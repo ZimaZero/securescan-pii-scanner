@@ -1,0 +1,4 @@
+Patient intake form
+Date of birth: 1990-03-15
+Appointment: 2026-01-10
+Follow up 15/06/2025

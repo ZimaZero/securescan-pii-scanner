@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "sin": "132-677-360",
+    "email": "format.test@example.com",
+    "phone": "416-555-0199",
+    "note": "Postal Code: T2X 1V4"
+  },
+  {
+    "id": 2,
+    "note": "no PII in this record"
+  }
+]

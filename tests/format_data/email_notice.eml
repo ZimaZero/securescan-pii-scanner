@@ -1,0 +1,37 @@
+From: records@example.org
+To: case.worker@example.org
+Subject: Account summary
+Date: Thu, 04 Jun 2026 10:00:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============2157490377456783554=="
+
+--===============2157490377456783554==
+Content-Type: multipart/alternative;
+ boundary="===============7168812476427548043=="
+
+--===============7168812476427548043==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+SIN on file: 132-677-360
+Contact phone: 416-555-0199
+
+--===============7168812476427548043==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Card on file: 4111 1111 1111 1111</p><p>Postal Code: T2X 1V4</=
+p></body></html>
+
+--===============7168812476427548043==--
+
+--===============2157490377456783554==
+Content-Type: application/pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="invoice.pdf"
+MIME-Version: 1.0
+
+JVBERi0xLjQgZmFrZSBpbnZvaWNlIGJvZHk=
+
+--===============2157490377456783554==--

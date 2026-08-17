@@ -1,0 +1,254 @@
+{
+  "seed": 1337,
+  "generated_files": 174,
+  "total_bytes": 44079714,
+  "salted": [
+    {
+      "path": "tests/stress_data/sales/team_beta/project_z/current/2025/salted_sin_0151.txt",
+      "category": "sin",
+      "salt_value": "757 036 793",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 11,
+      "size_bytes": 6482
+    },
+    {
+      "path": "tests/stress_data/finance/team_gamma/project_x/drafts/2025/salted_sin_0152.md",
+      "category": "sin",
+      "salt_value": "211 412 358",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 110,
+      "size_bytes": 20214
+    },
+    {
+      "path": "tests/stress_data/engineering/team_beta/project_y/archive/salted_sin_0153.csv",
+      "category": "sin",
+      "salt_value": "793 066 655",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 109,
+      "size_bytes": 20095
+    },
+    {
+      "path": "tests/stress_data/marketing/team_alpha/project_y/archive/2025/salted_sin_0154.log",
+      "category": "sin",
+      "salt_value": "518 535 687",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 17,
+      "size_bytes": 3621
+    },
+    {
+      "path": "tests/stress_data/marketing/team_gamma/project_z/archive/2025/salted_sin_0155.py",
+      "category": "sin",
+      "salt_value": "101 276 350",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 503,
+      "size_bytes": 24747
+    },
+    {
+      "path": "tests/stress_data/hr/team_gamma/project_z/drafts/salted_credit_card_0156.json",
+      "category": "credit_card",
+      "salt_value": "4078 2391 1501 1150",
+      "expected_taxonomy": "identifier.financial.credit_card",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 479,
+      "size_bytes": 28712
+    },
+    {
+      "path": "tests/stress_data/engineering/team_delta/project_x/archive/salted_credit_card_0157.txt",
+      "category": "credit_card",
+      "salt_value": "4699 6411 2127 3451",
+      "expected_taxonomy": "identifier.financial.credit_card",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 24,
+      "size_bytes": 13168
+    },
+    {
+      "path": "tests/stress_data/engineering/team_beta/project_y/archive/misc/salted_credit_card_0158.csv",
+      "category": "credit_card",
+      "salt_value": "5138 1725 6510 9023",
+      "expected_taxonomy": "identifier.financial.credit_card",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 141,
+      "size_bytes": 26355
+    },
+    {
+      "path": "tests/stress_data/legal/team_gamma/project_x/drafts/misc/salted_credit_card_0159.log",
+      "category": "credit_card",
+      "salt_value": "5533 1052 4296 5343",
+      "expected_taxonomy": "identifier.financial.credit_card",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 77,
+      "size_bytes": 17198
+    },
+    {
+      "path": "tests/stress_data/hr/team_delta/project_y/drafts/2025/salted_credit_card_0160.py",
+      "category": "credit_card",
+      "salt_value": "3770 8681 1171 3352",
+      "expected_taxonomy": "identifier.financial.credit_card",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 395,
+      "size_bytes": 19446
+    },
+    {
+      "path": "tests/stress_data/sales/team_gamma/project_y/current/salted_aws_access_key_0161.py",
+      "category": "aws_access_key",
+      "salt_value": "AKIAUENRRD5W2K63MIHV",
+      "expected_taxonomy": "secret.credential.aws_access_key",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 347,
+      "size_bytes": 17092
+    },
+    {
+      "path": "tests/stress_data/sales/team_gamma/project_y/current/salted_aws_access_key_0162.log",
+      "category": "aws_access_key",
+      "salt_value": "AKIAIRO2NQ1QIIMFHIPU",
+      "expected_taxonomy": "secret.credential.aws_access_key",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 121,
+      "size_bytes": 26974
+    },
+    {
+      "path": "tests/stress_data/engineering/team_alpha/project_x/drafts/misc/salted_aws_access_key_0163.json",
+      "category": "aws_access_key",
+      "salt_value": "AKIAJ5JJLKWDLVACXTPN",
+      "expected_taxonomy": "secret.credential.aws_access_key",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 119,
+      "size_bytes": 6990
+    },
+    {
+      "path": "tests/stress_data/finance/team_gamma/project_x/current/salted_aws_secret_key_0164.txt",
+      "category": "aws_secret_key",
+      "salt_value": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+      "expected_taxonomy": "secret.credential.aws_secret_key",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 6,
+      "size_bytes": 3444
+    },
+    {
+      "path": "tests/stress_data/finance/team_beta/project_z/drafts/2025/salted_aws_secret_key_0165.md",
+      "category": "aws_secret_key",
+      "salt_value": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+      "expected_taxonomy": "secret.credential.aws_secret_key",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 106,
+      "size_bytes": 19674
+    },
+    {
+      "path": "tests/stress_data/finance/team_delta/project_y/current/2024/salted_email_0166.md",
+      "category": "email",
+      "salt_value": "noah.kaplan@globex-holdings.io",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 22,
+      "size_bytes": 3693
+    },
+    {
+      "path": "tests/stress_data/marketing/team_gamma/project_z/archive/salted_email_0167.csv",
+      "category": "email",
+      "salt_value": "sofia.marchetti@globex-holdings.io",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 141,
+      "size_bytes": 26244
+    },
+    {
+      "path": "tests/stress_data/engineering/team_alpha/project_x/current/2026/salted_email_0168.txt",
+      "category": "email",
+      "salt_value": "noah.kaplan@acme-industries.net",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 43,
+      "size_bytes": 24503
+    },
+    {
+      "path": "tests/stress_data/sales/team_gamma/project_z/archive/salted_email_0169.json",
+      "category": "email",
+      "salt_value": "noah.kaplan@globex-holdings.io",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 125,
+      "size_bytes": 7505
+    },
+    {
+      "path": "tests/stress_data/hr/team_beta/project_z/drafts/salted_email_0170.log",
+      "category": "email",
+      "salt_value": "ines.fontaine@globex-holdings.io",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 130,
+      "size_bytes": 28827
+    },
+    {
+      "path": "tests/stress_data/edge_cases/very_long_single_line.txt",
+      "category": "email_longline",
+      "salt_value": "jordan.blake@globex-holdings.io",
+      "expected_taxonomy": "contact.email",
+      "expected_band": "MEDIUM",
+      "min_score": 30,
+      "max_score": 69,
+      "line": 1,
+      "size_bytes": 1100641
+    },
+    {
+      "path": "tests/stress_data/edge_cases/level_00/level_01/level_02/level_03/level_04/level_05/level_06/level_07/level_08/level_09/level_10/level_11/level_12/buried_treasure.txt",
+      "category": "sin_deep_nested",
+      "salt_value": "764 432 712",
+      "expected_taxonomy": "identifier.financial.sin",
+      "expected_band": "HIGH",
+      "min_score": 70,
+      "max_score": 100,
+      "line": 6,
+      "size_bytes": 3559,
+      "depth": 13
+    }
+  ],
+  "edge_only": [
+    "tests/stress_data/edge_cases/empty_zero_byte.txt",
+    "tests/stress_data/edge_cases/weird_unicode.txt"
+  ]
+}

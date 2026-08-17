@@ -1,0 +1,47 @@
+# Optional override: Windows drive visibility for WSL2. Applied
+# automatically by scripts/securescan-gui-common.sh when it detects WSL;
+# apply it manually otherwise:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.wsl.yml run --rm securescan-cpu python gui.py
+#
+# Without this file, securescan-cpu/-gpu can only see whatever's under /app
+# (the repo itself). This file adds read-only access to the Windows C: drive
+# as WSL sees it over drvfs, plus everything under /mnt so a share mounted in
+# WSL after the container starts (e.g. `sudo mount -t drvfs //nas/share
+# /mnt/nas`, or a CIFS mount) appears without a restart -- see
+# docker-compose.yml's history for why this replaced a single fixed
+# CORPUS_PATH mount. Host and container paths are identical strings by
+# design (host /mnt/c/Users/x <-> container /mnt/c/Users/x), so a path typed
+# or picked in the GUI means the same thing on both sides.
+#
+# Live propagation of shares mounted after the container starts requires the
+# WSL2 distro's root mount namespace to be "shared", systemd's default when
+# `systemd=true` is set in /etc/wsl.conf (the common modern WSL2 setup).
+# Without that, a share mounted after startup needs a container restart to
+# appear.
+#
+# Not meaningful outside WSL: on plain Linux, /mnt/c has no Windows drive
+# behind it, so this file is WSL-only by design, not merely WSL-tested.
+
+services:
+  securescan-cpu:
+    volumes:
+      - type: bind
+        source: /mnt/c
+        target: /mnt/c
+        read_only: true
+      - type: bind
+        source: /mnt
+        target: /mnt
+        read_only: true
+
+  securescan-gpu:
+    volumes:
+      - type: bind
+        source: /mnt/c
+        target: /mnt/c
+        read_only: true
+      - type: bind
+        source: /mnt
+        target: /mnt
+        read_only: true

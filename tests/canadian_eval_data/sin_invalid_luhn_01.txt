@@ -1,0 +1,2 @@
+Synthetic rejected payroll field
+Social Insurance Number: 123456789

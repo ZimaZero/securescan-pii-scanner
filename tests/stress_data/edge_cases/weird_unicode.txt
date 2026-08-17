@@ -1,0 +1,8 @@
+﻿Emoji stress: 😀💩🧨🗿
+RTL Arabic: مرحبا بالعالم
+RTL Hebrew: שלום עולם
+Zalgo: Z̵̧a̶̡l̷̰g̸̖ó̵!̶̀
+Zero-width: a​b‌c‍d﻿e
+Math alphanumeric: 𝕳𝖆𝖓𝖓𝖖
+Combining overload: é́́́́́́́
+CJK: 你好世界 こんにちは

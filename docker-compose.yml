@@ -1,0 +1,128 @@
+# CPU and GPU services share one Dockerfile and source mount. Build arguments
+# select their inference packages.
+#
+# No fixed CORPUS_PATH is required. The WSL overlay exposes Windows drives;
+# plain Linux callers add explicit host-directory mounts for each scan root.
+#
+# securescan-gpu/ollama request no GPU device here -- that reservation lives
+# in docker-compose.gpu.yml, applied only when a real NVIDIA GPU is detected
+# (scripts/securescan-gui-common.sh does this automatically; see README.md
+# for the manual `-f docker-compose.yml -f docker-compose.gpu.yml` invocation
+# otherwise). `deploy.resources.reservations.devices` is not merely inert
+# without a matching GPU/NVIDIA Container Toolkit -- Compose actively refuses
+# to start a container that requests a device driver it can't satisfy
+# ("could not select device driver ... with capabilities: [[gpu]]"), so this
+# split lets securescan-gpu and Ollama start without a GPU; application-level
+# fallback handles unavailable acceleration
+# (GLiNER's CUDA session swap and PaddleOCR's device selection both already
+# fall back to CPU on their own when the device turns out to be unusable
+# even with the reservation applied -- see gliner_detector.py and
+# extractors/image_extractor.py). No `version:` key: it's obsolete under the
+# Compose Spec used by current `docker compose`.
+
+x-securescan-common: &securescan-common
+  build:
+    context: .
+    dockerfile: docker/Dockerfile
+  working_dir: /app
+  # gui.py, not a one-shot scanner.py run: with no fixed corpus mount there
+  # is no single path to hand scanner.py up front, and the GUI is what lets
+  # an operator type or browse to any path under the active mounts. Override
+  # the command (e.g. `docker compose run securescan-cpu /opt/venv/bin/python
+  # scanner.py --path /mnt/c/... --no-open`) for one-shot CLI scans.
+  command: ["/opt/venv/bin/python", "gui.py"]
+  volumes:
+    # Repo bind-mounted, not baked into the image, so host edits are seen
+    # live without a rebuild.
+    - .:/app
+    # Pre-existing host caches, bind-mounted so no model download/ONNX
+    # export happens inside the container (see Dockerfile comment). Baked
+    # models (see docker/Dockerfile's bake stage) are the offline fallback
+    # when these are empty/absent -- docker/entrypoint.sh seeds them from
+    # the image without touching an existing populated cache.
+    - ${HOME}/.cache/huggingface:/root/.cache/huggingface
+    - ${HOME}/.cache/securescan:/root/.cache/securescan
+  # Windows drive visibility (/mnt/c, /mnt) is WSL-only and lives in
+  # docker-compose.wsl.yml. scripts/securescan-gui-common.sh detects WSL and
+  # adds that overlay only there; README.md shows the equivalent manual
+  # Compose invocation.
+
+services:
+  securescan-gpu:
+    <<: *securescan-common
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ENABLE_GPU: "1"
+        ENABLE_PADDLE_GPU: "1"
+    image: securescan:gpu
+    container_name: securescan-gpu
+    environment:
+      # NiceGUI must bind all container interfaces so the published host port
+      # can reach it. gui.py uses this same value in both ui.run() and the
+      # visible header; unset/bare-host invocations still default to 127.0.0.1.
+      - SECURESCAN_GUI_HOST=0.0.0.0
+      # Ollama runs as the "ollama" compose service, not in this container,
+      # so the OLLAMA_HOST default of localhost:11434 (config.py) would point
+      # at the container itself. Compose's built-in DNS resolves the service
+      # name to the ollama container on the shared default network -- no
+      # extra_hosts/host.docker.internal needed.
+      - SECURESCAN_OLLAMA_HOST=http://ollama:11434
+      # This service has paddlepaddle-gpu installed (ENABLE_PADDLE_GPU
+      # above); point PaddleOCR at the GPU explicitly. config.py's default
+      # ("cpu") is unaffected for securescan-cpu and any bare-host run.
+      - SECURESCAN_PADDLEOCR_DEVICE=gpu:0
+      # Routes GLiNER's ONNX session onto CUDAExecutionProvider via
+      # gliner_detector.py's locked session swap. config.py's default
+      # ("cpu") is unaffected for securescan-cpu and any bare-host run.
+      - SECURESCAN_GLINER_DEVICE=cuda
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    ports:
+      - "8080:8080"
+    # No GPU device reservation here -- see docker-compose.gpu.yml and the
+    # top-of-file comment. Without it this service still starts and runs,
+    # just on CPU (the SECURESCAN_*_DEVICE env vars above ask for GPU, but
+    # the app-level fallbacks win when no GPU is actually reachable).
+
+  # CPU service: GPU inference packages and device reservations are disabled.
+  securescan-cpu:
+    <<: *securescan-common
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ENABLE_GPU: "0"
+        ENABLE_PADDLE_GPU: "0"
+    image: securescan:cpu
+    container_name: securescan-cpu
+    environment:
+      - SECURESCAN_GUI_HOST=0.0.0.0
+      - SECURESCAN_OLLAMA_HOST=http://ollama:11434
+    ports:
+      - "8081:8080"
+
+  # Runs the optional verification-layer LLM in-compose so nothing needs to
+  # be installed on the Windows host. Model weights land in the named
+  # ollama_data volume (not the container filesystem), so a `down`/`up` or
+  # image rebuild doesn't repeat the ~2GB qwen2.5:3b pull. Verification
+  # itself remains opt-in, and both securescan services treat a down/unreachable
+  # Ollama as "skipped" rather than a hard failure -- this service is not a
+  # startup dependency of either (no depends_on below), so securescan-gpu/
+  # -cpu remain usable before the model is pulled
+  # or if this container is never started at all.
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    # Same split as securescan-gpu: no GPU device reservation here, so this
+    # starts fine with no GPU present. docker-compose.gpu.yml adds the same
+    # reservation Ollama uses when a GPU is
+    # detected. Ollama runs on CPU without it.
+
+volumes:
+  ollama_data:

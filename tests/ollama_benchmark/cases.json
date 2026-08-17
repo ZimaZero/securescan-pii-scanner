@@ -1,0 +1,183 @@
+{
+  "_description": "Regression/benchmark cases for the Ollama PII-verification judge layer. Each case is what the judge model receives ({value, detected_type, context, source_layer}) plus the expected verdict this benchmark grades against. 'synthetic': true means the context was constructed to be faithful to a documented finding rather than copied verbatim from a corpus artifact (either because the exact surrounding text wasn't recoverable, or because the case is a generic sanity check with no specific incident behind it). 'source' cites where the case comes from. 'hallucination_watch' (optional) lists phrases that would indicate a model invented a justification not supported by the facts of the case (e.g. claiming a checksum was computed when the detector in question doesn't use one).",
+  "cases": [
+    {
+      "id": 1,
+      "description": "Ukrainian passport number matches our 2-letter+6-digit passport_ca shape",
+      "value": "EK000001",
+      "detected_type": "identifier.government.passport_ca",
+      "source_layer": "passport",
+      "context": "YKPAIHA @ UKRAINE &\nTun! Type Kon Country code Homep nacnopra/ Passport No.\nEK000001\neo PASSPORT\nGiven Names\nnaevddo\nIBAH/IVAN\npomaaAHcTeo/ Nationality\nYKPATHA/UKRAINE >\nAata Date of birth Homep/ Pe",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": false,
+      "source": "tests/external_octopii_docs/EVALUATION.md, finding #1 (dummy-passport-ukraine.jpg OCR excerpt)",
+      "hallucination_watch": ["checksum", "invalid format", "fails validation"]
+    },
+    {
+      "id": 2,
+      "description": "Aadhaar reference number happens to satisfy the Ontario OHIP checksum",
+      "value": "1145002075",
+      "detected_type": "identifier.government.health_card_on",
+      "source_layer": "health_card",
+      "context": "AADHAAR\nGovernment of India - Unique Identification Authority\nEnrollment No.: 1234/56789/01234\nRef: 1145002075\nName: Sree Marrang\nDOB: 01/01/1990\nAadhaar is proof of identity, not of citizenship.\nhelp@uidai.gov.in",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": true,
+      "source": "Reconstructed from tests/external_octopii_docs/EVALUATION.md finding #2 (dummy-aadhaar.png) — the reference number and narrative are documented verbatim there, but the raw OCR block containing the number itself was not captured in the doc (only the first ~200 chars of a different part of the OCR were), so this context is a faithful reconstruction, not a verbatim excerpt.",
+      "hallucination_watch": ["OHIP checksum is invalid", "fails the checksum"]
+    },
+    {
+      "id": 3,
+      "description": "Indian (Maharashtra) driver's licence number swept into generic drivers_license_ca",
+      "value": "200800000000",
+      "detected_type": "identifier.government.drivers_license_ca",
+      "source_layer": "drivers_license",
+      "context": "THE UNION OF INDIA\nMAHARASHTRA STATE MOTOR DRIVING LICENCE ia\nDL No .MM03 200800000000 DO! 24-01-2007\nsee 24 Valid Till : 23-01-2027 (NT) 09-03-2011 (TR)\nAED 15-03-2008 RULE 16 (2)\nAUTHORISATION TO D",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": false,
+      "source": "tests/external_octopii_docs/EVALUATION.md, finding #3 (dummy-drivers-license-maharashtra.jpg OCR excerpt)"
+    },
+    {
+      "id": 4,
+      "description": "OCR misread of \"Email\" as \"Emall\" tagged as a person name",
+      "value": "Emall",
+      "detected_type": "entity.person",
+      "source_layer": "gliner",
+      "context": "CONTACT US\nEmall: owais.shaikh@redhuntlabs.com | me@0x4f.in\nPhone: +91 98765 43210\nAddress: 4th Floor, Tech Park, Bengaluru, India 560001\nwww.redhuntlabs.com",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": true,
+      "source": "Modeled on the real contact block in tests/external_octopii_docs/README.md line 48 (\"Email: owais.shaikh@redhuntlabs.com | me@0x4f.in\"); the specific \"Emall\" OCR misread is a faithful, not verbatim, reconstruction — no corpus document was found containing this exact misread."
+    },
+    {
+      "id": 5,
+      "description": "GLiNER tags the bare word \"employee\" as a person name",
+      "value": "employee",
+      "detected_type": "entity.person",
+      "source_layer": "gliner",
+      "context": "...payments will be authorised using the company card 340590169215641 and reconciled against the tax register number S0079831N. For identity verification, the submission should also include a copy of the employee's ID card 48WYS1XEBK and driver's licence 7R8AEB1XPX.",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": false,
+      "source": "tests/external_ai4privacy/results.json fp_examples, sample_uid 24841255 (also cited as the 'employee' gliner miss in tests/external_ai4privacy/EVALUATION.md's top-10 FP table)"
+    },
+    {
+      "id": 6,
+      "description": "Regex misreads a SOCIALNUM (SSN-shaped) 10-digit run as a phone number",
+      "value": "1800632735",
+      "detected_type": "contact.phone",
+      "source_layer": "regex",
+      "context": "SMS to Shalyn Aiying: \"Your new CPF-linked retirement account is active. Current age: 59. Please reply with your social security reference 1800632735 or call +18 23-146-0036 for verification.\"",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": false,
+      "source": "tests/external_ai4privacy/results.json fp_examples, sample_uid 24841171 (contact.phone/regex bucket)"
+    },
+    {
+      "id": 7,
+      "description": "Bare 10-digit SOCIALNUM swept into drivers_license by keyword proximity, not an actual licence number",
+      "value": "5313616887",
+      "detected_type": "identifier.government.drivers_license",
+      "source_layer": "drivers_license",
+      "context": "The preliminary findings of the Communication Effectiveness Audit, dated March 4th, 2026, indicate that staff members with identification numbers such as driver license EG1C8CLSLZ, social security 5313616887, and tax ID F7482767B demonstrate higher response rates...",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": false,
+      "source": "tests/external_ai4privacy/results.json fp_examples, sample_uid 24817957 — one of the 34 newly-appeared drivers_license FPs documented in tests/external_ai4privacy/EVALUATION.md's 'Post-fix addendum' (bare-digit-run phone false positives), where the phone fix stopped absorbing these digits and let the DL detector's own keyword-window weakness surface them instead"
+    },
+    {
+      "id": 8,
+      "description": "A bare domain name gets tagged as an organization",
+      "value": "portal.example.com",
+      "detected_type": "entity.organization",
+      "source_layer": "gliner",
+      "context": "For support, please visit portal.example.com or contact your account representative. This system is provided for demonstration purposes only and does not process real customer data.",
+      "expected_verdict": "FALSE_POSITIVE",
+      "synthetic": true,
+      "source": "Historic case behind the _is_structured() junk filter in detectors/gliner_detector.py — tests/test_gliner_filter.py's SHOULD_FILTER list includes \"example.com\" and \"portal.example.com\" as 'confirmed junk leaks from /tmp/gliner_probe.py'. The probe script and its original context were never committed, so this surrounding prose is a faithful reconstruction, not the original."
+    },
+    {
+      "id": 9,
+      "description": "A real SIN with explicit keyword context",
+      "value": "132-677-360",
+      "detected_type": "identifier.financial.sin",
+      "source_layer": "regex",
+      "context": "Please complete the attached T4 slip and return it with your SIN: 132-677-360 to payroll by end of week so we can process your tax filing for this year.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Value reused from tests/test_gliner_filter.py's SHOULD_FILTER fixture (a checksum-valid SIN used to confirm GLiNER correctly defers to the regex/checksum layer); surrounding prose is constructed for this benchmark."
+    },
+    {
+      "id": 10,
+      "description": "A real person name in an unambiguous authorship context",
+      "value": "John Smith",
+      "detected_type": "entity.person",
+      "source_layer": "gliner",
+      "context": "Prepared by John Smith, Acme Corporation. This quarterly report summarizes regional sales performance and is intended for internal distribution only.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case; no specific corpus incident behind it."
+    },
+    {
+      "id": 11,
+      "description": "A real organization name in the same authorship context as case 10",
+      "value": "Acme Corporation",
+      "detected_type": "entity.organization",
+      "source_layer": "gliner",
+      "context": "Prepared by John Smith, Acme Corporation. This quarterly report summarizes regional sales performance and is intended for internal distribution only.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case; no specific corpus incident behind it."
+    },
+    {
+      "id": 12,
+      "description": "A real email address in ordinary prose",
+      "value": "jane.doe@example.org",
+      "detected_type": "contact.email",
+      "source_layer": "regex",
+      "context": "If you have any questions about the attached invoice, please reach out to jane.doe@example.org and she will be happy to assist you within one business day.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case; no specific corpus incident behind it."
+    },
+    {
+      "id": 13,
+      "description": "A real formatted phone number with an explicit label",
+      "value": "(403) 555-1234",
+      "detected_type": "contact.phone",
+      "source_layer": "regex",
+      "context": "For scheduling changes, contact our office directly. Phone: (403) 555-1234, Monday to Friday, 9am to 5pm Mountain Time. Voicemail is checked hourly during business hours.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case; no specific corpus incident behind it."
+    },
+    {
+      "id": 14,
+      "description": "A real (Luhn-valid) credit card number with an explicit billing context",
+      "value": "4111 1111 1111 1111",
+      "detected_type": "identifier.financial.credit_card",
+      "source_layer": "regex",
+      "context": "Per our records, the card on file for auto-renewal is 4111 1111 1111 1111, expiring 09/27. Please update this before your next billing cycle if it has expired or been reissued.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case using the well-known Luhn-valid test PAN 4111 1111 1111 1111; no specific corpus incident behind it."
+    },
+    {
+      "id": 15,
+      "description": "A real person name in meeting-notes context",
+      "value": "Sarah Chen",
+      "detected_type": "entity.person",
+      "source_layer": "gliner",
+      "context": "Meeting notes, Aug 14: Sarah Chen raised concerns about the Q3 timeline and volunteered to follow up with the vendor by Friday. Action items assigned below.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Constructed sanity-check case; no specific corpus incident behind it."
+    },
+    {
+      "id": 16,
+      "description": "A real, checksum-valid Ontario health card number with explicit OHIP keyword context",
+      "value": "1043321817",
+      "detected_type": "identifier.government.health_card_on",
+      "source_layer": "health_card",
+      "context": "Patient intake form. Name: Marc Tremblay. DOB: 1985-04-12. OHIP number: 1043321817. Please bring this card to all scheduled appointments at the clinic.",
+      "expected_verdict": "LEGITIMATE",
+      "synthetic": true,
+      "source": "Number generated with detectors/health_card_detector.py's own ohip_valid() checksum (same technique tests/make_stress_data.py uses for SIN/credit-card generation, seed=42) so it is a genuine checksum-valid Ontario health card number, not a documented corpus find. Surrounding prose is constructed for this benchmark."
+    }
+  ]
+}

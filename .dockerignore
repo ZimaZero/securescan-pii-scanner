@@ -1,0 +1,14 @@
+# Keeps the build context small. The repo is bind-mounted at runtime (see
+# docker-compose.yml), not COPYed wholesale, so most of this never needs to
+# reach the Docker daemon at build time -- only requirements.txt plus the
+# handful of modules docker/Dockerfile's bake stage COPYs individually
+# (config.py, detectors/gliner_detector.py, extractors/*, docker/*) do.
+.git/
+.venv/
+__pycache__/
+*.pyc
+outputs/
+.claude/
+.vscode/
+tests/
+docs/

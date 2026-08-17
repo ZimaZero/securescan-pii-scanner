@@ -1,0 +1,2 @@
+Synthetic business correspondence
+Employee ID 12345678 belongs to a synthetic department.

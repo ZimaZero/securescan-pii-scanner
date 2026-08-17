@@ -1,0 +1,7 @@
+# Downloaded dataset slice and derived results — regenerate with
+# download_ai4privacy_sample.py + run_evaluation.py. Not committed: the
+# sample is a third-party dataset download, and results.json embeds full
+# verbatim sample text for every FP/FN (effectively re-deriving a large
+# chunk of the same downloaded data).
+ai4privacy_en_sample.json
+results.json

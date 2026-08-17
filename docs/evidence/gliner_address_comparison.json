@@ -1,0 +1,812 @@
+{
+  "medium5_total": 921,
+  "pii_total": 135,
+  "recovered_count": 62,
+  "recovered_pct_of_pii": 45.9,
+  "pii_only_count": 73,
+  "medium5_only_count": 846,
+  "medium5_confidence": {
+    "n": 921,
+    "min": 0.5002,
+    "p10": 0.5269,
+    "p50": 0.6558,
+    "p90": 0.8353,
+    "max": 0.9895,
+    "mean": 0.6698
+  },
+  "pii_confidence": {
+    "n": 135,
+    "min": 0.5024,
+    "p10": 0.5226,
+    "p50": 0.6955,
+    "p90": 0.9047,
+    "max": 0.977,
+    "mean": 0.7034
+  },
+  "recovered_examples": [
+    {
+      "file": "beck-s__sent__256.txt",
+      "pii_value": "EB 3389",
+      "pii_conf": 0.8787,
+      "medium5_value": "EB 3389",
+      "medium5_conf": 0.756
+    },
+    {
+      "file": "blair-l__merger_with_dynegy__3.txt",
+      "pii_value": "1000 Louisiana, Suite 5800, Houston, TX 77002",
+      "pii_conf": 0.8717,
+      "medium5_value": "1000 Louisiana",
+      "medium5_conf": 0.8411
+    },
+    {
+      "file": "blair-l__merger_with_dynegy__3.txt",
+      "pii_value": "1400 Smith Street, Houston, TX 77002",
+      "pii_conf": 0.8393,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.7849
+    },
+    {
+      "file": "dasovich-j__deleted_items__410.txt",
+      "pii_value": "100 - East 50th Street, NYC",
+      "pii_conf": 0.9255,
+      "medium5_value": "100 - East 50th Street",
+      "medium5_conf": 0.7689
+    },
+    {
+      "file": "dasovich-j__deleted_items__410.txt",
+      "pii_value": "100 - East 50th Street, NYC",
+      "pii_conf": 0.8835,
+      "medium5_value": "100 - East 50th Street",
+      "medium5_conf": 0.7689
+    },
+    {
+      "file": "dasovich-j__notes_inbox__11634.txt",
+      "pii_value": "Arlington, Va.",
+      "pii_conf": 0.5552,
+      "medium5_value": "Arlington, Va.",
+      "medium5_conf": 0.6638
+    },
+    {
+      "file": "germany-c__sent__601.txt",
+      "pii_value": "St 85",
+      "pii_conf": 0.5956,
+      "medium5_value": "St 85",
+      "medium5_conf": 0.8679
+    },
+    {
+      "file": "germany-c__sent__601.txt",
+      "pii_value": "St 85",
+      "pii_conf": 0.5226,
+      "medium5_value": "St 85",
+      "medium5_conf": 0.8679
+    },
+    {
+      "file": "germany-c__sent_items__660.txt",
+      "pii_value": "ECS 04425",
+      "pii_conf": 0.8212,
+      "medium5_value": "ECS 04425",
+      "medium5_conf": 0.8212
+    },
+    {
+      "file": "haedicke-m__sent__356.txt",
+      "pii_value": "117 East Colorado Blvd, Suite 200\nPasadena, CA 91105",
+      "pii_conf": 0.5472,
+      "medium5_value": "117 East Colorado Blvd",
+      "medium5_conf": 0.6809
+    },
+    {
+      "file": "hayslett-r__inbox__15.txt",
+      "pii_value": "1400 Smith 3AC-3147, Houston, TX  77002",
+      "pii_conf": 0.7629,
+      "medium5_value": "1400 Smith 3AC-3147",
+      "medium5_conf": 0.6915
+    },
+    {
+      "file": "jones-t__inbox__885.txt",
+      "pii_value": "10375 Richmond, Suite 300\nHouston, Texas  77042",
+      "pii_conf": 0.669,
+      "medium5_value": "10375 Richmond",
+      "medium5_conf": 0.526
+    },
+    {
+      "file": "jones-t__inbox__885.txt",
+      "pii_value": "1100 Louisiana, Suite 1000\n\tHouston, Texas  77002",
+      "pii_conf": 0.9504,
+      "medium5_value": "1100 Louisiana",
+      "medium5_conf": 0.6996
+    },
+    {
+      "file": "jones-t__inbox__885.txt",
+      "pii_value": "PO Box 4791, Houston, TX  77210-4791",
+      "pii_conf": 0.7278,
+      "medium5_value": "PO Box 4791",
+      "medium5_conf": 0.7278
+    },
+    {
+      "file": "kaminski-v__consultants__4.txt",
+      "pii_value": "4807 41st Street, NW\nWashington, DC 20016",
+      "pii_conf": 0.8073,
+      "medium5_value": "4807 41st Street",
+      "medium5_conf": 0.7657
+    },
+    {
+      "file": "kitchen-l__deleted_items__10.txt",
+      "pii_value": "EB 3829a",
+      "pii_conf": 0.5454,
+      "medium5_value": "EB 3829a",
+      "medium5_conf": 0.9043
+    },
+    {
+      "file": "lenhart-m__sent_items__336.txt",
+      "pii_value": "1100 Louisiana St. 808B\n Houston, TX 77002",
+      "pii_conf": 0.594,
+      "medium5_value": "1100 Louisiana St.",
+      "medium5_conf": 0.7555
+    },
+    {
+      "file": "mann-k__all_documents__6246.txt",
+      "pii_value": "399 Park\nAvenue, New York, New York 10022",
+      "pii_conf": 0.8228,
+      "medium5_value": "399 Park\nAvenue",
+      "medium5_conf": 0.8308
+    },
+    {
+      "file": "mann-k__discussion_threads__1706.txt",
+      "pii_value": "600 Travis Street\nSuite 4200\nHouston, Texas  77002",
+      "pii_conf": 0.5719,
+      "medium5_value": "600 Travis Street",
+      "medium5_conf": 0.8742
+    },
+    {
+      "file": "mann-k__discussion_threads__3065.txt",
+      "pii_value": "399 Park Avenue\nNew York, New York 10022",
+      "pii_conf": 0.7581,
+      "medium5_value": "399 Park Avenue",
+      "medium5_conf": 0.7369
+    },
+    {
+      "file": "mccarty-d__sent_items__27.txt",
+      "pii_value": "707 Eighth Avenue S.W.",
+      "pii_conf": 0.977,
+      "medium5_value": "707 Eighth Avenue S.W.",
+      "medium5_conf": 0.8253
+    },
+    {
+      "file": "nemec-g__all_documents__5934.txt",
+      "pii_value": "711 Louisiana St., Suite 2900\nHouston, TX  77002-2781",
+      "pii_conf": 0.5103,
+      "medium5_value": "711 Louisiana St.",
+      "medium5_conf": 0.8353
+    },
+    {
+      "file": "nemec-g__all_documents__5935.txt",
+      "pii_value": "7620  Katy Freeway",
+      "pii_conf": 0.8232,
+      "medium5_value": "7620  Katy Freeway",
+      "medium5_conf": 0.9122
+    },
+    {
+      "file": "sager-e__inbox__374.txt",
+      "pii_value": "2400 Smith St.",
+      "pii_conf": 0.9206,
+      "medium5_value": "2400 Smith St.",
+      "medium5_conf": 0.8461
+    },
+    {
+      "file": "sanders-r__sent__1044.txt",
+      "pii_value": "1201 Third Avenue, Suite 3090",
+      "pii_conf": 0.6508,
+      "medium5_value": "1201 Third Avenue",
+      "medium5_conf": 0.7439
+    },
+    {
+      "file": "scott-s__all_documents__898.txt",
+      "pii_value": "555 W. Fifth St. GT14D6",
+      "pii_conf": 0.6268,
+      "medium5_value": "555 W. Fifth St.",
+      "medium5_conf": 0.5516
+    },
+    {
+      "file": "shackleton-s__all_documents__9188.txt",
+      "pii_value": "1400 Smith Street, EB 3801a",
+      "pii_conf": 0.528,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.7763
+    },
+    {
+      "file": "shackleton-s__inbox__319.txt",
+      "pii_value": "1400 Smith Street, EB3803\nHouston, Texas 77002",
+      "pii_conf": 0.5761,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.8281
+    },
+    {
+      "file": "shackleton-s__sent_items__252.txt",
+      "pii_value": "1400 Smith Street, EB3801a\nHouston, TX  77002",
+      "pii_conf": 0.5814,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.8336
+    },
+    {
+      "file": "shackleton-s__sent_items__351.txt",
+      "pii_value": "1400 Smith Street, EB3801a\nHouston, TX  77002",
+      "pii_conf": 0.7345,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.7708
+    },
+    {
+      "file": "shankman-j__all_documents__1.txt",
+      "pii_value": "50 Fremont Street; San\nFrancisco, CA  94120",
+      "pii_conf": 0.7166,
+      "medium5_value": "50 Fremont Street",
+      "medium5_conf": 0.89
+    },
+    {
+      "file": "shankman-j__all_documents__1.txt",
+      "pii_value": "2999 California Street, Apt 32, San Francisco, CA  94115",
+      "pii_conf": 0.858,
+      "medium5_value": "2999 California Street",
+      "medium5_conf": 0.8439
+    },
+    {
+      "file": "shapiro-r__deleted_items__1351.txt",
+      "pii_value": "189 Reservoir st\n                  Needham,Ma 02494",
+      "pii_conf": 0.82,
+      "medium5_value": "189 Reservoir st",
+      "medium5_conf": 0.665
+    },
+    {
+      "file": "taylor-m__all_documents__2215.txt",
+      "pii_value": "1400 Smith Street EB 3817\nHouston Texas 77002",
+      "pii_conf": 0.6444,
+      "medium5_value": "1400 Smith Street",
+      "medium5_conf": 0.643
+    },
+    {
+      "file": "taylor-m__archive__7_00__120.txt",
+      "pii_value": "Seyang Building, 223 Naeja-Dong, Chongro-Ku, Seoul, Korea 110-720",
+      "pii_conf": 0.8615,
+      "medium5_value": "Seyang Building",
+      "medium5_conf": 0.8984
+    },
+    {
+      "file": "tholt-j__sent_items__41.txt",
+      "pii_value": "414 Silver Avenue SE, Albuquerque, NM  87102-2610",
+      "pii_conf": 0.9296,
+      "medium5_value": "414 Silver Avenue SE",
+      "medium5_conf": 0.8666
+    },
+    {
+      "file": "williams-j__discussion_threads__18.txt",
+      "pii_value": "2119 Milford St.\n> Houston, TX 77098",
+      "pii_conf": 0.8312,
+      "medium5_value": "2119 Milford St.",
+      "medium5_conf": 0.804
+    },
+    {
+      "file": "NB_front_sample.jpg",
+      "pii_value": "364 ARGYLE STREET\nFREDERICTON, NB E3B 1T9",
+      "pii_conf": 0.6461,
+      "medium5_value": "364 ARGYLE STREET",
+      "medium5_conf": 0.7084
+    },
+    {
+      "file": "NL_front_sample.jpg",
+      "pii_value": "8149 Smalhwood Drive\nMount Pearl, NL A1N 584",
+      "pii_conf": 0.8719,
+      "medium5_value": "Smalhwood Drive",
+      "medium5_conf": 0.5737
+    },
+    {
+      "file": "NS_front_sample_with_DL_number.jpg",
+      "pii_value": "885 Bates Brothers Road\nColumbus, OH 43215",
+      "pii_conf": 0.7104,
+      "medium5_value": "Bates Brothers Road",
+      "medium5_conf": 0.5715
+    }
+  ],
+  "pii_only_examples": [
+    {
+      "file": "adjacent_part_04.txt",
+      "value": "warehouse C",
+      "confidence": 0.5879
+    },
+    {
+      "file": "bass-e__discussion_threads__1065.txt",
+      "value": "14002 kimberley ln\nhouston, tx 77079",
+      "confidence": 0.7908
+    },
+    {
+      "file": "beck-s___sent_mail__131.txt",
+      "value": "5701 Main Street\n  Houston,  TX  77005",
+      "confidence": 0.5135
+    },
+    {
+      "file": "beck-s___sent_mail__131.txt",
+      "value": "Ruggles Center Field Terrace",
+      "confidence": 0.5165
+    },
+    {
+      "file": "dasovich-j__all_documents__11383.txt",
+      "value": "Orange, New Jersey",
+      "confidence": 0.6352
+    },
+    {
+      "file": "dasovich-j__all_documents__12268.txt",
+      "value": "1860 Embarcadero Road - Suite 210\nPalo Alto, CA 94303",
+      "confidence": 0.5096
+    },
+    {
+      "file": "dasovich-j__notes_inbox__11634.txt",
+      "value": "Charlotte, N.C.",
+      "confidence": 0.9363
+    },
+    {
+      "file": "dasovich-j__notes_inbox__11634.txt",
+      "value": "San Jose, Calif.",
+      "confidence": 0.5732
+    },
+    {
+      "file": "dean-c__all_documents__121.txt",
+      "value": "Clarksville, Tenn.",
+      "confidence": 0.6681
+    },
+    {
+      "file": "dean-c__all_documents__121.txt",
+      "value": "Clarksville, Tenn.",
+      "confidence": 0.6401
+    },
+    {
+      "file": "derrick-j__sent_items__94.txt",
+      "value": "Houst=\non, Texas, USA",
+      "confidence": 0.7688
+    },
+    {
+      "file": "derrick-j__sent_items__94.txt",
+      "value": "Houst=\non, Texas, USA",
+      "confidence": 0.9239
+    },
+    {
+      "file": "derrick-j__sent_items__94.txt",
+      "value": "S=\nao Paulo, Brazil",
+      "confidence": 0.5382
+    },
+    {
+      "file": "derrick-j__sent_items__94.txt",
+      "value": "Washington, D.C., USA",
+      "confidence": 0.6061
+    },
+    {
+      "file": "derrick-j__sent_items__94.txt",
+      "value": "commercial address",
+      "confidence": 0.6075
+    },
+    {
+      "file": "hain-m__discussion_threads__161.txt",
+      "value": "6633 TRAVIS STREET / HOUSTON, TX 77030",
+      "confidence": 0.661
+    },
+    {
+      "file": "hain-m__notes_inbox__45.txt",
+      "value": "Shilo\nInn - Portland Airport, 11701 NE Airport Way",
+      "confidence": 0.7468
+    },
+    {
+      "file": "hayslett-r__all_documents__129.txt",
+      "value": "address",
+      "confidence": 0.7902
+    },
+    {
+      "file": "hayslett-r__all_documents__129.txt",
+      "value": "address",
+      "confidence": 0.6878
+    },
+    {
+      "file": "jones-t__all_documents__9822.txt",
+      "value": "SugarLand, \nTX",
+      "confidence": 0.5277
+    },
+    {
+      "file": "jones-t__inbox__885.txt",
+      "value": "Suite 101, 2366 Avenue C North\nSaskatoon, Saskatchewan  S7L 5X5",
+      "confidence": 0.5052
+    },
+    {
+      "file": "jones-t__inbox__885.txt",
+      "value": "address",
+      "confidence": 0.9047
+    },
+    {
+      "file": "jones-t__notes_inbox__3756.txt",
+      "value": "1400 Smith St.\nHouston, TX  77002",
+      "confidence": 0.5737
+    },
+    {
+      "file": "jones-t__sent__2240.txt",
+      "value": "1400 Smith Street EB 3817\nHouston Texas 77002",
+      "confidence": 0.5854
+    },
+    {
+      "file": "kaminski-v__all_documents__2844.txt",
+      "value": "1400 Smith\nRoom EB 1962\nHouston, TX 77002",
+      "confidence": 0.6795
+    },
+    {
+      "file": "kaminski-v__personal__174.txt",
+      "value": "10 Snowbird\nThe Woodlands, TX 77381",
+      "confidence": 0.5811
+    },
+    {
+      "file": "mann-k__discussion_threads__3065.txt",
+      "value": "address",
+      "confidence": 0.565
+    },
+    {
+      "file": "martin-t__inbox__282.txt",
+      "value": "Sacramento, California",
+      "confidence": 0.5373
+    },
+    {
+      "file": "martin-t__inbox__282.txt",
+      "value": "Sacramento, California",
+      "confidence": 0.5077
+    },
+    {
+      "file": "martin-t__inbox__282.txt",
+      "value": "Sacramento,\nCalifornia",
+      "confidence": 0.575
+    },
+    {
+      "file": "mccarty-d__sent_items__27.txt",
+      "value": "Address",
+      "confidence": 0.7802
+    },
+    {
+      "file": "mcconnell-m__sent_items__12.txt",
+      "value": "Salt Lake City, Utah",
+      "confidence": 0.7389
+    },
+    {
+      "file": "sample-contact__ubswenergy_com__1.txt",
+      "value": "@enron address",
+      "confidence": 0.5154
+    },
+    {
+      "file": "nemec-g__inbox__729.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.5755
+    },
+    {
+      "file": "perlingiere-d__all_documents__2300.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.6114
+    },
+    {
+      "file": "perlingiere-d__sent__2130.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.5265
+    },
+    {
+      "file": "perlingiere-d__sent__2451.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.7441
+    },
+    {
+      "file": "perlingiere-d__sent__2526.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.567
+    },
+    {
+      "file": "perlingiere-d__sent__469.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.5596
+    },
+    {
+      "file": "perlingiere-d__sent__525.txt",
+      "value": "1400 Smith Street, EB 3885\nHouston, Texas 77002",
+      "confidence": 0.6049
+    }
+  ],
+  "medium5_only_examples": [
+    {
+      "file": "ab_healthcard_display_01.txt",
+      "value": "24520-1527",
+      "confidence": 0.5992
+    },
+    {
+      "file": "adjacent_phone_05.txt",
+      "value": "416-555-0199",
+      "confidence": 0.675
+    },
+    {
+      "file": "arora-h__inbox__69.txt",
+      "value": "israel.estrada@enron.com",
+      "confidence": 0.8256
+    },
+    {
+      "file": "arora-h__inbox__69.txt",
+      "value": "israel.estrada@enron.com",
+      "confidence": 0.8004
+    },
+    {
+      "file": "badeer-r__california__47.txt",
+      "value": "shapp@caiso.com",
+      "confidence": 0.5266
+    },
+    {
+      "file": "badeer-r__california__47.txt",
+      "value": "20participants@caiso.com",
+      "confidence": 0.7886
+    },
+    {
+      "file": "badeer-r__california__47.txt",
+      "value": "SHapp@caiso.com",
+      "confidence": 0.5539
+    },
+    {
+      "file": "badeer-r__california__47.txt",
+      "value": "ISO Market Participants",
+      "confidence": 0.8079
+    },
+    {
+      "file": "badeer-r__discussion_threads__226.txt",
+      "value": "marketstatus@caiso.com",
+      "confidence": 0.7584
+    },
+    {
+      "file": "badeer-r__discussion_threads__226.txt",
+      "value": "MarketStatus@caiso.com",
+      "confidence": 0.6935
+    },
+    {
+      "file": "bass-e___sent_mail__675.txt",
+      "value": "ebass.nsf",
+      "confidence": 0.6217
+    },
+    {
+      "file": "bass-e__all_documents__608.txt",
+      "value": "cheatsheets.net",
+      "confidence": 0.5957
+    },
+    {
+      "file": "bass-e__all_documents__608.txt",
+      "value": "cheatsheets@egroups.com",
+      "confidence": 0.8465
+    },
+    {
+      "file": "bass-e__all_documents__608.txt",
+      "value": "bryant@cheatsheets.net",
+      "confidence": 0.5685
+    },
+    {
+      "file": "bass-e__all_documents__608.txt",
+      "value": "Cheatsheets Mailing List",
+      "confidence": 0.609
+    },
+    {
+      "file": "bass-e__all_documents__608.txt",
+      "value": "cheatsheets@egroups.com",
+      "confidence": 0.8586
+    },
+    {
+      "file": "bass-e__notes_inbox__542.txt",
+      "value": "Commissioner.COM",
+      "confidence": 0.6758
+    },
+    {
+      "file": "bass-e__notes_inbox__542.txt",
+      "value": "Commissioner.COM",
+      "confidence": 0.7472
+    },
+    {
+      "file": "baughman-d__all_documents__55.txt",
+      "value": "accountit@autorelister.com",
+      "confidence": 0.6392
+    },
+    {
+      "file": "baughman-d__all_documents__55.txt",
+      "value": "accountit@autorelister.com",
+      "confidence": 0.5435
+    },
+    {
+      "file": "baughman-d__all_documents__55.txt",
+      "value": "accountit@autorelister.com",
+      "confidence": 0.5094
+    },
+    {
+      "file": "baughman-d__discussion_threads__208.txt",
+      "value": "enron.announcements@enron.com",
+      "confidence": 0.6579
+    },
+    {
+      "file": "baughman-d__discussion_threads__208.txt",
+      "value": "ena.employees@enron.com",
+      "confidence": 0.5511
+    },
+    {
+      "file": "baughman-d__discussion_threads__208.txt",
+      "value": "ENA Employees",
+      "confidence": 0.5336
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.8959
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.8083
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.8531
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com@enews.buy.com",
+      "confidence": 0.8341
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.7849
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.873
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.5376
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6138
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.621
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6586
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6559
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6974
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6873
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6994
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6932
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6345
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.5808
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6896
+    },
+    {
+      "file": "baughman-d__inbox__315.txt",
+      "value": "buy.com",
+      "confidence": 0.6392
+    },
+    {
+      "file": "beck-s___sent_mail__829.txt",
+      "value": "EB3756",
+      "confidence": 0.6522
+    },
+    {
+      "file": "beck-s___sent_mail__829.txt",
+      "value": "3389",
+      "confidence": 0.6207
+    },
+    {
+      "file": "beck-s__all_documents__2199.txt",
+      "value": "EB49C1",
+      "confidence": 0.6559
+    },
+    {
+      "file": "beck-s__discussion_threads__3542.txt",
+      "value": "713-853-5926",
+      "confidence": 0.5355
+    },
+    {
+      "file": "beck-s__discussion_threads__3542.txt",
+      "value": "281-370-8568",
+      "confidence": 0.6048
+    },
+    {
+      "file": "beck-s__inbox__226.txt",
+      "value": "bakerbotts.com",
+      "confidence": 0.5229
+    },
+    {
+      "file": "beck-s__inbox__226.txt",
+      "value": "212-310-8000",
+      "confidence": 0.7164
+    },
+    {
+      "file": "beck-s__inbox__316.txt",
+      "value": "713.345.4554",
+      "confidence": 0.5175
+    },
+    {
+      "file": "beck-s__inbox__49.txt",
+      "value": "mbx_iscinfra@enron.com",
+      "confidence": 0.8549
+    },
+    {
+      "file": "beck-s__inbox__49.txt",
+      "value": "mbx_iscinfra@enron.com",
+      "confidence": 0.7523
+    },
+    {
+      "file": "beck-s__inbox__984.txt",
+      "value": "SBECK (Non-Privileged)",
+      "confidence": 0.5636
+    },
+    {
+      "file": "benson-r__deleted_items__108.txt",
+      "value": "distribution@pira.com",
+      "confidence": 0.8451
+    },
+    {
+      "file": "benson-r__deleted_items__108.txt",
+      "value": "Distribution@pira.com",
+      "confidence": 0.8231
+    },
+    {
+      "file": "blair-l__inbox__83.txt",
+      "value": "DL-ETS TMS Production Support",
+      "confidence": 0.5233
+    },
+    {
+      "file": "blair-l__sent_items__433.txt",
+      "value": "SMTP@enronXgate",
+      "confidence": 0.7867
+    },
+    {
+      "file": "blair-l__sent_items__433.txt",
+      "value": "SMTP@enronXgate",
+      "confidence": 0.764
+    },
+    {
+      "file": "buy-r__inbox__315.txt",
+      "value": "BUY-R",
+      "confidence": 0.6087
+    }
+  ]
+}

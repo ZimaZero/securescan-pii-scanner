@@ -1,0 +1,2 @@
+Synthetic business correspondence
+Order number 1234567890 has shipped.

@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Desktop",
+    "path": "{windows_profile}/Desktop",
+    "group": "folders"
+  },
+  {
+    "label": "Downloads",
+    "path": "{windows_profile}/Downloads",
+    "group": "folders"
+  },
+  {
+    "label": "Documents",
+    "path": "{windows_profile}/Documents",
+    "group": "folders"
+  },
+  {
+    "label": "C:",
+    "path": "/mnt/c",
+    "group": "drives"
+  },
+  {
+    "label": "D:",
+    "path": "/mnt/d",
+    "group": "drives"
+  }
+]

@@ -1,0 +1,441 @@
+{
+  "generated_by": "tests/make_format_data.py",
+  "files": [
+    {
+      "path": "tests/format_data/docx_full.docx",
+      "format": "docx",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "body paragraph"
+        },
+        {
+          "taxonomy": "identifier.financial_unverified.credit_card",
+          "value": "4111 1111 1111 1111",
+          "band": "MEDIUM",
+          "location": "table cell"
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "header",
+          "note": "docx_extractor.py's _extract_docx_text() only reads doc.paragraphs + doc.tables, not section headers/footers \u2014 expected extraction gap, not a detection gap."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "footer",
+          "note": "Same header/footer extraction gap as the email above."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/docx_no_pii.docx",
+      "format": "docx",
+      "negative_control": true,
+      "expected": []
+    },
+    {
+      "path": "tests/format_data/xlsx_multisheet.xlsx",
+      "format": "xlsx",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "Sheet 'Records', cell B2"
+        },
+        {
+          "taxonomy": "identifier.financial.credit_card",
+          "value": "4111 1111 1111 1111",
+          "band": "HIGH",
+          "location": "Sheet 'Records', cell B3 (text-formatted)"
+        },
+        {
+          "taxonomy": "identifier.government.health_card_on",
+          "value": "9876543217",
+          "band": "HIGH",
+          "location": "Sheet 'Records', cell A4 comment",
+          "note": "xlsx_extractor.py loads with read_only=True, which does not expose openpyxl cell comments via iter_rows() \u2014 expected extraction gap, not a detection gap."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "Sheet 'Contact', cell B1"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "Sheet 'Contact', cell B2"
+        },
+        {
+          "taxonomy": "contact.address.postal_code",
+          "value": "T2X 1V4",
+          "band": "MEDIUM",
+          "location": "Sheet 'Contact', cell B3 (label 'Postal Code' in A3)"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/pdf_text_layer.pdf",
+      "format": "pdf",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "paragraph"
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "paragraph"
+        },
+        {
+          "taxonomy": "identifier.financial_unverified.credit_card",
+          "value": "4111 1111 1111 1111",
+          "band": "MEDIUM",
+          "location": "table cell"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "table cell"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/pdf_no_pii.pdf",
+      "format": "pdf",
+      "negative_control": true,
+      "expected": []
+    },
+    {
+      "path": "tests/format_data/pdf_scanned_2page.pdf",
+      "format": "pdf",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.government.passport_ca",
+          "value": "AB123456",
+          "band": "HIGH",
+          "location": "page 1, OCR"
+        },
+        {
+          "taxonomy": "identifier.government.health_card_on",
+          "value": "9876543217",
+          "band": "HIGH",
+          "location": "page 2, OCR",
+          "note": "Exact finding span is the 10 digits only; the next line's BC label is not an Ontario version code."
+        },
+        {
+          "taxonomy": "identifier.government.health_card_ca",
+          "value": "9123456780",
+          "band": "HIGH",
+          "location": "page 2, OCR",
+          "note": "BC MOD-11 result 11 is invalid, and the abbreviation BC does not establish province attribution."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_clean.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "large clear text, OCR"
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "large clear text, OCR"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "large clear text, OCR"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_small.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "~14pt text, OCR",
+          "note": "OCR robustness probe \u2014 small font size."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "~14pt text, OCR",
+          "note": "OCR robustness probe \u2014 small font size."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "~14pt text, OCR",
+          "note": "OCR robustness probe \u2014 small font size."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_rotated.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "rotated 5deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "rotated 5deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "rotated 5deg, OCR",
+          "note": "Was a documented known_fail: at 5deg rotation Tesseract misread the leading '4' in '416-555-0199' as 'A', breaking the phone regex, even though Tesseract's own confidence stayed high (a wrong-but-confident read). Fixed by image_extractor.py's orientation-resilience ladder: OSD + brute-force cardinal correction for 90/180/270 rotations, plus a fine-angle deskew rung (always attempted, judged on its own geometric signal rather than OCR confidence, since confidence can't detect this failure mode) that now catches this sub-cardinal skew."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_rotated_180.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "rotated 180deg, OCR",
+          "note": "OCR robustness probe \u2014 full upside-down orientation, the realistic case for a photographed ID card. Corrected by image_extractor.py's OSD step."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "rotated 180deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "rotated 180deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_rotated_270.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "rotated 270deg, OCR",
+          "note": "OCR robustness probe \u2014 sideways orientation, the realistic case for a photographed ID card. Corrected by image_extractor.py's OSD step."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "rotated 270deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "rotated 270deg, OCR",
+          "note": "OCR robustness probe \u2014 rotation."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/image_exif_rotated.png",
+      "format": "png",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "upright content, EXIF Orientation=6, OCR",
+          "note": "OCR robustness probe \u2014 EXIF-only rotation (pixel data pre-rotated 270deg CW, no visible re-crop). Corrected by image_extractor.py's exif_transpose step 0, before OSD/brute-force/deskew ever run."
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "upright content, EXIF Orientation=6, OCR",
+          "note": "OCR robustness probe \u2014 EXIF-only rotation."
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "upright content, EXIF Orientation=6, OCR",
+          "note": "OCR robustness probe \u2014 EXIF-only rotation."
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/data.csv",
+      "format": "csv",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "row 1, sin column"
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "row 1, email column"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "row 1, phone column"
+        },
+        {
+          "taxonomy": "contact.address.postal_code",
+          "value": "T2X 1V4",
+          "band": "MEDIUM",
+          "location": "row 1, postal_code column"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/data.json",
+      "format": "json",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "record 1, sin field"
+        },
+        {
+          "taxonomy": "contact.email",
+          "value": "format.test@example.com",
+          "band": "MEDIUM",
+          "location": "record 1, email field"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "record 1, phone field"
+        },
+        {
+          "taxonomy": "contact.address.postal_code",
+          "value": "T2X 1V4",
+          "band": "MEDIUM",
+          "location": "record 1, note field"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/email_notice.eml",
+      "format": "eml",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "plain-text body"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "plain-text body"
+        },
+        {
+          "taxonomy": "identifier.financial_unverified.credit_card",
+          "value": "4111 1111 1111 1111",
+          "band": "MEDIUM",
+          "location": "HTML alternative body (tags stripped)"
+        },
+        {
+          "taxonomy": "contact.address.postal_code",
+          "value": "T2X 1V4",
+          "band": "MEDIUM",
+          "location": "HTML alternative body (label 'Postal Code', tags stripped)"
+        }
+      ]
+    },
+    {
+      "path": "tests/format_data/deck_summary.pptx",
+      "format": "pptx",
+      "negative_control": false,
+      "expected": [
+        {
+          "taxonomy": "identifier.financial.sin",
+          "value": "132-677-360",
+          "band": "HIGH",
+          "location": "slide 1 body text"
+        },
+        {
+          "taxonomy": "contact.phone",
+          "value": "416-555-0199",
+          "band": "MEDIUM",
+          "location": "slide 1 body text"
+        },
+        {
+          "taxonomy": "contact.address.postal_code",
+          "value": "T2X 1V4",
+          "band": "MEDIUM",
+          "location": "slide 1 speaker notes (label 'Postal Code')"
+        },
+        {
+          "taxonomy": "identifier.financial_unverified.credit_card",
+          "value": "4111 1111 1111 1111",
+          "band": "MEDIUM",
+          "location": "slide 2 table cell"
+        }
+      ]
+    }
+  ]
+}

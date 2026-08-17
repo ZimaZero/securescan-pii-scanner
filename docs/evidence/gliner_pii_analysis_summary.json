@@ -1,0 +1,2333 @@
+{
+  "pii_total_entities": 31444,
+  "medium_total_entities": 43695,
+  "det_total_findings": 11011,
+  "pii_files_covered": 1381,
+  "medium_files_covered": 1381,
+  "pii_by_corpus_label": {
+    "enron::person": 17938,
+    "enron::organization": 7481,
+    "enron::email": 3999,
+    "enron::phone number": 350,
+    "stress::person": 221,
+    "enron::fax number": 136,
+    "specimen::organization": 136,
+    "specimen::person": 122,
+    "enron::address": 90,
+    "enron::email address": 62,
+    "stress::organization": 55,
+    "enron::insurance company": 46,
+    "format::email": 40,
+    "specimen::address": 37,
+    "enron::username": 29,
+    "canadian_eval::health insurance id number": 28,
+    "canadian_eval::organization": 27,
+    "enron::credit card brand": 27,
+    "specimen::date of birth": 26,
+    "enron::cnpj": 25,
+    "enron::postal code": 24,
+    "enron::transaction number": 24,
+    "canadian_eval::driver's license number": 23,
+    "canadian_eval::vehicle registration number": 17,
+    "specimen::driver's license number": 17,
+    "specimen::passport expiration date": 17,
+    "specimen::credit card expiration date": 17,
+    "enron::medical condition": 16,
+    "test_anchor::person": 16,
+    "format::phone number": 14,
+    "specimen::postal code": 14,
+    "specimen::phone number": 14,
+    "external_octopii::person": 13,
+    "format::postal code": 13,
+    "enron::reservation number": 12,
+    "enron::credit card expiration date": 12,
+    "enron::cvc": 12,
+    "enron::passport number": 11,
+    "enron::blood type": 10,
+    "enron::social security number": 9,
+    "specimen::credit card brand": 8,
+    "specimen::bank account number": 8,
+    "canadian_eval::social security number": 7,
+    "enron::passport expiration date": 7,
+    "external_octopii::organization": 7,
+    "specimen::insurance company": 7,
+    "specimen::fax number": 7,
+    "test_anchor::organization": 7,
+    "canadian_eval::passport number": 6,
+    "canadian_eval::license plate number": 6,
+    "canadian_eval::transaction number": 6,
+    "enron::flight number": 6,
+    "stress::credit card number": 6,
+    "test_anchor::date of birth": 6,
+    "enron::digital signature": 5,
+    "specimen::passport number": 5,
+    "canadian_eval::health insurance number": 4,
+    "canadian_eval::insurance number": 4,
+    "enron::medication": 4,
+    "enron::landline phone number": 4,
+    "enron::ip address": 4,
+    "enron::mobile phone number": 4,
+    "external_octopii::date of birth": 4,
+    "external_octopii::passport number": 4,
+    "format::health insurance id number": 4,
+    "format::organization": 4,
+    "specimen::social media handle": 4,
+    "specimen::health insurance number": 4,
+    "specimen::registration number": 4,
+    "specimen::email": 4,
+    "stress::email": 4,
+    "test_anchor::address": 4,
+    "canadian_eval::passport_number": 3,
+    "enron::driver's license number": 3,
+    "enron::cvv": 3,
+    "format::credit card number": 3,
+    "format::email address": 3,
+    "specimen::health insurance id number": 3,
+    "specimen::credit card number": 3,
+    "specimen::insurance number": 3,
+    "test_anchor::driver's license number": 3,
+    "test_anchor::insurance company": 3,
+    "canadian_eval::registration number": 2,
+    "canadian_eval::person": 2,
+    "enron::birth certificate number": 2,
+    "enron::credit card number": 2,
+    "enron::bank account number": 2,
+    "enron::date of birth": 2,
+    "enron::social media handle": 2,
+    "external_octopii::identity document number": 2,
+    "external_octopii::phone number": 2,
+    "external_octopii::email": 2,
+    "format::address": 2,
+    "specimen::national id number": 2,
+    "specimen::social security number": 2,
+    "specimen::digital signature": 2,
+    "specimen::cvc": 2,
+    "specimen::visa number": 2,
+    "test_anchor::passport expiration date": 2,
+    "test_anchor::passport_number": 2,
+    "test_anchor::passport number": 2,
+    "canadian_eval::credit card expiration date": 1,
+    "canadian_eval::address": 1,
+    "canadian_eval::phone number": 1,
+    "canadian_eval::iban": 1,
+    "enron::insurance number": 1,
+    "enron::passport_number": 1,
+    "enron::social_security_number": 1,
+    "enron::tax identification number": 1,
+    "enron::visa number": 1,
+    "enron::license plate number": 1,
+    "external_octopii::bank account number": 1,
+    "external_octopii::address": 1,
+    "external_octopii::credit card brand": 1,
+    "external_octopii::driver's license number": 1,
+    "external_octopii::health insurance id number": 1,
+    "format::social security number": 1,
+    "format::person": 1,
+    "format::passport number": 1,
+    "format::driver's license number": 1,
+    "format::license plate number": 1,
+    "specimen::medication": 1,
+    "specimen::passport_number": 1,
+    "specimen::vehicle registration number": 1,
+    "specimen::cnpj": 1,
+    "specimen::license plate number": 1,
+    "test_anchor::postal code": 1,
+    "test_anchor::vehicle registration number": 1,
+    "test_anchor::insurance number": 1
+  },
+  "pii_by_label_total": {
+    "person": 18313,
+    "organization": 7717,
+    "email": 4049,
+    "phone number": 381,
+    "fax number": 143,
+    "address": 135,
+    "email address": 65,
+    "insurance company": 56,
+    "postal code": 52,
+    "driver's license number": 48,
+    "date of birth": 38,
+    "health insurance id number": 36,
+    "credit card brand": 36,
+    "transaction number": 30,
+    "credit card expiration date": 30,
+    "passport number": 29,
+    "username": 29,
+    "cnpj": 26,
+    "passport expiration date": 26,
+    "vehicle registration number": 19,
+    "social security number": 19,
+    "medical condition": 16,
+    "cvc": 14,
+    "credit card number": 14,
+    "reservation number": 12,
+    "bank account number": 11,
+    "blood type": 10,
+    "license plate number": 9,
+    "insurance number": 9,
+    "health insurance number": 8,
+    "passport_number": 7,
+    "digital signature": 7,
+    "registration number": 6,
+    "flight number": 6,
+    "social media handle": 6,
+    "medication": 5,
+    "landline phone number": 4,
+    "ip address": 4,
+    "mobile phone number": 4,
+    "cvv": 3,
+    "visa number": 3,
+    "birth certificate number": 2,
+    "identity document number": 2,
+    "national id number": 2,
+    "iban": 1,
+    "social_security_number": 1,
+    "tax identification number": 1
+  },
+  "medium_by_corpus_label": {
+    "enron::person": 23701,
+    "enron::organization": 10948,
+    "enron::location": 5026,
+    "enron::date": 2221,
+    "stress::date": 342,
+    "stress::person": 293,
+    "stress::organization": 225,
+    "specimen::person": 174,
+    "specimen::date": 162,
+    "specimen::location": 152,
+    "specimen::organization": 133,
+    "canadian_eval::location": 64,
+    "format::person": 42,
+    "format::location": 31,
+    "test_anchor::person": 30,
+    "format::organization": 21,
+    "test_anchor::location": 19,
+    "test_anchor::date": 18,
+    "canadian_eval::organization": 17,
+    "external_octopii::location": 17,
+    "external_octopii::person": 15,
+    "stress::location": 11,
+    "external_octopii::date": 10,
+    "test_anchor::organization": 10,
+    "canadian_eval::person": 7,
+    "external_octopii::organization": 5,
+    "format::date": 1
+  },
+  "pii_confidence_overall": {
+    "n": 31444,
+    "min": 0.5,
+    "p10": 0.5632,
+    "p50": 0.8071,
+    "p90": 0.9834,
+    "max": 0.9999,
+    "mean": 0.7901
+  },
+  "medium_confidence_overall": {
+    "n": 43695,
+    "min": 0.5,
+    "p10": 0.5547,
+    "p50": 0.7671,
+    "p90": 0.9343,
+    "max": 0.9928,
+    "mean": 0.7553
+  },
+  "pii_confidence_by_label": {
+    "organization": {
+      "n": 7717,
+      "min": 0.5,
+      "p10": 0.5744,
+      "p50": 0.8357,
+      "p90": 0.9855,
+      "max": 0.9996,
+      "mean": 0.8065
+    },
+    "registration number": {
+      "n": 6,
+      "min": 0.7295,
+      "p10": 0.7295,
+      "p50": 0.9125,
+      "p90": 0.9407,
+      "max": 0.9407,
+      "mean": 0.8773
+    },
+    "passport number": {
+      "n": 29,
+      "min": 0.5004,
+      "p10": 0.5039,
+      "p50": 0.5863,
+      "p90": 0.8665,
+      "max": 0.9384,
+      "mean": 0.6412
+    },
+    "health insurance id number": {
+      "n": 36,
+      "min": 0.5124,
+      "p10": 0.5307,
+      "p50": 0.6147,
+      "p90": 0.7495,
+      "max": 0.7726,
+      "mean": 0.625
+    },
+    "driver's license number": {
+      "n": 48,
+      "min": 0.5229,
+      "p10": 0.5906,
+      "p50": 0.9564,
+      "p90": 0.9897,
+      "max": 0.9968,
+      "mean": 0.8747
+    },
+    "vehicle registration number": {
+      "n": 19,
+      "min": 0.5011,
+      "p10": 0.5065,
+      "p50": 0.6263,
+      "p90": 0.7259,
+      "max": 0.7291,
+      "mean": 0.619
+    },
+    "license plate number": {
+      "n": 9,
+      "min": 0.5218,
+      "p10": 0.5218,
+      "p50": 0.611,
+      "p90": 0.8924,
+      "max": 0.8924,
+      "mean": 0.6259
+    },
+    "person": {
+      "n": 18313,
+      "min": 0.5,
+      "p10": 0.5696,
+      "p50": 0.8379,
+      "p90": 0.987,
+      "max": 0.9999,
+      "mean": 0.8052
+    },
+    "transaction number": {
+      "n": 30,
+      "min": 0.5081,
+      "p10": 0.5385,
+      "p50": 0.6924,
+      "p90": 0.8422,
+      "max": 0.9322,
+      "mean": 0.6796
+    },
+    "credit card expiration date": {
+      "n": 30,
+      "min": 0.5417,
+      "p10": 0.594,
+      "p50": 0.8302,
+      "p90": 0.9707,
+      "max": 0.9963,
+      "mean": 0.7919
+    },
+    "address": {
+      "n": 135,
+      "min": 0.5024,
+      "p10": 0.5226,
+      "p50": 0.6955,
+      "p90": 0.9047,
+      "max": 0.977,
+      "mean": 0.7034
+    },
+    "phone number": {
+      "n": 381,
+      "min": 0.5037,
+      "p10": 0.6095,
+      "p50": 0.8835,
+      "p90": 0.9819,
+      "max": 0.9979,
+      "mean": 0.8351
+    },
+    "health insurance number": {
+      "n": 8,
+      "min": 0.5088,
+      "p10": 0.5088,
+      "p50": 0.6074,
+      "p90": 0.6821,
+      "max": 0.6821,
+      "mean": 0.5982
+    },
+    "passport_number": {
+      "n": 7,
+      "min": 0.5081,
+      "p10": 0.5081,
+      "p50": 0.5224,
+      "p90": 0.5595,
+      "max": 0.5595,
+      "mean": 0.5294
+    },
+    "insurance number": {
+      "n": 9,
+      "min": 0.5244,
+      "p10": 0.5244,
+      "p50": 0.6027,
+      "p90": 0.691,
+      "max": 0.691,
+      "mean": 0.6127
+    },
+    "iban": {
+      "n": 1,
+      "min": 0.5074,
+      "p10": 0.5074,
+      "p50": 0.5074,
+      "p90": 0.5074,
+      "max": 0.5074,
+      "mean": 0.5074
+    },
+    "social security number": {
+      "n": 19,
+      "min": 0.5056,
+      "p10": 0.5187,
+      "p50": 0.6759,
+      "p90": 0.9162,
+      "max": 0.9318,
+      "mean": 0.7164
+    },
+    "email": {
+      "n": 4049,
+      "min": 0.5,
+      "p10": 0.5399,
+      "p50": 0.7001,
+      "p90": 0.8526,
+      "max": 0.9881,
+      "mean": 0.6992
+    },
+    "username": {
+      "n": 29,
+      "min": 0.5083,
+      "p10": 0.5597,
+      "p50": 0.7386,
+      "p90": 0.9744,
+      "max": 0.9928,
+      "mean": 0.7651
+    },
+    "email address": {
+      "n": 65,
+      "min": 0.5002,
+      "p10": 0.5208,
+      "p50": 0.5875,
+      "p90": 0.7537,
+      "max": 0.8259,
+      "mean": 0.6135
+    },
+    "medical condition": {
+      "n": 16,
+      "min": 0.5118,
+      "p10": 0.5871,
+      "p50": 0.7734,
+      "p90": 0.9508,
+      "max": 0.9627,
+      "mean": 0.7479
+    },
+    "cnpj": {
+      "n": 26,
+      "min": 0.5021,
+      "p10": 0.5063,
+      "p50": 0.5708,
+      "p90": 0.6195,
+      "max": 0.6416,
+      "mean": 0.5624
+    },
+    "fax number": {
+      "n": 143,
+      "min": 0.5005,
+      "p10": 0.6631,
+      "p50": 0.9401,
+      "p90": 0.993,
+      "max": 0.9995,
+      "mean": 0.8886
+    },
+    "postal code": {
+      "n": 52,
+      "min": 0.5034,
+      "p10": 0.529,
+      "p50": 0.6408,
+      "p90": 0.894,
+      "max": 0.999,
+      "mean": 0.6875
+    },
+    "insurance company": {
+      "n": 56,
+      "min": 0.5004,
+      "p10": 0.5156,
+      "p50": 0.7402,
+      "p90": 0.9927,
+      "max": 0.996,
+      "mean": 0.7497
+    },
+    "blood type": {
+      "n": 10,
+      "min": 0.534,
+      "p10": 0.6269,
+      "p50": 0.6935,
+      "p90": 0.9156,
+      "max": 0.9156,
+      "mean": 0.7062
+    },
+    "reservation number": {
+      "n": 12,
+      "min": 0.5589,
+      "p10": 0.647,
+      "p50": 0.8497,
+      "p90": 0.9348,
+      "max": 0.9491,
+      "mean": 0.7922
+    },
+    "birth certificate number": {
+      "n": 2,
+      "min": 0.5351,
+      "p10": 0.5351,
+      "p50": 0.6086,
+      "p90": 0.6086,
+      "max": 0.6086,
+      "mean": 0.5718
+    },
+    "passport expiration date": {
+      "n": 26,
+      "min": 0.5161,
+      "p10": 0.5489,
+      "p50": 0.8295,
+      "p90": 0.9868,
+      "max": 0.9928,
+      "mean": 0.8089
+    },
+    "cvv": {
+      "n": 3,
+      "min": 0.5255,
+      "p10": 0.5255,
+      "p50": 0.6266,
+      "p90": 0.6351,
+      "max": 0.6351,
+      "mean": 0.5957
+    },
+    "cvc": {
+      "n": 14,
+      "min": 0.5285,
+      "p10": 0.5293,
+      "p50": 0.5957,
+      "p90": 0.7449,
+      "max": 0.7712,
+      "mean": 0.6107
+    },
+    "medication": {
+      "n": 5,
+      "min": 0.5213,
+      "p10": 0.5213,
+      "p50": 0.7656,
+      "p90": 0.994,
+      "max": 0.994,
+      "mean": 0.7971
+    },
+    "flight number": {
+      "n": 6,
+      "min": 0.5556,
+      "p10": 0.5556,
+      "p50": 0.9819,
+      "p90": 0.9924,
+      "max": 0.9924,
+      "mean": 0.892
+    },
+    "landline phone number": {
+      "n": 4,
+      "min": 0.5634,
+      "p10": 0.5634,
+      "p50": 0.6849,
+      "p90": 0.9172,
+      "max": 0.9172,
+      "mean": 0.7018
+    },
+    "ip address": {
+      "n": 4,
+      "min": 0.6503,
+      "p10": 0.6503,
+      "p50": 0.8142,
+      "p90": 0.8396,
+      "max": 0.8396,
+      "mean": 0.7791
+    },
+    "credit card number": {
+      "n": 14,
+      "min": 0.5208,
+      "p10": 0.5437,
+      "p50": 0.7668,
+      "p90": 0.9678,
+      "max": 0.9695,
+      "mean": 0.7772
+    },
+    "mobile phone number": {
+      "n": 4,
+      "min": 0.6253,
+      "p10": 0.6253,
+      "p50": 0.8963,
+      "p90": 0.9429,
+      "max": 0.9429,
+      "mean": 0.8241
+    },
+    "credit card brand": {
+      "n": 36,
+      "min": 0.5014,
+      "p10": 0.5583,
+      "p50": 0.8424,
+      "p90": 0.9857,
+      "max": 0.9926,
+      "mean": 0.8086
+    },
+    "digital signature": {
+      "n": 7,
+      "min": 0.5525,
+      "p10": 0.5525,
+      "p50": 0.6654,
+      "p90": 0.8879,
+      "max": 0.8879,
+      "mean": 0.7017
+    },
+    "bank account number": {
+      "n": 11,
+      "min": 0.5281,
+      "p10": 0.5302,
+      "p50": 0.5758,
+      "p90": 0.8302,
+      "max": 0.9109,
+      "mean": 0.654
+    },
+    "social_security_number": {
+      "n": 1,
+      "min": 0.5144,
+      "p10": 0.5144,
+      "p50": 0.5144,
+      "p90": 0.5144,
+      "max": 0.5144,
+      "mean": 0.5144
+    },
+    "date of birth": {
+      "n": 38,
+      "min": 0.5016,
+      "p10": 0.5124,
+      "p50": 0.7414,
+      "p90": 0.9724,
+      "max": 0.9943,
+      "mean": 0.7526
+    },
+    "tax identification number": {
+      "n": 1,
+      "min": 0.8852,
+      "p10": 0.8852,
+      "p50": 0.8852,
+      "p90": 0.8852,
+      "max": 0.8852,
+      "mean": 0.8852
+    },
+    "social media handle": {
+      "n": 6,
+      "min": 0.5015,
+      "p10": 0.5015,
+      "p50": 0.7734,
+      "p90": 0.9348,
+      "max": 0.9348,
+      "mean": 0.7429
+    },
+    "visa number": {
+      "n": 3,
+      "min": 0.5498,
+      "p10": 0.5498,
+      "p50": 0.822,
+      "p90": 0.9262,
+      "max": 0.9262,
+      "mean": 0.766
+    },
+    "identity document number": {
+      "n": 2,
+      "min": 0.6135,
+      "p10": 0.6135,
+      "p50": 0.6603,
+      "p90": 0.6603,
+      "max": 0.6603,
+      "mean": 0.6369
+    },
+    "national id number": {
+      "n": 2,
+      "min": 0.5991,
+      "p10": 0.5991,
+      "p50": 0.6074,
+      "p90": 0.6074,
+      "max": 0.6074,
+      "mean": 0.6033
+    }
+  },
+  "new_coverage_labels": {
+    "address": 135,
+    "bank account number": 11,
+    "birth certificate number": 2,
+    "blood type": 10,
+    "cnpj": 26,
+    "credit card brand": 36,
+    "credit card expiration date": 30,
+    "cvc": 14,
+    "cvv": 3,
+    "digital signature": 7,
+    "flight number": 6,
+    "iban": 1,
+    "identity document number": 2,
+    "insurance company": 56,
+    "insurance number": 9,
+    "ip address": 4,
+    "license plate number": 9,
+    "medical condition": 16,
+    "medication": 5,
+    "national id number": 2,
+    "passport expiration date": 26,
+    "registration number": 6,
+    "reservation number": 12,
+    "social media handle": 6,
+    "tax identification number": 1,
+    "transaction number": 30,
+    "username": 29,
+    "vehicle registration number": 19,
+    "visa number": 3
+  },
+  "shared_with_production_ner_labels": {
+    "person": 18313,
+    "organization": 7717
+  },
+  "new_coverage_sample_file": "/workspaces/securescan/docs/evidence/gliner_pii_new_coverage_samples.json",
+  "overlap_with_deterministic": {
+    "driver's license number": {
+      "agree": 28,
+      "pii_only_missed_by_det": 17,
+      "det_only_missed_by_pii": 8,
+      "sample_disagreements": [
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Driver_Licence_Specimens/NS/NS_front_specimen.jpg",
+          "corpus": "specimen",
+          "pii_only": [
+            "4"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mb_licence_asterisk_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [
+            "1234567890"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/on_licence_invalid_suffix_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [
+            "12345678901299"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_octopii/dummy-drivers-license-maharashtra.jpg",
+          "corpus": "external_octopii",
+          "pii_only": [
+            "03200800000000"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/rodrique-r___sent_mail__303.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1119677"
+          ]
+        }
+      ]
+    },
+    "passport number": {
+      "agree": 5,
+      "pii_only_missed_by_det": 23,
+      "det_only_missed_by_pii": 13,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/mann-k__discussion_threads__586.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "3"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td1_exact_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "12345"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_octopii/dummy-passport-britain.jpg",
+          "corpus": "external_octopii",
+          "pii_only": [
+            "023477812",
+            "02347781281110630004422"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/passport_display_space_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "654321"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_octopii/dummy-hong-kong-resident-id.png",
+          "corpus": "external_octopii",
+          "pii_only": [
+            "683365"
+          ],
+          "det_only": []
+        }
+      ]
+    },
+    "passport_number": {
+      "agree": 2,
+      "pii_only_missed_by_det": 5,
+      "det_only_missed_by_pii": 16,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/dasovich-j__notes_inbox__4183.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "936022"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_exact_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "0123456"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td1_exact_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "12345"
+          ]
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Driver_Licence_Specimens/NS/NS_back_specimen.jpg",
+          "corpus": "specimen",
+          "pii_only": [
+            "0000000000006650"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_i_for_one_02.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "0123456"
+          ]
+        }
+      ]
+    },
+    "health insurance id number": {
+      "agree": 21,
+      "pii_only_missed_by_det": 15,
+      "det_only_missed_by_pii": 36,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/ocr_health_card_ab_s_for_five_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [
+            "12346789"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/guzman-m__all_documents__441.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2001041614"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/uci_display_2_4_4_04.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [
+            "1234567890"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/merriss-s__discussion_threads__490.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2001042923"
+          ]
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Health_Card_Specimens_v2/cards/AB/AB_mobile_current.jpg",
+          "corpus": "specimen",
+          "pii_only": [],
+          "det_only": [
+            "123450000"
+          ]
+        }
+      ]
+    },
+    "health insurance number": {
+      "agree": 3,
+      "pii_only_missed_by_det": 5,
+      "det_only_missed_by_pii": 54,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/ns_healthcard_compact_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "9694706476"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/bc_healthcard_checksum_invalid_named_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "9123456781"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/guzman-m__all_documents__441.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2001041614"
+          ]
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Health_Card_Specimens_v2/cards/AB/AB_standalone_current.jpg",
+          "corpus": "specimen",
+          "pii_only": [],
+          "det_only": [
+            "123450000"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/merriss-s__discussion_threads__490.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2001042923"
+          ]
+        }
+      ]
+    },
+    "national health insurance number": {
+      "agree": 0,
+      "pii_only_missed_by_det": 0,
+      "det_only_missed_by_pii": 57,
+      "sample_disagreements": [
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Driver_Licence_Specimens/NL/NL_front_sample_with_DL_number.jpg",
+          "corpus": "specimen",
+          "pii_only": [],
+          "det_only": [
+            "9900917999"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/format_data/pdf_scanned_2page.pdf",
+          "corpus": "format",
+          "pii_only": [],
+          "det_only": [
+            "9123456780",
+            "9876543217"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/on_healthcard_compact_02.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "8126934416"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/on_healthcard_version_1letter_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "9175771881"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/bc_healthcard_checksum_invalid_named_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "9123456781"
+          ]
+        }
+      ]
+    },
+    "social security number": {
+      "agree": 4,
+      "pii_only_missed_by_det": 14,
+      "det_only_missed_by_pii": 22,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sample-contact__personal__72.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "135635886"
+          ]
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Negative_Control_Document_Samples/dataset/Pay_Stubs/paystub_cfpb_01.png",
+          "corpus": "specimen",
+          "pii_only": [
+            "social sec. no."
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/stress_data/engineering/team_beta/project_y/archive/salted_sin_0153.csv",
+          "corpus": "stress",
+          "pii_only": [],
+          "det_only": [
+            "793066655"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/format_data/image_small.png",
+          "corpus": "format",
+          "pii_only": [],
+          "det_only": [
+            "132677360"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/ocr_sin_o_for_zero_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [
+            "31857522"
+          ],
+          "det_only": []
+        }
+      ]
+    },
+    "social_security_number": {
+      "agree": 0,
+      "pii_only_missed_by_det": 1,
+      "det_only_missed_by_pii": 26,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sample-contact__personal__72.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "135635886"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/stress_data/engineering/team_beta/project_y/archive/salted_sin_0153.csv",
+          "corpus": "stress",
+          "pii_only": [],
+          "det_only": [
+            "793066655"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/format_data/image_small.png",
+          "corpus": "format",
+          "pii_only": [],
+          "det_only": [
+            "132677360"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/stress_data/marketing/team_alpha/project_y/archive/2025/salted_sin_0154.log",
+          "corpus": "stress",
+          "pii_only": [],
+          "det_only": [
+            "518535687"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/stress_data/marketing/team_gamma/project_z/archive/2025/salted_sin_0155.py",
+          "corpus": "stress",
+          "pii_only": [],
+          "det_only": [
+            "101276350"
+          ]
+        }
+      ]
+    },
+    "credit card number": {
+      "agree": 8,
+      "pii_only_missed_by_det": 5,
+      "det_only_missed_by_pii": 99,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/keavey-p__discussion_threads__430.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1075855660966"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/love-p__central__80.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1075841076269"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sturm-f__all_documents__171.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1075857443056"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__discussion_threads__3542.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1075856027777"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/rodrique-r__sent__8.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "1075858352009"
+          ]
+        }
+      ]
+    },
+    "date of birth": {
+      "agree": 11,
+      "pii_only_missed_by_det": 23,
+      "det_only_missed_by_pii": 18,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sample-contact__personal__72.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "222001"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td1_exact_01.txt",
+          "corpus": "canadian_eval",
+          "pii_only": [],
+          "det_only": [
+            "850615"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_octopii/dummy-passport-britain.jpg",
+          "corpus": "external_octopii",
+          "pii_only": [
+            "6550"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Driver_Licence_Specimens/NS/NS_front_sample_with_DL_number.jpg",
+          "corpus": "specimen",
+          "pii_only": [
+            "198002024"
+          ],
+          "det_only": [
+            "19800202"
+          ]
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Canadian_Driver_Licence_Specimens/NL/NL_front_sample.jpg",
+          "corpus": "specimen",
+          "pii_only": [],
+          "det_only": [
+            "19990917"
+          ]
+        }
+      ]
+    },
+    "phone number": {
+      "agree": 260,
+      "pii_only_missed_by_det": 74,
+      "det_only_missed_by_pii": 316,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kaminski-v__sent__1411.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7134105396"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sanders-r__sent__983.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7133456946"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__all_documents__1786.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7136468795"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/motley-m__deleted_items__109.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "5034647553",
+            "5034648321"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kaminski-v__all_documents__2844.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "6037196675",
+            "7035324544"
+          ]
+        }
+      ]
+    },
+    "mobile phone number": {
+      "agree": 3,
+      "pii_only_missed_by_det": 1,
+      "det_only_missed_by_pii": 573,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__discussion_threads__3542.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2813708568",
+            "7138535926"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/may-l__inbox__208.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2126866808"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kaminski-v__sent__1411.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7138533848"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sanders-r__sent__983.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7133456946"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kean-s__all_documents__6073.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "4152790702"
+          ]
+        }
+      ]
+    },
+    "landline phone number": {
+      "agree": 2,
+      "pii_only_missed_by_det": 2,
+      "det_only_missed_by_pii": 574,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__discussion_threads__3542.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2813708568",
+            "7138535926"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/may-l__inbox__208.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2126866808"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kaminski-v__sent__1411.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7134105396",
+            "7138533848"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sanders-r__sent__983.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7133456946"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kean-s__all_documents__6073.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "4152790702"
+          ]
+        }
+      ]
+    },
+    "fax number": {
+      "agree": 94,
+      "pii_only_missed_by_det": 27,
+      "det_only_missed_by_pii": 482,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__discussion_threads__3542.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2813708568",
+            "7138535926"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/may-l__inbox__208.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "2126866808"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kaminski-v__sent__1411.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7134105396",
+            "7138533848"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/sanders-r__sent__983.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "7133456946"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kean-s__all_documents__6073.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "4152790702"
+          ]
+        }
+      ]
+    },
+    "email": {
+      "agree": 2629,
+      "pii_only_missed_by_det": 369,
+      "det_only_missed_by_pii": 6194,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/bass-e__all_documents__608.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "cheatsheets@egroups.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/nemec-g__all_documents__5588.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "gerald.nemec@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/shapiro-r__discussion_threads__571.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "howard.fromer@enron.com",
+            "richard.shapiro@enron.com",
+            "steve.montovano@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/kean-s__all_documents__6073.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "mpalmer@"
+          ],
+          "det_only": [
+            "alan.comnes@enron.com",
+            "angela.schwarz@enron.com",
+            "beverly.aden@enron.com",
+            "bill.votaw@enron.com",
+            "brenda.barreda@enron.com",
+            "carol.moffett@enron.com",
+            "cathy.corbin@enron.com",
+            "chris.foster@enron.com",
+            "christina.liscano@enron.com",
+            "christopher.calger@enron.com",
+            "craig.sutter@enron.com",
+            "dan.leff@enron.com",
+            "debora.whitehead@enron.com",
+            "dennis.benevides@enron.com",
+            "dirk.vanulden@enron.com",
+            "don.black@enron.com",
+            "dorothy.youngblood@enron.com",
+            "douglas.huth@enron.com",
+            "edward.sacks@enron.com",
+            "eric.melvin@enron.com",
+            "erika.dupre@enron.com",
+            "evan.hughes@enron.com",
+            "fran.deltoro@enron.com",
+            "frank.vickers@enron.com",
+            "gayle.muench@enron.com",
+            "ginger.dernehl@enron.com",
+            "gordon.savage@enron.com",
+            "greg.wolfe@enron.com",
+            "harold.buchanan@enron.com",
+            "iris.waser@enron.com",
+            "james.lewis@enron.com",
+            "james.steffes@enron.com",
+            "james.wright@enron.com",
+            "jeff.dasovich@enron.com",
+            "jeff.messina@enron.com",
+            "jeremy.blachman@enron.com",
+            "jess.hewitt@enron.com",
+            "joe.hartsoe@enron.com",
+            "jubran.whalan@enron.com",
+            "karen.denne@enron.com",
+            "kathryn.corbally@enron.com",
+            "kathy.bass@enron.com",
+            "kathy.dodgen@enron.com",
+            "ken.gustafson@enron.com",
+            "kevin.hughes@enron.com",
+            "leasa.lopez@enron.com",
+            "leticia.botello@enron.com",
+            "mark.muller@enron.com",
+            "marsha.suggs@enron.com",
+            "marty.sunde@enron.com",
+            "meredith.eggleston@enron.com",
+            "michael.etringer@enron.com",
+            "michael.mann@enron.com",
+            "michelle.cisneros@enron.com",
+            "mike.smith@enron.com",
+            "mpalmer@enron.com",
+            "neil.bresnan@enron.com",
+            "neil.hong@enron.com",
+            "paul.kaufman@enron.com",
+            "paula.warren@enron.com",
+            "richard.leibert@enron.com",
+            "richard.sanders@enron.com",
+            "richard.shapiro@enron.com",
+            "richard.zdunkewicz@enron.com",
+            "rita.hennessy@enron.com",
+            "robert.badeer@enron.com",
+            "robert.williams@enron.com",
+            "roger.yang@enron.com",
+            "rosalinda.tijerina@enron.com",
+            "sarah.novosel@enron.com",
+            "scott.gahn@enron.com",
+            "scott.stoness@enron.com",
+            "sharon.dick@enron.com",
+            "skean@enron.com",
+            "steve.walker@enron.com",
+            "susan.mara@enron.com",
+            "tanya.leslie@enron.com",
+            "tasha.lair@enron.com",
+            "ted.murphy@enron.com",
+            "terri.greenlee@enron.com",
+            "tim.belden@enron.com",
+            "tony.spruiell@enron.com",
+            "triley@enron.com",
+            "vicki.sharp@enron.com",
+            "vladimir.gorny@enron.com",
+            "wanda.curry@enron.com",
+            "william.bradford@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/guzman-m__all_documents__441.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "3",
+            "bert.meyers@enron.com",
+            "bill.williams.iii@enron.com",
+            "craig.dean@enron.com",
+            "eric.linder@enron.com",
+            "geir.solberg@enron.com",
+            "jbryson@enron.com",
+            "leaf.harasin@enron.com",
+            "mark.guzman@enron.com",
+            "monika.causholli@enron.com",
+            "pete.davis@enron.com",
+            "ryan.slinger@enron.com",
+            "steven.merris@enron.com"
+          ]
+        }
+      ]
+    },
+    "email address": {
+      "agree": 44,
+      "pii_only_missed_by_det": 19,
+      "det_only_missed_by_pii": 8779,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/mclaughlin-e__all_documents__390.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "errol.mclaughlin@enron.com",
+            "jean.bell@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/bass-e__all_documents__608.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "bryant@cheatsheets.net",
+            "cheatsheets-unsubscribe@egroups.com",
+            "cheatsheets@egroups.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/nemec-g__all_documents__5588.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "barry.tycholiz@enron.com",
+            "darren.vanek@enron.com",
+            "gerald.nemec@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/lokay-m__kim_s_files__5.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "kimberly.watson@enron.com",
+            "michelle.lokay@enron.com"
+          ]
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/beck-s__all_documents__361.txt",
+          "corpus": "enron",
+          "pii_only": [],
+          "det_only": [
+            "jeffrey.gossett@enron.com",
+            "sally.beck@enron.com",
+            "shona.wilson@enron.com"
+          ]
+        }
+      ]
+    },
+    "postal code": {
+      "agree": 5,
+      "pii_only_missed_by_det": 40,
+      "det_only_missed_by_pii": 1,
+      "sample_disagreements": [
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/scott-s__all_documents__898.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "900131011"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/external_corpus/test_anchor/specimen_sin_01.jpg",
+          "corpus": "test_anchor",
+          "pii_only": [
+            "245521000979"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/external_corpus/specimen_corpus/Negative_Control_Document_Samples/dataset/Insurance_EOBs/eob_cms_01.png",
+          "corpus": "specimen",
+          "pii_only": [
+            "city, state, zip:\nthis is not a bill"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/shankman-j__all_documents__934.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "postal\naddress"
+          ],
+          "det_only": []
+        },
+        {
+          "file": "/workspaces/securescan/tests/external_enron/sample/whalley-l__discussion_threads__1315.txt",
+          "corpus": "enron",
+          "pii_only": [
+            "322"
+          ],
+          "det_only": []
+        }
+      ]
+    }
+  },
+  "specimen_adjudication": [
+    {
+      "file": "Canadian_Driver_Licence_Specimens/AB/AB_front_specimen.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "134711-320",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/BC/BC_front_back_specimen.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "2222222",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/MB/MB_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "PU-BL-IJ-Q008NH",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NB/NB_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "SAMPLE_12345",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NL/NL_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "990917999",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NL/NL_front_sample_with_DL_number.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "9900917999",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NS/NS_front_specimen.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "PUBLI020220005",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NS/NS_front_sample_with_DL_number.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "PUBL1234567890",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NT/NT_front_specimen.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "1234567890",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/NU/NU_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "889 4034 22",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/ON/ON_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "D6101-40709-50228",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/ON/ON_front_sample_with_DL_number.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "D0123-45678-90123",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/PE/PE_front_specimen.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "PUBLI020220005",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/PE/PE_front_sample_with_DL_number.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "1285",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/QC/QC_front_sample.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "L1531-171274-08",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/SK/SK_front_specimens.png",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "20000030",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/YT/YT_front_sample.webp",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "504896",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Driver_Licence_Specimens/YT/YT_front_sample_with_DL_number.jpg",
+      "expected_type": "drivers_license_ca",
+      "expected_value": "129804",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/AB/AB_mobile_current.jpg",
+      "expected_type": "health_card_ab",
+      "expected_value": "12345-0000",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/AB/AB_standalone_current.jpg",
+      "expected_type": "health_card_ab",
+      "expected_value": "12345-0000",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/AB/AB_paper_legacy.png",
+      "expected_type": "health_card_ab",
+      "expected_value": "12345-0000",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/BC/BC_services_back.png",
+      "expected_type": "health_card_bc",
+      "expected_value": "9876 543 214",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/BC/BC_carecard_legacy.png",
+      "expected_type": "health_card_bc",
+      "expected_value": "9020 512 706",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NB/NB_medicare.png",
+      "expected_type": "health_card_nb",
+      "expected_value": "999 999 999",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NL/NL_mcp_legacy.png",
+      "expected_type": "health_card_nl",
+      "expected_value": "000 000 000 000",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NL/NL_official_embossed.png",
+      "expected_type": "health_card_nl",
+      "expected_value": "123 456 789 001",
+      "det_hit": false,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NL/NL_official_laser.png",
+      "expected_type": "health_card_nl",
+      "expected_value": "123 456 789 001",
+      "det_hit": false,
+      "pii_hit": true,
+      "read_confidence": "probable"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NS/NS_health_card.png",
+      "expected_type": "health_card_ns",
+      "expected_value": "5004 739 743",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NS/NS_official_example.jpg",
+      "expected_type": "health_card_ns",
+      "expected_value": "0000 000 000",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NT/NT_health_plan.png",
+      "expected_type": "health_card_nt",
+      "expected_value": "N6739906",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/NU/NU_health_card.png",
+      "expected_type": "health_card_nu",
+      "expected_value": "123456789",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/ON/ON_photo_health.png",
+      "expected_type": "health_card_on",
+      "expected_value": "5584-486-674-YM",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/PE/PE_health_card.png",
+      "expected_type": "health_card_pe",
+      "expected_value": "18072314",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/QC/QC_health_card_legacy.png",
+      "expected_type": "health_card_qc",
+      "expected_value": "GAGL 0000 0000",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/QC/QC_current_official.jpg",
+      "expected_type": "health_card_qc",
+      "expected_value": "BOUF 9401 1419",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/SK/SK_health_card.png",
+      "expected_type": "health_card_sk",
+      "expected_value": "123 456 789",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_Health_Card_Specimens_v2/cards/YT/YT_health_plan.png",
+      "expected_type": "health_card_yt",
+      "expected_value": "002-999-999",
+      "det_hit": false,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/SCIS/scis_certificate.jpeg",
+      "expected_type": "status_card_registration",
+      "expected_value": "9997001801",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/SCIS/scis_certificate.png",
+      "expected_type": "status_card_registration",
+      "expected_value": "9997001801",
+      "det_hit": true,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/SCIS/scis_certificate_sample_no_numbers.jpg",
+      "expected_type": "status_card_registration",
+      "expected_value": "9997001801",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/PR_Card/pr_card_2021_current.jpg",
+      "expected_type": "uci",
+      "expected_value": "0018-5978",
+      "det_hit": false,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/PR_Card/pr_card_2016_previous.jpg",
+      "expected_type": "uci",
+      "expected_value": "0018-5978",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/Temporary_Resident_Documents/Visitors_record_notobfuscated.jpg",
+      "expected_type": "uci",
+      "expected_value": "87557383",
+      "det_hit": false,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/Temporary_Resident_Documents/Work_Permit_withUCI.jpg",
+      "expected_type": "uci",
+      "expected_value": "1127041820",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/Canadian_Passport/passport_new_data_page_mrz_annotated.jpg",
+      "expected_type": "mrz + passport_ca",
+      "expected_value": "P123456AA",
+      "det_hit": false,
+      "pii_hit": true,
+      "read_confidence": "certain"
+    },
+    {
+      "file": "Canadian_ID_Specimens/Canadian_Passport/Canada_passport-data-page-large_2023.jpeg",
+      "expected_type": "mrz + passport_ca",
+      "expected_value": "P123456AA",
+      "det_hit": true,
+      "pii_hit": false,
+      "read_confidence": "certain"
+    }
+  ],
+  "specimen_adjudication_summary": [
+    [
+      [
+        false,
+        false
+      ],
+      21
+    ],
+    [
+      [
+        true,
+        true
+      ],
+      11
+    ],
+    [
+      [
+        true,
+        false
+      ],
+      9
+    ],
+    [
+      [
+        false,
+        true
+      ],
+      5
+    ]
+  ],
+  "pii_ocr_junk_candidates": 282,
+  "medium_ocr_junk_candidates": 965,
+  "pii_ocr_junk_sample": [
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/IMG_20260724_142233_01.txt",
+      "corpus": "canadian_eval",
+      "label": "passport number",
+      "value": "AB123456",
+      "char_start": 50,
+      "char_end": 58,
+      "confidence": 0.852,
+      "context_before": "Synthetic travel record\nCanadian passport number: ",
+      "context_after": "\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/bc_healthcard_mod11_result11_01.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance number",
+      "value": "9000000000",
+      "char_start": 67,
+      "char_end": 77,
+      "confidence": 0.6821,
+      "context_before": "Synthetic British Columbia validation rejection\nPHN health number: ",
+      "context_after": "\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mb_licence_asterisk_01.txt",
+      "corpus": "canadian_eval",
+      "label": "driver's license number",
+      "value": "A1234*567890",
+      "char_start": 53,
+      "char_end": 65,
+      "confidence": 0.9689,
+      "context_before": "Synthetic Manitoba record\nManitoba driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mb_licence_asterisk_01.txt",
+      "corpus": "canadian_eval",
+      "label": "vehicle registration number",
+      "value": "A1234*567890",
+      "char_start": 53,
+      "char_end": 65,
+      "confidence": 0.6246,
+      "context_before": "Synthetic Manitoba record\nManitoba driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_b_for_eight_04.txt",
+      "corpus": "canadian_eval",
+      "label": "passport_number",
+      "value": "B506151M2906151CAN",
+      "char_start": 31,
+      "char_end": 49,
+      "confidence": 0.5595,
+      "context_before": "ICCANAC12345<<9<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<2\nSYNTHETIC<<CASE<<<<<<<<<<<<<<<\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_b_for_eight_04.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "B506151M2906151CAN",
+      "char_start": 31,
+      "char_end": 49,
+      "confidence": 0.5133,
+      "context_before": "ICCANAC12345<<9<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<2\nSYNTHETIC<<CASE<<<<<<<<<<<<<<<\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_i_for_one_02.txt",
+      "corpus": "canadian_eval",
+      "label": "transaction number",
+      "value": "AC01234561CAN900I011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.7359,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "financial"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_i_for_one_02.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "AC01234561CAN900I011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.5352,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_i_for_one_02.txt",
+      "corpus": "canadian_eval",
+      "label": "insurance number",
+      "value": "AC01234561CAN900I011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.5946,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_rn_for_m_05.txt",
+      "corpus": "canadian_eval",
+      "label": "transaction number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 46,
+      "char_end": 74,
+      "confidence": 0.7528,
+      "context_before": "P<CANSARNPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "financial"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_rn_for_m_05.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 46,
+      "char_end": 74,
+      "confidence": 0.6513,
+      "context_before": "P<CANSARNPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_ocr_rn_for_m_05.txt",
+      "corpus": "canadian_eval",
+      "label": "insurance number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 46,
+      "char_end": 74,
+      "confidence": 0.6788,
+      "context_before": "P<CANSARNPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_bad_document_check_01.txt",
+      "corpus": "canadian_eval",
+      "label": "transaction number",
+      "value": "AC01234562CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.746,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "financial"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_bad_document_check_01.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "AC01234562CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.5307,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_bad_document_check_01.txt",
+      "corpus": "canadian_eval",
+      "label": "insurance number",
+      "value": "AC01234562CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.6008,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_exact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "transaction number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.7479,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "financial"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_exact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.5218,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "health_medical"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/mrz_td3_exact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "insurance number",
+      "value": "AC01234561CAN9001011F3001019",
+      "char_start": 45,
+      "char_end": 73,
+      "confidence": 0.6027,
+      "context_before": "P<CANSAMPLE<<SYNTHETIC<<<<<<<<<<<<<<<<<<<<<<\n",
+      "context_after": "<<<<<<<<<<<<<<<4\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/nl_licence_compact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "driver's license number",
+      "value": "N251849238",
+      "char_start": 87,
+      "char_end": 97,
+      "confidence": 0.9899,
+      "context_before": "Synthetic Newfoundland and Labrador record\nNewfoundland and Labrador driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/nl_licence_compact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "license plate number",
+      "value": "N251849238",
+      "char_start": 87,
+      "char_end": 97,
+      "confidence": 0.6807,
+      "context_before": "Synthetic Newfoundland and Labrador record\nNewfoundland and Labrador driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/ns_licence_compact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "driver's license number",
+      "value": "PUBLI020220005",
+      "char_start": 59,
+      "char_end": 73,
+      "confidence": 0.9564,
+      "context_before": "Synthetic Nova Scotia record\nNova Scotia driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/ns_licence_compact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "vehicle registration number",
+      "value": "PUBLI020220005",
+      "char_start": 59,
+      "char_end": 73,
+      "confidence": 0.576,
+      "context_before": "Synthetic Nova Scotia record\nNova Scotia driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/ns_licence_display_01.txt",
+      "corpus": "canadian_eval",
+      "label": "driver's license number",
+      "value": "PUBLI-020220005",
+      "char_start": 71,
+      "char_end": 86,
+      "confidence": 0.963,
+      "context_before": "Synthetic Nova Scotia card transcription\nNova Scotia driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "identity_gov"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/ns_licence_display_01.txt",
+      "corpus": "canadian_eval",
+      "label": "vehicle registration number",
+      "value": "PUBLI-020220005",
+      "char_start": 71,
+      "char_end": 86,
+      "confidence": 0.5523,
+      "context_before": "Synthetic Nova Scotia card transcription\nNova Scotia driver's licence: ",
+      "context_after": "\n",
+      "batch_group": "travel_misc"
+    },
+    {
+      "file": "/workspaces/securescan/tests/canadian_eval_data/nt_healthcard_compact_01.txt",
+      "corpus": "canadian_eval",
+      "label": "health insurance id number",
+      "value": "L3341991",
+      "char_start": 52,
+      "char_end": 60,
+      "confidence": 0.6073,
+      "context_before": "Synthetic Northwest Territories record\nHealth card: ",
+      "context_after": "\n",
+      "batch_group": "health_medical"
+    }
+  ],
+  "pii_manifest_cost": {
+    "files": 1381,
+    "total_wall_s": 28030.5,
+    "total_chars": 10095581,
+    "chars_per_s": 360.2
+  },
+  "medium_manifest_cost": {
+    "files": 1381,
+    "total_wall_s": 6367.1,
+    "total_chars": 10245581,
+    "chars_per_s": 1609.1
+  }
+}

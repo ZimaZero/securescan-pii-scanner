@@ -1,0 +1,7 @@
+CONFIDENTIAL CLIENT FILE
+Client: Robert Chen
+Email: rchen@acme.com
+Phone: 403-555-9988
+SIN: 500 978 820
+Card: 5500 0000 0000 0004
+DOB: 1985-07-22

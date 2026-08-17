@@ -1,0 +1,7 @@
+# Downloaded archive and extracted sample — regenerate with
+# download_enron_sample.py. Not committed: sample/ is a third-party corpus
+# extraction (~1000 flattened .txt files) and enron_raw/ is a cached copy
+# of the ~423MB upstream tarball kept only to make re-runs fast.
+enron_raw/
+sample/
+sample_5000/

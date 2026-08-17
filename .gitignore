@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+outputs/
+*.pyc
+.claude/
+.vscode/
+tests/ollama_benchmark/raw_results*.jsonl
+docs/evidence/*.jsonl
+docs/evidence/anchor_*_scan.json
+core.*
+dist/
+
+# --- Public repo exclusions ---
+
+# Internal working files (kept locally, not published)
+CLAUDE.md
+AGENTS.md
+.claude/
+.codex/
+.agents/
+
+# Third-party dataset - fetched by download_enron_sample.py
+tests/external_enron/enron_raw/
+tests/external_enron/enron_sample/
+
+# Build and runtime artifacts
+core.*
+__pycache__/
+
+# Raw scan dumps (~190MB) - one-time comparison artifacts, kept locally.
+# Conclusions drawn from them are in the accompanying .md files.
+docs/evidence/anchor_current_scan.json
+docs/evidence/anchor_head_scan.json
+docs/evidence/anchor_sin_fix_scan.json
+docs/evidence/gliner_medium_raw.jsonl
+docs/evidence/gliner_medium5_raw.jsonl
+docs/evidence/gliner_pii_raw.jsonl

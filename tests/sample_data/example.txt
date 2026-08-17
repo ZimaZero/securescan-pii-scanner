@@ -1,0 +1,6 @@
+Hello Jordan,
+Contact: alex@example.com
+Phone: 403-555-0123
+Credit card: 4111 1111 1111 1111
+SIN: 123 456 789
+DOB: 1990-03-15

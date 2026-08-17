@@ -1,0 +1,34 @@
+# Optional override: requests the real NVIDIA GPU device for securescan-gpu
+# and ollama. Applied automatically by scripts/securescan-gui-common.sh when
+# it detects a real NVIDIA GPU + the NVIDIA Container Toolkit; apply it
+# manually otherwise:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up securescan-gpu
+#
+# Without this file, both services still start and run on CPU
+# (securescan-gpu's SECURESCAN_GLINER_DEVICE=cuda/SECURESCAN_PADDLEOCR_DEVICE=gpu:0
+# env vars in docker-compose.yml ask for GPU, but gliner_detector.py's CUDA
+# session swap and extractors/image_extractor.py's PaddleOCR device selection
+# both fall back to CPU when the device turns out to be unreachable). This
+# file exists only to grant real GPU access when one is actually present and
+# usable; see docker-compose.yml's top-of-file comment for why the
+# reservation can't just live there unconditionally.
+
+services:
+  securescan-gpu:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  ollama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

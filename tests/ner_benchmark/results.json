@@ -1,0 +1,1798 @@
+{
+  "Presidio": {
+    "aggregate": {
+      "ndet": 82,
+      "tp": 39,
+      "fp": 43,
+      "fn": 7,
+      "precision": 0.47560975609756095,
+      "recall": 0.8478260869565217,
+      "f1": 0.609375,
+      "ms": 34.60844200041417
+    },
+    "per_doc": {
+      "doc1_onboarding_memo (clean)": {
+        "detections": [
+          {
+            "type_raw": "EMAIL_ADDRESS",
+            "canonical": "EMAIL",
+            "value": "sarah.johnson@northwind.com",
+            "score": 1.0
+          },
+          {
+            "type_raw": "EMAIL_ADDRESS",
+            "canonical": "EMAIL",
+            "value": "m.rodriguez88@gmail.com",
+            "score": 1.0
+          },
+          {
+            "type_raw": "CREDIT_CARD",
+            "canonical": "CREDIT_CARD",
+            "value": "4539 1488 0343 6467",
+            "score": 1.0
+          },
+          {
+            "type_raw": "CREDIT_CARD",
+            "canonical": "CREDIT_CARD",
+            "value": "5500 0000 0000 0004",
+            "score": 1.0
+          },
+          {
+            "type_raw": "IBAN_CODE",
+            "canonical": "IBAN",
+            "value": "GB29 NWBK 6016 1331 9268 19",
+            "score": 1.0
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Sarah Johnson",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "David Chen\nDate",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "March 14, 2024\n\nHi David",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "Northwind Trading Inc.",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Michael Rodriguez\nHome",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "1425 Maple Avenue",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Springfield",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "IL 62704\nPersonal",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "m.rodriguez88@gmail.com\nMobile",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "US",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "SSN",
+            "score": 0.85
+          },
+          {
+            "type_raw": "US_SSN",
+            "canonical": "SSN",
+            "value": "536-90-4399",
+            "score": 0.85
+          },
+          {
+            "type_raw": "NRP",
+            "canonical": "NRP",
+            "value": "Canadian",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "Visa",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "4539",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Vancouver",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Chicago",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "2024-04-01",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "IBAN",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "NWBK",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "1331",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "(415) 555-0182",
+            "score": 0.75
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "https://portal.northwind.com/welcome",
+            "score": 0.6
+          },
+          {
+            "type_raw": "IP_ADDRESS",
+            "canonical": "IP",
+            "value": "192.168.1.42",
+            "score": 0.6
+          },
+          {
+            "type_raw": "IP_ADDRESS",
+            "canonical": "IP",
+            "value": "203.0.113.75",
+            "score": 0.6
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "sarah.jo",
+            "score": 0.5
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "northwind.com",
+            "score": 0.5
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "m.ro",
+            "score": 0.5
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "gmail.com",
+            "score": 0.5
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "403-555-9910",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "046 454 286",
+            "score": 0.4
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "1425 Maple Avenue",
+            "as": "ORGANIZATION",
+            "reason": "mistype (true ADDRESS)",
+            "score": 0.85
+          },
+          {
+            "value": "046 454 286",
+            "as": "PHONE_NUMBER",
+            "reason": "mistype (true SIN)",
+            "score": 0.4
+          },
+          {
+            "value": "Springfield",
+            "as": "LOCATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "IL 62704\nPersonal",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "m.rodriguez88@gmail.com\nMobile",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "US",
+            "as": "LOCATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "SSN",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "Canadian",
+            "as": "NRP",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "Visa",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "4539",
+            "as": "DATE_TIME",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "IBAN",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "NWBK",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "1331",
+            "as": "DATE_TIME",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "sarah.jo",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "northwind.com",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "m.ro",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "gmail.com",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          }
+        ],
+        "tp": 19,
+        "fp": 17,
+        "fn": 2
+      },
+      "doc2_incident_report (adversarial)": {
+        "detections": [
+          {
+            "type_raw": "EMAIL_ADDRESS",
+            "canonical": "EMAIL",
+            "value": "j.baker+secure@fastmail.io",
+            "score": 1.0
+          },
+          {
+            "type_raw": "EMAIL_ADDRESS",
+            "canonical": "EMAIL",
+            "value": "hacker_9x@protonmail.com",
+            "score": 1.0
+          },
+          {
+            "type_raw": "CREDIT_CARD",
+            "canonical": "CREDIT_CARD",
+            "value": "6011 0009 9013 9424",
+            "score": 1.0
+          },
+          {
+            "type_raw": "IBAN_CODE",
+            "canonical": "IBAN",
+            "value": "DE89 3704 0044 0532 0130 00",
+            "score": 1.0
+          },
+          {
+            "type_raw": "IP_ADDRESS",
+            "canonical": "IP",
+            "value": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "score": 0.95
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "07/09/2023 14:32",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "UTC\nAnalyst",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Priya Ramaswamy",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "the evening of",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "2023",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Jordan Baker",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Jordan",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Amman",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "previous week",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "4467 - full",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "PAN",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "4556-7376-5624-4467",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "IBAN",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "Deutsche Bank",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Ontario",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "SSN",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "IP",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Marcus Webb-O'Connor",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "Toronto",
+            "score": 0.85
+          },
+          {
+            "type_raw": "DATE_TIME",
+            "canonical": "DATE",
+            "value": "2023-09-11T09:15:00-04:00",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "London",
+            "score": 0.85
+          },
+          {
+            "type_raw": "LOCATION",
+            "canonical": "LOCATION",
+            "value": "United Kingdom",
+            "score": 0.85
+          },
+          {
+            "type_raw": "PERSON",
+            "canonical": "PERSON",
+            "value": "Priya Ramaswamy\nVP",
+            "score": 0.85
+          },
+          {
+            "type_raw": "ORGANIZATION",
+            "canonical": "ORG",
+            "value": "Trust & Safety - Cloudstrike Systems LLP",
+            "score": 0.85
+          },
+          {
+            "type_raw": "IP_ADDRESS",
+            "canonical": "IP",
+            "value": "45.83.201.19",
+            "score": 0.6
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "https://status.cloud",
+            "score": 0.6
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "j.ba",
+            "score": 0.5
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "fastmail.io",
+            "score": 0.5
+          },
+          {
+            "type_raw": "URL",
+            "canonical": "URL",
+            "value": "protonmail.com",
+            "score": 0.5
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "+1 (604) 555-2381",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "+44 20 7946 0958",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "1-800-000-0000",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "078-05-1120",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "5544 332 211",
+            "score": 0.4
+          },
+          {
+            "type_raw": "PHONE_NUMBER",
+            "canonical": "PHONE",
+            "value": "078051121",
+            "score": 0.4
+          },
+          {
+            "type_raw": "US_BANK_NUMBER",
+            "canonical": "US_BANK_NUMBER",
+            "value": "4556737656244470",
+            "score": 0.05
+          },
+          {
+            "type_raw": "US_PASSPORT",
+            "canonical": "US_PASSPORT",
+            "value": "078051121",
+            "score": 0.05
+          },
+          {
+            "type_raw": "US_SSN",
+            "canonical": "SSN",
+            "value": "078051121",
+            "score": 0.05
+          },
+          {
+            "type_raw": "US_BANK_NUMBER",
+            "canonical": "US_BANK_NUMBER",
+            "value": "078051121",
+            "score": 0.05
+          },
+          {
+            "type_raw": "US_DRIVER_LICENSE",
+            "canonical": "US_DRIVER_LICENSE",
+            "value": "4556737656244470",
+            "score": 0.01
+          },
+          {
+            "type_raw": "US_DRIVER_LICENSE",
+            "canonical": "US_DRIVER_LICENSE",
+            "value": "078051121",
+            "score": 0.01
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "United Kingdom",
+            "as": "LOCATION",
+            "reason": "mistype (true ADDRESS)",
+            "score": 0.85
+          },
+          {
+            "value": "078-05-1120",
+            "as": "PHONE_NUMBER",
+            "reason": "mistype (true SSN)",
+            "score": 0.4
+          },
+          {
+            "value": "4556-7376-5624-4467",
+            "as": "DATE_TIME",
+            "reason": "mistype (true CREDIT_CARD)",
+            "score": 0.85
+          },
+          {
+            "value": "5544 332 211",
+            "as": "PHONE_NUMBER",
+            "reason": "mistype (true HEALTH_CARD)",
+            "score": 0.4
+          },
+          {
+            "value": "UTC\nAnalyst",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "Priya Ramaswamy",
+            "as": "PERSON",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "the evening of",
+            "as": "DATE_TIME",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "Jordan",
+            "as": "PERSON",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "previous week",
+            "as": "DATE_TIME",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "4467 - full",
+            "as": "DATE_TIME",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "PAN",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "IBAN",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "Ontario",
+            "as": "LOCATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "SSN",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "IP",
+            "as": "ORGANIZATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "London",
+            "as": "LOCATION",
+            "reason": "spurious (no GT match)",
+            "score": 0.85
+          },
+          {
+            "value": "j.ba",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "fastmail.io",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "protonmail.com",
+            "as": "URL",
+            "reason": "spurious (no GT match)",
+            "score": 0.5
+          },
+          {
+            "value": "078051121",
+            "as": "PHONE_NUMBER",
+            "reason": "spurious (no GT match)",
+            "score": 0.4
+          },
+          {
+            "value": "4556737656244470",
+            "as": "US_BANK_NUMBER",
+            "reason": "spurious (no GT match)",
+            "score": 0.05
+          },
+          {
+            "value": "078051121",
+            "as": "US_PASSPORT",
+            "reason": "spurious (no GT match)",
+            "score": 0.05
+          },
+          {
+            "value": "078051121",
+            "as": "US_SSN",
+            "reason": "spurious (no GT match)",
+            "score": 0.05
+          },
+          {
+            "value": "078051121",
+            "as": "US_BANK_NUMBER",
+            "reason": "spurious (no GT match)",
+            "score": 0.05
+          },
+          {
+            "value": "4556737656244470",
+            "as": "US_DRIVER_LICENSE",
+            "reason": "spurious (no GT match)",
+            "score": 0.01
+          },
+          {
+            "value": "078051121",
+            "as": "US_DRIVER_LICENSE",
+            "reason": "spurious (no GT match)",
+            "score": 0.01
+          }
+        ],
+        "tp": 20,
+        "fp": 26,
+        "fn": 5
+      }
+    }
+  },
+  "GLiNER-small": {
+    "aggregate": {
+      "ndet": 32,
+      "tp": 22,
+      "fp": 10,
+      "fn": 24,
+      "precision": 0.6875,
+      "recall": 0.4782608695652174,
+      "f1": 0.5641025641025642,
+      "ms": 391.77798033415456
+    },
+    "per_doc": {
+      "doc1_onboarding_memo (clean)": {
+        "detections": [
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Sarah Johnson",
+            "score": 0.9215316772460938
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "sarah.johnson",
+            "score": 0.7815316915512085
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "northwind.com",
+            "score": 0.41927462816238403
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "David Chen",
+            "score": 0.898481011390686
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "March 14, 2024",
+            "score": 0.8013519048690796
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Northwind Trading Inc.",
+            "score": 0.9162300825119019
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Michael Rodriguez",
+            "score": 0.7789990305900574
+          },
+          {
+            "type_raw": "address",
+            "canonical": "ADDRESS",
+            "value": "1425 Maple Avenue",
+            "score": 0.7732275724411011
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Springfield, IL",
+            "score": 0.46051424741744995
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "m.rodriguez88",
+            "score": 0.4119112193584442
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "403-555-9910",
+            "score": 0.5460175275802612
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SSN",
+            "score": 0.45050323009490967
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "536-90-4399",
+            "score": 0.7954954504966736
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "046 454 286",
+            "score": 0.3753567934036255
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Vancouver",
+            "score": 0.6826334595680237
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Chicago",
+            "score": 0.5296587347984314
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "2024-04-01",
+            "score": 0.5748069286346436
+          },
+          {
+            "type_raw": "address",
+            "canonical": "ADDRESS",
+            "value": "192.168.1.42",
+            "score": 0.45883089303970337
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "203.0.113.75",
+            "score": 0.32310253381729126
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "IBAN",
+            "score": 0.4884470999240875
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "GB29 NWBK 6016 1331 9268 19",
+            "score": 0.5852665305137634
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "sarah.johnson",
+            "as": "person",
+            "reason": "mistype (true EMAIL)",
+            "score": 0.7815316915512085
+          },
+          {
+            "value": "m.rodriguez88",
+            "as": "person",
+            "reason": "mistype (true EMAIL)",
+            "score": 0.4119112193584442
+          },
+          {
+            "value": "046 454 286",
+            "as": "social security number",
+            "reason": "mistype (true SIN)",
+            "score": 0.3753567934036255
+          },
+          {
+            "value": "northwind.com",
+            "as": "organization",
+            "reason": "mistype (true URL)",
+            "score": 0.41927462816238403
+          },
+          {
+            "value": "192.168.1.42",
+            "as": "address",
+            "reason": "mistype (true IP)",
+            "score": 0.45883089303970337
+          },
+          {
+            "value": "Springfield, IL",
+            "as": "location",
+            "reason": "spurious (no GT match)",
+            "score": 0.46051424741744995
+          },
+          {
+            "value": "SSN",
+            "as": "social security number",
+            "reason": "spurious (no GT match)",
+            "score": 0.45050323009490967
+          },
+          {
+            "value": "IBAN",
+            "as": "iban",
+            "reason": "spurious (no GT match)",
+            "score": 0.4884470999240875
+          }
+        ],
+        "tp": 13,
+        "fp": 8,
+        "fn": 8
+      },
+      "doc2_incident_report (adversarial)": {
+        "detections": [
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Dr. Priya Ramaswamy",
+            "score": 0.8290743231773376
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Cloudstrike Systems LLP",
+            "score": 0.8178462386131287
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "Sept 7th, 2023",
+            "score": 0.7495987415313721
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Jordan Baker",
+            "score": 0.6793494820594788
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Amman",
+            "score": 0.638635516166687
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "45.83.201.19",
+            "score": 0.41671425104141235
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "j.baker",
+            "score": 0.5447474718093872
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "IBAN DE89 3704 0044 0532 0130 00",
+            "score": 0.7449489831924438
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Deutsche Bank",
+            "score": 0.8274908065795898
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SSN 078-05-1120",
+            "score": 0.6895197629928589
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SIN 193 456 787",
+            "score": 0.6164051294326782
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "j.baker",
+            "as": "person",
+            "reason": "mistype (true EMAIL)",
+            "score": 0.5447474718093872
+          },
+          {
+            "value": "SIN 193 456 787",
+            "as": "social security number",
+            "reason": "mistype (true SIN)",
+            "score": 0.6164051294326782
+          }
+        ],
+        "tp": 9,
+        "fp": 2,
+        "fn": 16
+      }
+    }
+  },
+  "GLiNER-medium": {
+    "aggregate": {
+      "ndet": 47,
+      "tp": 32,
+      "fp": 15,
+      "fn": 14,
+      "precision": 0.6808510638297872,
+      "recall": 0.6956521739130435,
+      "f1": 0.6881720430107526,
+      "ms": 819.9957066669109
+    },
+    "per_doc": {
+      "doc1_onboarding_memo (clean)": {
+        "detections": [
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Sarah Johnson",
+            "score": 0.9094258546829224
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "sarah.johnson",
+            "score": 0.4487967789173126
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "David Chen",
+            "score": 0.7778310775756836
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "March 14, 2024",
+            "score": 0.8844139575958252
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Northwind Trading Inc.",
+            "score": 0.9424905776977539
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Michael Rodriguez",
+            "score": 0.8611807227134705
+          },
+          {
+            "type_raw": "address",
+            "canonical": "ADDRESS",
+            "value": "1425 Maple Avenue",
+            "score": 0.5077835917472839
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Springfield, IL",
+            "score": 0.5790688395500183
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "62704",
+            "score": 0.4265696406364441
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "m.rodriguez88",
+            "score": 0.34184977412223816
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "(415) 555-0182",
+            "score": 0.7803928256034851
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "Office line",
+            "score": 0.3004872798919678
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "403-555-9910",
+            "score": 0.720299482345581
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "US SSN",
+            "score": 0.4553109407424927
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "536-90-4399",
+            "score": 0.7583522796630859
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "4539 1488 0343 6467\nBackup card",
+            "score": 0.4156615138053894
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Vancouver",
+            "score": 0.5566020011901855
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Chicago",
+            "score": 0.43233856558799744
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "2024-04-01",
+            "score": 0.5589141249656677
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "192.168.1.42",
+            "score": 0.6962488889694214
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "203.0.113.75",
+            "score": 0.6797071695327759
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "IBAN for reimbursements",
+            "score": 0.7160543203353882
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "GB29 NWBK 6016 1331 9268 19",
+            "score": 0.8730385303497314
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "sarah.johnson",
+            "as": "person",
+            "reason": "mistype (true EMAIL)",
+            "score": 0.4487967789173126
+          },
+          {
+            "value": "m.rodriguez88",
+            "as": "person",
+            "reason": "mistype (true EMAIL)",
+            "score": 0.34184977412223816
+          },
+          {
+            "value": "Springfield, IL",
+            "as": "location",
+            "reason": "spurious (no GT match)",
+            "score": 0.5790688395500183
+          },
+          {
+            "value": "62704",
+            "as": "location",
+            "reason": "spurious (no GT match)",
+            "score": 0.4265696406364441
+          },
+          {
+            "value": "Office line",
+            "as": "phone number",
+            "reason": "spurious (no GT match)",
+            "score": 0.3004872798919678
+          },
+          {
+            "value": "US SSN",
+            "as": "social security number",
+            "reason": "spurious (no GT match)",
+            "score": 0.4553109407424927
+          },
+          {
+            "value": "IBAN for reimbursements",
+            "as": "phone number",
+            "reason": "spurious (no GT match)",
+            "score": 0.7160543203353882
+          }
+        ],
+        "tp": 16,
+        "fp": 7,
+        "fn": 5
+      },
+      "doc2_incident_report (adversarial)": {
+        "detections": [
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "07/09/2023",
+            "score": 0.3535003364086151
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Dr. Priya Ramaswamy",
+            "score": 0.5049474239349365
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Cloudstrike Systems LLP",
+            "score": 0.5900687575340271
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "Sept 7th, 2023",
+            "score": 0.9296556115150452
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Jordan Baker",
+            "score": 0.9430862665176392
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Amman",
+            "score": 0.595566987991333
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "45.83.201.19",
+            "score": 0.8359456062316895
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "2001",
+            "score": 0.4881395995616913
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "j.baker",
+            "score": 0.4163236618041992
+          },
+          {
+            "type_raw": "email",
+            "canonical": "EMAIL",
+            "value": "secure@fastmail.io",
+            "score": 0.5128565430641174
+          },
+          {
+            "type_raw": "email",
+            "canonical": "EMAIL",
+            "value": "hacker_9x@protonmail.com",
+            "score": 0.8680339455604553
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "+1 (604) 555-2381",
+            "score": 0.8621646165847778
+          },
+          {
+            "type_raw": "url",
+            "canonical": "URL",
+            "value": "+44 20 7946 0958",
+            "score": 0.3973616063594818
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "Fax",
+            "score": 0.36687779426574707
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "1-800-000-0000",
+            "score": 0.7345976829528809
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "4556-7376-5624-4467",
+            "score": 0.5011542439460754
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "IBAN DE89 3704 0044 0532 0130 00",
+            "score": 0.8002486228942871
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Deutsche Bank",
+            "score": 0.8562922477722168
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SSN 078-05-1120",
+            "score": 0.807392418384552
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "SIN 193 456 787",
+            "score": 0.6783953309059143
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "5544 332 211-XH",
+            "score": 0.4765133559703827
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "4556737656244470",
+            "score": 0.349025696516037
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SSN",
+            "score": 0.743921160697937
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "Rack unit 192.168",
+            "score": 0.37275829911231995
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "+44 20 7946 0958",
+            "as": "url",
+            "reason": "mistype (true PHONE)",
+            "score": 0.3973616063594818
+          },
+          {
+            "value": "SIN 193 456 787",
+            "as": "credit card number",
+            "reason": "mistype (true SIN)",
+            "score": 0.6783953309059143
+          },
+          {
+            "value": "5544 332 211-XH",
+            "as": "credit card number",
+            "reason": "mistype (true HEALTH_CARD)",
+            "score": 0.4765133559703827
+          },
+          {
+            "value": "j.baker",
+            "as": "person",
+            "reason": "spurious (no GT match)",
+            "score": 0.4163236618041992
+          },
+          {
+            "value": "Fax",
+            "as": "phone number",
+            "reason": "spurious (no GT match)",
+            "score": 0.36687779426574707
+          },
+          {
+            "value": "4556737656244470",
+            "as": "credit card number",
+            "reason": "spurious (no GT match)",
+            "score": 0.349025696516037
+          },
+          {
+            "value": "SSN",
+            "as": "social security number",
+            "reason": "spurious (no GT match)",
+            "score": 0.743921160697937
+          },
+          {
+            "value": "Rack unit 192.168",
+            "as": "ip address",
+            "reason": "spurious (no GT match)",
+            "score": 0.37275829911231995
+          }
+        ],
+        "tp": 16,
+        "fp": 8,
+        "fn": 9
+      }
+    }
+  },
+  "GLiNER-large": {
+    "aggregate": {
+      "ndet": 42,
+      "tp": 35,
+      "fp": 7,
+      "fn": 11,
+      "precision": 0.8333333333333334,
+      "recall": 0.7608695652173914,
+      "f1": 0.7954545454545455,
+      "ms": 2488.1521530005557
+    },
+    "per_doc": {
+      "doc1_onboarding_memo (clean)": {
+        "detections": [
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Sarah Johnson",
+            "score": 0.9310612678527832
+          },
+          {
+            "type_raw": "email",
+            "canonical": "EMAIL",
+            "value": "sarah.johnson@northwind.com",
+            "score": 0.5761801600456238
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "David Chen",
+            "score": 0.9001513719558716
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "March 14, 2024",
+            "score": 0.920502781867981
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Northwind Trading Inc.",
+            "score": 0.8940160274505615
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Michael Rodriguez",
+            "score": 0.9270176887512207
+          },
+          {
+            "type_raw": "address",
+            "canonical": "ADDRESS",
+            "value": "1425 Maple Avenue",
+            "score": 0.9664865136146545
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Springfield, IL 62704",
+            "score": 0.40465837717056274
+          },
+          {
+            "type_raw": "email",
+            "canonical": "EMAIL",
+            "value": "m.rodriguez88@gmail.com",
+            "score": 0.8682294487953186
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "(415) 555-0182",
+            "score": 0.7007851600646973
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "403-555-9910",
+            "score": 0.42112600803375244
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "US SSN",
+            "score": 0.7746855616569519
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "536-90-4399",
+            "score": 0.9028059840202332
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "Corporate card (Visa)",
+            "score": 0.5261978507041931
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "4539 1488 0343 6467",
+            "score": 0.9369454979896545
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "5500 0000 0000 0004",
+            "score": 0.8896098136901855
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Vancouver",
+            "score": 0.7224816679954529
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Chicago office",
+            "score": 0.6817769408226013
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "2024-04-01",
+            "score": 0.9442080855369568
+          },
+          {
+            "type_raw": "url",
+            "canonical": "URL",
+            "value": "https://portal.northwind.com/welcome",
+            "score": 0.9171714782714844
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "192.168.1.42",
+            "score": 0.9830931425094604
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "203.0.113.75",
+            "score": 0.9692772626876831
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "GB29 NWBK 6016 1331 9268 19",
+            "score": 0.7931696176528931
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "Springfield, IL 62704",
+            "as": "location",
+            "reason": "mistype (true ADDRESS)",
+            "score": 0.40465837717056274
+          },
+          {
+            "value": "1425 Maple Avenue",
+            "as": "address",
+            "reason": "spurious (no GT match)",
+            "score": 0.9664865136146545
+          },
+          {
+            "value": "US SSN",
+            "as": "social security number",
+            "reason": "spurious (no GT match)",
+            "score": 0.7746855616569519
+          },
+          {
+            "value": "Corporate card (Visa)",
+            "as": "credit card number",
+            "reason": "spurious (no GT match)",
+            "score": 0.5261978507041931
+          }
+        ],
+        "tp": 19,
+        "fp": 4,
+        "fn": 2
+      },
+      "doc2_incident_report (adversarial)": {
+        "detections": [
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "07/09/2023",
+            "score": 0.5566686391830444
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Dr. Priya Ramaswamy",
+            "score": 0.8885871171951294
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Cloudstrike Systems LLP",
+            "score": 0.9267049431800842
+          },
+          {
+            "type_raw": "date",
+            "canonical": "DATE",
+            "value": "Sept 7th, 2023",
+            "score": 0.9400856494903564
+          },
+          {
+            "type_raw": "person",
+            "canonical": "PERSON",
+            "value": "Jordan Baker",
+            "score": 0.8632960319519043
+          },
+          {
+            "type_raw": "location",
+            "canonical": "LOCATION",
+            "value": "Amman",
+            "score": 0.9703707695007324
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "45.83.201.19",
+            "score": 0.9677208662033081
+          },
+          {
+            "type_raw": "email",
+            "canonical": "EMAIL",
+            "value": "hacker_9x@protonmail.com",
+            "score": 0.9263951182365417
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "+1 (604) 555-2381",
+            "score": 0.9364549517631531
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "+44 20 7946 0958",
+            "score": 0.8374348878860474
+          },
+          {
+            "type_raw": "phone number",
+            "canonical": "PHONE",
+            "value": "1-800-000-0000",
+            "score": 0.7922848463058472
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "4556-7376-5624-4467",
+            "score": 0.913770318031311
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "6011 0009 9013 9424",
+            "score": 0.8744809627532959
+          },
+          {
+            "type_raw": "iban",
+            "canonical": "IBAN",
+            "value": "DE89 3704 0044 0532 0130 00",
+            "score": 0.9704738259315491
+          },
+          {
+            "type_raw": "organization",
+            "canonical": "ORG",
+            "value": "Deutsche Bank",
+            "score": 0.8843981027603149
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SSN 078-05-1120",
+            "score": 0.9080564379692078
+          },
+          {
+            "type_raw": "social security number",
+            "canonical": "SSN",
+            "value": "SIN 193 456 787",
+            "score": 0.5304853320121765
+          },
+          {
+            "type_raw": "credit card number",
+            "canonical": "CREDIT_CARD",
+            "value": "5544 332 211-XH",
+            "score": 0.42613381147384644
+          },
+          {
+            "type_raw": "ip address",
+            "canonical": "IP",
+            "value": "Rack unit 192.168",
+            "score": 0.6073168516159058
+          }
+        ],
+        "false_positives": [
+          {
+            "value": "SIN 193 456 787",
+            "as": "social security number",
+            "reason": "mistype (true SIN)",
+            "score": 0.5304853320121765
+          },
+          {
+            "value": "5544 332 211-XH",
+            "as": "credit card number",
+            "reason": "mistype (true HEALTH_CARD)",
+            "score": 0.42613381147384644
+          },
+          {
+            "value": "Rack unit 192.168",
+            "as": "ip address",
+            "reason": "spurious (no GT match)",
+            "score": 0.6073168516159058
+          }
+        ],
+        "tp": 16,
+        "fp": 3,
+        "fn": 9
+      }
+    }
+  }
+}
