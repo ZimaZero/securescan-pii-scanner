@@ -8,7 +8,8 @@ Current release: **v2.4.1** · Python 3.13 · Linux/WSL2 · MIT
 
 ## Highlights
 
-- Coordinates eleven detection layers with an explicit source-trust hierarchy.
+- Coordinates eleven detection layers, reconciled through an explicit
+  source-trust hierarchy when two layers collide on the same value.
 - Validates SINs, payment cards, supported health cards, and ICAO 9303 MRZ
   fields with checksums where available.
 - Detects Canadian passports, IRCC UCIs, Certificate of Indian Status
@@ -36,7 +37,7 @@ discovery.py ──► format-specific extraction
       │                         │
       │                         └─► PaddleOCR for images/scanned PDF pages
       ▼
-detectors/hybrid_detector.py
+detectors/hybrid_detector.py — eleven layers, run in this order:
       ├─  1 regex and checksum validation
       ├─  2 keyword/context detection
       ├─  3 GLiNER semantic NER
@@ -55,6 +56,15 @@ collision reconciliation ──► optional demote-only LLM verification
       ▼
 banded scoring ──► Markdown · JSON · HTML reports
 ```
+
+The numbering above is execution order, not trust. When two layers claim the
+same value, collision reconciliation resolves it by source-trust priority
+instead, highest wins:
+
+1. `secrets` (highest)
+2. `regex` / `health_card` / `mrz`
+3. `passport` / `uci` / `status_card` / `ocr_recovery` / `keyword_context`
+4. `gliner` / `drivers_license` (lowest — loses every collision by design)
 
 All eleven layers receive the full extracted text except GLiNER, which may be
 disabled by file type and is limited to a configurable text prefix. Detection
@@ -266,14 +276,34 @@ structure in the recorded corpus comparison.
 
 ## Tests
 
-Run project tests inside the CPU container:
+33 standalone test modules under `tests/`, each with its own pass/fail table
+and also pytest-compatible, cover:
+
+- Every detection layer individually — regex (SIN, credit card, phone,
+  IP/URL), keyword/context, GLiNER (backend selection and its junk filter),
+  secrets, health cards, passports, IRCC UCI, status-card registration
+  numbers, driver's licences, MRZ, deterministic OCR recovery, and the
+  financial checksum-tier split.
+- Extraction per file family — PDF native text, images and OCR confidence
+  scoring, multi-frame TIFF, EML, PPTX, and the binary-content guard.
+- Orchestration and edge behavior — scan-boundary exclusions, layer
+  selection, backend fault injection, extraction-failure status, scan
+  cancellation, scoring bands, HTML masking, the silent-miss mismatch alarm,
+  the optional LLM verifier, and GUI logic helpers.
+- Format coverage across all 19 supported extensions (`test_format_coverage.py`,
+  16/16 fixtures green).
+
+Run any module directly inside the CPU container:
 
 ```bash
 docker compose run --rm securescan-cpu python tests/test_format_coverage.py
 docker compose run --rm securescan-cpu python tests/test_orchestration_audit.py
 ```
 
-Each test module is also executable directly with the same container command.
+There is no aggregator script; loop over `tests/test_*.py` to run the full
+suite. Two evaluation harnesses are run manually rather than as part of this
+loop — `tests/run_canadian_eval.py` and `tests/run_specimen_eval.py` — since
+they exercise NER/OCR/optional-LLM paths against larger external corpora.
 
 ## Build release archives
 
