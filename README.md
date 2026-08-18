@@ -290,8 +290,10 @@ and also pytest-compatible, cover:
   selection, backend fault injection, extraction-failure status, scan
   cancellation, scoring bands, HTML masking, the silent-miss mismatch alarm,
   the optional LLM verifier, and GUI logic helpers.
-- Format coverage across all 19 supported extensions (`test_format_coverage.py`,
-  16/16 fixtures green).
+- Format coverage — 16 fixtures spanning 8 extensions (`.csv`, `.docx`,
+  `.eml`, `.json`, `.pdf`, `.png`, `.pptx`, `.xlsx`), 16/16 green. The other
+  11 supported extensions share those same extractors and have no fixture of
+  their own.
 
 Run any module directly inside the CPU container:
 
@@ -300,8 +302,14 @@ docker compose run --rm securescan-cpu python tests/test_format_coverage.py
 docker compose run --rm securescan-cpu python tests/test_orchestration_audit.py
 ```
 
-There is no aggregator script; loop over `tests/test_*.py` to run the full
-suite. Two evaluation harnesses are run manually rather than as part of this
+There is no aggregator script. Run the full suite with:
+
+```bash
+for t in tests/test_*.py; do
+  docker compose run --rm securescan-cpu python "$t" || echo "FAILED: $t"
+done
+```
+ Two evaluation harnesses are run manually rather than as part of this
 loop — `tests/run_canadian_eval.py` and `tests/run_specimen_eval.py` — since
 they exercise NER/OCR/optional-LLM paths against larger external corpora.
 
