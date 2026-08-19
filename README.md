@@ -105,6 +105,67 @@ by confidence before detection.
 No host-side Python environment is required. Application Python and all runtime
 dependencies remain inside the containers.
 
+## Install on a clean machine
+
+Verified on a clean Windows 11 laptop with an RTX 4060, 2026-08-18.
+
+### 1. Windows: install WSL2
+
+In PowerShell as Administrator:
+
+```powershell
+wsl --install
+```
+
+Reboot. Ubuntu then opens and asks for a username and password. If
+`wsl --install` fails with a catastrophic-failure error, confirm hardware
+virtualization is enabled in the BIOS, reboot, and retry. If WSL installs but
+no distribution appears, run `wsl --install -d Ubuntu`.
+
+### 2. Linux: install Docker Engine
+
+```bash
+curl -fsSL https://get.docker.com | sudo sh
+sudo service docker start
+sudo usermod -aG docker $USER
+```
+
+Close and reopen the shell so the group change applies, then verify:
+
+```bash
+docker compose version
+```
+
+### 3. Optional: NVIDIA GPU support
+
+Confirm the GPU is visible from inside WSL2:
+
+```bash
+nvidia-smi
+```
+
+If it prints a table, the Windows driver is present and only the container
+toolkit is missing:
+
+```bash
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey \
+  | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list \
+  | sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
+  | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo service docker restart
+```
+
+The daemon restart is required. Without it the GPU service builds and runs but
+falls back to CPU.
+
+### Disk
+
+The CPU image is 14.19 GB. The GPU image adds the CUDA 12.6 runtime base on
+top of it. Allow at least 40 GB free before starting.
+
 ## Download and build
 
 ```bash
