@@ -7,7 +7,6 @@ Supported detections:
 - Phone numbers
 - Credit card numbers (validated via Luhn algorithm)
 - Canadian SIN (9-digit)
-- US SSN (3-2-4 format)
 - Date-of-birth patterns
 
 Uses strict patterns and validation rules and returns structured findings to
@@ -84,7 +83,6 @@ CREDITCARD_RE = re.compile(
 # invalid groupings such as Alberta licence ``123456-789`` and mixed layouts.
 # Dots are also invalid and made internal-IP fragments look SIN-shaped.
 SIN_RE = re.compile(r"\b(?:\d{9}|\d{3}-\d{3}-\d{3}|\d{3} \d{3} \d{3})\b")
-SSN_RE = re.compile(r"\b\d{3}-\d{2}-\d{4}\b")
 
 DOB_RE = re.compile(
     r"\b(?:(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}"  # YYYY-MM-DD
@@ -245,7 +243,6 @@ def detect_pii(text: str) -> dict:
         "credit_card_unverified": [],
         "sin_9digits": [],
         "sin_unverified": [],
-        "ssn": [],
         "date": [],
         "ip_address": [],
         "url": [],

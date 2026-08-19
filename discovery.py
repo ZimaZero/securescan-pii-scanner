@@ -23,6 +23,7 @@ Now enhanced with:
 
 import contextlib
 import os
+import re
 import subprocess
 import threading
 from datetime import datetime
@@ -134,8 +135,42 @@ def _replace_latest_report(html_document: str) -> None:
 
 
 def _report_timestamp() -> str:
-    """Return a collision-resistant timestamp for a folder-scan report."""
-    return datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    """Return the second-granularity timestamp portion of a report filename
+    (YYYY-MM-DD_HH-MM-SS). Same-second collisions for the same scan target
+    are disambiguated separately by _unique_report_stem()'s numeric suffix,
+    not by baking sub-second precision into this value."""
+    return datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+
+_TARGET_SANITIZE_RE = re.compile(r"[^a-z0-9]+")
+_TARGET_NAME_MAX_LEN = 40
+
+
+def _sanitize_target_name(scan_root: str) -> str:
+    """Basename of the scanned root, lowercased with runs of non-alphanumeric
+    characters collapsed to a single underscore and truncated to 40 chars,
+    for use in report filenames. Falls back to "root" when the basename is
+    empty (e.g. scanning "/") or sanitizes away to nothing (e.g. ".")."""
+    basename = os.path.basename(os.path.normpath(scan_root))
+    slug = _TARGET_SANITIZE_RE.sub("_", basename.lower()).strip("_")
+    slug = slug[:_TARGET_NAME_MAX_LEN]
+    return slug or "root"
+
+
+def _unique_report_stem(dated_dir: str, timestamp: str, target_name: str) -> str:
+    """report_<timestamp>_<target_name>, or that stem with a numeric _2, _3,
+    ... suffix appended if a report set with that exact stem already exists
+    in dated_dir (a same-second collision for the same scan target)."""
+    base = f"report_{timestamp}_{target_name}"
+    stem = base
+    suffix = 1
+    while any(
+        os.path.exists(os.path.join(dated_dir, stem + ext))
+        for ext in (".md", ".json", ".html")
+    ):
+        suffix += 1
+        stem = f"{base}_{suffix}"
+    return stem
 
 
 def _dated_output_dir() -> str:
@@ -816,6 +851,17 @@ def _scan_folder_impl(
     active_layers = requested_layers & ALL_LAYERS
     disabled_layers_scan = sorted(ALL_LAYERS - active_layers)
     resolved_enabled_layers = frozenset(active_layers) if enabled_layers is not None else None
+
+    # Snapshot GLiNER's run counter before scanning starts (only meaningful
+    # when the layer is active for this scan) so the report can tell whether
+    # GLiNER actually executed this scan, as opposed to every file being
+    # excluded by type (GLINER_SKIP_EXTENSIONS) or run_ner=False leaving the
+    # module-level singleton's device stale from an earlier scan in the same
+    # process. See the gliner_device computation near report generation below.
+    gliner_run_count_before = None
+    if "gliner" in active_layers:
+        from detectors.gliner_detector import run_counter as _gliner_run_counter
+        gliner_run_count_before = _gliner_run_counter()
     filtered_count = sum(
         os.path.splitext(path.lower())[1] not in selected_extensions for path in files
     )
@@ -1093,9 +1139,11 @@ def _scan_folder_impl(
     os.makedirs(dated_dir, mode=0o700, exist_ok=True)
     os.chmod(dated_dir, 0o700)
     timestamp = _report_timestamp()
-    md_path = os.path.join(dated_dir, f"report_{timestamp}.md")
-    json_path = os.path.join(dated_dir, f"report_{timestamp}.json")
-    html_path = os.path.join(dated_dir, f"report_{timestamp}.html")
+    target_name = _sanitize_target_name(discovery_label or abs_folder)
+    report_stem = _unique_report_stem(dated_dir, timestamp, target_name)
+    md_path = os.path.join(dated_dir, f"{report_stem}.md")
+    json_path = os.path.join(dated_dir, f"{report_stem}.json")
+    html_path = os.path.join(dated_dir, f"{report_stem}.html")
 
     # SecureScan's own peak RSS/CPU (see system_monitor.py) — never the
     # whole-VM figure, which doesn't track scan size at all (a 1-file scan
@@ -1124,15 +1172,21 @@ def _scan_folder_impl(
 
     # GLiNER's execution provider can only be known once it has actually run
     # (module-level singleton, see gliner_detector.py) — query it only when
-    # this scan enabled the layer, since the singleton persists across scans
-    # in the GUI and would otherwise echo a stale device from an earlier
-    # scan that had GLiNER on. PaddleOCR has no such fallback path: its
+    # this scan enabled the layer AND the run counter actually advanced
+    # during this scan, since the singleton persists across scans in the GUI
+    # and would otherwise echo a stale device from an earlier scan that had
+    # GLiNER on even when every file this time was excluded by type or
+    # produced no GLiNER call. PaddleOCR has no such fallback path: its
     # device is set directly from config on every call, so the configured
     # value is the actual value.
     gliner_device = None
-    if "gliner" in report_active_layers:
-        from detectors.gliner_detector import active_device as _gliner_active_device
-        gliner_device = _gliner_active_device()
+    if "gliner" in report_active_layers and gliner_run_count_before is not None:
+        from detectors.gliner_detector import (
+            active_device as _gliner_active_device,
+            run_counter as _gliner_run_counter,
+        )
+        if _gliner_run_counter() != gliner_run_count_before:
+            gliner_device = _gliner_active_device()
     peak_stats = {
         "peak_rss_mb": monitor_peaks.get("peak_rss_mb"),
         "peak_cpu_percent": monitor_peaks.get("peak_cpu_percent"),

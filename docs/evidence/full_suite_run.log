@@ -1,0 +1,198 @@
+=== tests/test_backend_faults.py ===
+Trigger D covers OCR-attempted scanned PDFs                PASS    unreadable
+One GLiNER failure is reported; other findings survive     PASS    ['gliner']
+All detectors dead emits degraded warning/report note      PASS    score=0
+----------------------------------------------------------------------------------------------------
+SUMMARY: 6/6 passed
+=== tests/test_binary_content_guard.py ===
+JSON summary skipped count includes the binary-content skip            PASS    skipped=1
+Markdown skipped section shows 'binary content' reason                 PASS    present
+HTML skipped section shows 'binary content' reason                     PASS    present
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 12/12 passed
+=== tests/test_cancel_scan.py ===
+cancel_event=None: all files scanned, scan_cancelled false     PASS    scanned=4 cancelled=False
+cancel_event=None: LLM verification pass still runs            PASS    verify_findings call_count=4
+cancel_event provided but never set: all files scanned         PASS    scanned=5 cancelled=False
+----------------------------------------------------------------------------------------------------
+SUMMARY: 7/7 passed
+=== tests/test_drivers_license.py ===
+SIN   asterisk-embedded SIN-shaped suffix is rejected PASS    _metadata=9                   
+SIN   explicit SIN context permits embedded value PASS    _metadata=9, identifier.financial.sin=1
+HYBRID full NS licence wins; embedded SIN absent PASS    _metadata=9, identifier.government.drivers_license_ns=1
+------------------------------------------------------------------------------------------------
+SUMMARY: 59/59 passed, 0 failed
+=== tests/test_eml_extractor.py ===
+scan_path detects SIN planted in Subject header                      PASS    [{"value": "132-677-360", "confidence": 0.6375, "source": "keyword_context", "risk_level": "HIGH", "category": "identifier.financial.sin"}]
+scan_path detects credit card planted in HTML body                   PASS    [{"value": "4111 1111 1111 1111", "confidence": 0.55, "source": "regex", "risk_level": "MEDIUM", "category": "identifier.financial_unverified.credit_card"}]
+scan_path scan_status is 'scanned' (not extraction_failed)           PASS    scanned
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 11/11 passed
+=== tests/test_extraction_status.py ===
+HTML failed section, UNKNOWN risk, and summary         PASS    present
+JSON failed section, statuses, and summary             PASS    {"failed": 5, "gliner_device": null, "high_risk": 0, "low_risk": 0, "medium_risk": 0, "no_pii": 1, "ocr_device": null, "peak_cpu_percent": null, "peak_rss_mb": null, "scan_cancelled": false, "scanned": 1, "skipped": 1, "workers": null}
+masked HTML export removes raw failure reasons         PASS    raw reasons absent
+------------------------------------------------------------------------------------------
+SUMMARY: 10/10 passed
+=== tests/test_face_detector.py ===
+OpenCV import failure returns unavailable sentinel         PASS    faces=-1
+metadata extraction survives unavailable OpenCV            PASS    faces_detected=absent
+single-frame metadata detects once after EXIF transpose    PASS    calls=1 sizes=[(1000, 260)]
+------------------------------------------------------------------------------------------
+SUMMARY: 5/5 passed
+=== tests/test_financial_identifier_tiers.py ===
+PASS  Enron labelled Visa remains HIGH
+PASS  Enron ticketless card remains visible at MEDIUM
+PASS  dot-separated SIN rejected
+PASS  SIN grouping accepts only 3-3-3 or compact
+SUMMARY: 8/8 passed
+=== tests/test_format_coverage.py ===
+email_notice.eml                 eml         83  PASS
+deck_summary.pptx                pptx        79  PASS
+----------------------------------------------------------------------
+SUMMARY: 16/16 files fully passed, 0 failed
+
+=== tests/test_gliner_backend.py ===
+first-use export logs once; cached load is silent          PASS    /tmp/tmp25un5q3e/onnx-cache/model.onnx
+partial cache forces a complete re-export                  PASS    /tmp/tmp25un5q3e/onnx-cache
+real PyTorch/ONNX fixture findings are identical           PASS    9/9
+------------------------------------------------------------------------------------------------
+SUMMARY: 8/8 passed
+=== tests/test_gliner_filter.py ===
+CHUNKS   'token-bound chunks retain overlap'      PASS
+CHUNKS   'normal prose remains word-bound'        PASS
+CHUNKS   'counting tokenizer access is serialized' PASS
+------------------------------------------------------------
+SUMMARY: 23/23 passed, 0 failed
+=== tests/test_gui_logic.py ===
+STATE      done_scan_state(cancelled=True) preserves done/total for the banner PASS    4                             
+STATE      error_scan_state sets phase=error with message             PASS    error                         
+SMOKE      import gui succeeds, no server started                     PASS    ok                            
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 161/161 passed, 0 failed
+=== tests/test_health_cards.py ===
+SCORE Bare ON checksum-only -> MEDIUM band, not HIGH PASS    score=34 band=MEDIUM        
+SCORE ON checksum + OHIP context -> HIGH band PASS    score=75 band=HIGH          
+SCORE Aadhaar Ref: number (OHIP-checksum collision, no health keyword) -> MEDIUM band PASS    score=34 band=MEDIUM        
+------------------------------------------------------------------------------------------
+SUMMARY: 43/43 passed, 0 failed
+=== tests/test_image_extractor_confidence.py ===
+[32mCreating model: ('en_PP-OCRv5_mobile_rec', None, None)[0m
+[32mModel files already exist. Using cached files. To redownload, please delete the directory manually: `/root/.cache/securescan/paddleocr/official_models/en_PP-OCRv5_mobile_rec`.[0m
+[PASS] test_real_paddleocr_contract
+[PASS] test_webp_is_ocr_supported
+SUMMARY: 7/7 passed
+=== tests/test_ip_url.py ===
+SKIP   five octets                  PASS   
+SKIP   version-ish number           PASS   
+SKIP   bare domain, no scheme       PASS   
+----------------------------------------------------------------------
+SUMMARY: 13/13 passed, 0 failed
+=== tests/test_keyword_negation.py ===
+DATE       joined DOB1980 form is accepted                  PASS  
+DATE       EXP inside EXPERIENCE is not a field label       PASS  
+DATE       future-date signal uses injected as-of date      PASS  
+------------------------------------------------------------------------------
+SUMMARY: 20/20 passed, 0 failed
+=== tests/test_layer_selection.py ===
+CLI        parses comma-separated list, strips whitespace                 PASS    ['regex', 'secrets']          
+CLI        unknown layer name raises ArgumentTypeError                    PASS    True                          
+CLI        empty --layers value raises ArgumentTypeError                  PASS    True                          
+-------------------------------------------------------------------------------------------------------------------
+SUMMARY: 20/20 passed, 0 failed
+=== tests/test_llm_verifier.py ===
+degradation  model missing -> disabled + status recorded                  PASS  
+degradation  findings pass through unverified when verify=False           PASS  
+disabled     LLM_VERIFICATION_ENABLED=False -> zero HTTP calls            PASS  
+------------------------------------------------------------------------------------------
+SUMMARY: 15/15 passed, 0 failed
+=== tests/test_masking.py ===
+ANCHOR    link + target for 'duplicate_scan.jpg' survive masked export PASS    intact                
+ANCHOR    link + target for 'duplicate_scan.jpg' survive masked export PASS    intact                
+ANCHOR    link + target for 'Sample_Driving_Licence.jpg' survive masked export PASS    intact                
+----------------------------------------------------------------------------------------------------
+SUMMARY: 77/77 passed, 0 failed
+=== tests/test_mismatch_alarm.py ===
+27. Identifier clearance still wins even with layers disabled          PASS    None      
+28. No trigger at all -> disabled_layers irrelevant, still silent      PASS    None      
+29. disabled_layers=None (default) behaves exactly as before           PASS    ('filename', [])
+----------------------------------------------------------------------------------------------------
+SUMMARY: 38/38 passed, 0 failed
+=== tests/test_mrz.py ===
+GATE    C retains TD2 V type                           PASS    mrz_dob=['910202'], mrz_document_number=['AC54321'], mrz_expiry=['310202']
+GATE    D suppresses uncorroborated prose document     PASS    {}                                      
+GATE    D retains unverified doc with valid dates      PASS    mrz_dob=['900101'], mrz_expiry=['300101'], mrz_unverified=['AC0123456']
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 42/42 passed, 0 failed
+=== tests/test_multiframe_tiff.py ===
+confidence is weighted by non-whitespace text length       PASS    confidence=60.0
+all-empty frames fall back to mean confidence              PASS    text='' confidence=50.0
+animated GIF remains frame-zero-only                       PASS    calls=1 result=('FRAME ZERO', 91.0, {'psm_used': 3})
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 7/7 passed
+=== tests/test_ocr_recovery.py ===
+PASS test_no_valid_variant_returns_nothing
+PASS test_search_cap_abandons_without_partial_search
+PASS test_normal_and_unchecksummed_types_never_enter_recovery
+PASS test_hybrid_tier_provenance_and_all_report_formats
+SUMMARY: 5/5 passed, 0 failed
+=== tests/test_orchestration_audit.py ===
+interactive single-file CLI uses full scan_path pipeline PASS    call('/tmp/tmp3kkchor8/interactive.txt')
+scanner --path accepts a file and uses scan_path     PASS    call('/tmp/tmpfpyd637c/noninteractive.txt', verify=None, enabled_layers=None)
+scan_path file enters one-item full pipeline         PASS    call('/tmp/tmp6qog1jbw', verify=False, monitor=<__main__.StubMonitor object at 0x734624ac62c0>, progress_callback=None, run_ner=None, ner_max_chars=None, max_workers=None, max_file_size_mb=None, ocr_workers=None, cancel_event=None, extensions={'.txt'}, enabled_layers=None, files_override=['/tmp/tmp6qog1jbw/one.txt'], discovery_label='/tmp/tmp6qog1jbw/one.txt')
+--------------------------------------------------------------------------------------
+SUMMARY: 8/8 passed
+=== tests/test_passports.py ===
+SKIP  Email, no passport context       PASS    {}                          
+SKIP  SIN, no passport context         PASS    {}                          
+SKIP  Bare 9-digit, no keyword         PASS    {}                          
+--------------------------------------------------------------------------------------------
+SUMMARY: 10/10 passed, 0 failed
+=== tests/test_pdf_native_text.py ===
+native contained in OCR is not duplicated          PASS    'Identity record: SIN 132-677-360'
+OCR contained in native is not duplicated          PASS    'SIN 132-677-360'
+distinct native and OCR text are both retained     PASS    'SIN 132-677-360\nDocument photograph'
+------------------------------------------------------------------------------------------
+SUMMARY: 4/4 passed
+=== tests/test_phone.py ===
+SKIP     bare 10-digit ID, unrelated keyword      PASS   
+SKIP     bare 10-digit ID, generic label          PASS   
+SKIP     CSV cell, no phone header context        PASS   
+----------------------------------------------------------------------
+SUMMARY: 11/11 passed, 0 failed
+=== tests/test_pptx_extractor.py ===
+scan_path detects SIN planted in speaker notes                       PASS    [{"value": "132-677-360", "confidence": 0.6375, "source": "keyword_context", "risk_level": "HIGH", "category": "identifier.financial.sin"}]
+scan_path detects phone planted in slide body                        PASS    [{"value": "416-555-0199", "confidence": 0.95, "source": "regex", "risk_level": "MEDIUM", "category": "contact.phone"}]
+scan_path scan_status is 'scanned' (not extraction_failed)           PASS    scanned
+--------------------------------------------------------------------------------------------------------------
+SUMMARY: 10/10 passed
+=== tests/test_scan_boundaries.py ===
+latest.html is published after the unique HTML report      PASS    latest_bytes=9655 unique_bytes=9655
+run_ner=False removes gliner from scan-level report layers PASS    {'enabled': ['drivers_license', 'health_card', 'keyword_context', 'mrz', 'ocr_recovery', 'passport', 'regex', 'secrets', 'status_card', 'uci'], 'disabled': ['gliner'], 'total': 11}
+getsize PermissionError is recorded as skipped             PASS    summary={'scan_cancelled': False, 'peak_rss_mb': None, 'peak_cpu_percent': None, 'workers': 1, 'ocr_device': 'cpu', 'gliner_device': None, 'scanned': 1, 'failed': 0, 'skipped': 1, 'high_risk': 0, 'medium_risk': 0, 'low_risk': 0, 'no_pii': 1} details=[{'file': '/tmp/tmp8r8nqenn/locked.txt', 'reason': 'permission denied', 'scan_status': 'skipped'}]
+----------------------------------------------------------------------------------------------
+SUMMARY: 14/14 passed
+=== tests/test_scoring.py ===
+test_bare_dates_never_exceed_low                                      PASS
+test_bare_dates_do_not_inflate_higher_bands                           PASS
+test_invalid_inputs_score_zero                                        PASS
+------------------------------------------------------------------------------
+ALL PASS
+=== tests/test_secrets.py ===
+SKIP  pass = normal word           PASS      {}                                      
+SKIP  passing_grade var            PASS      {}                                      
+SKIP  base64 image fragment        PASS      {}                                      
+------------------------------------------------------------------------------------------
+SUMMARY: 21/21 passed, 0 failed
+=== tests/test_status_card.py ===
+ Container pii_scanner-securescan-cpu-run-b71331a3337d Created 
+PASS test_public_format_with_sourced_context
+PASS test_context_absent_and_invalid_lengths
+PASS test_hybrid_taxonomy_tier_and_source
+SUMMARY: 3/3 passed, 0 failed
+=== tests/test_uci.py ===
+ Container pii_scanner-securescan-cpu-run-8cfa4cfb407d Created 
+PASS test_public_formats
+PASS test_context_absent_and_invalid_lengths
+PASS test_hybrid_taxonomy_tier_and_source
+SUMMARY: 3/3 passed, 0 failed

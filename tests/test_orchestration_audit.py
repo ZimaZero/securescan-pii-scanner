@@ -137,12 +137,18 @@ def main():
         )
     )
 
-    folder_timestamps = (discovery._report_timestamp(), discovery._report_timestamp())
+    with tempfile.TemporaryDirectory() as dated_dir:
+        timestamp = discovery._report_timestamp()
+        target_name = "sample"
+        base_stem = f"report_{timestamp}_{target_name}"
+        for ext in (".md", ".json", ".html"):
+            (Path(dated_dir) / (base_stem + ext)).write_text("x", encoding="utf-8")
+        second_stem = discovery._unique_report_stem(dated_dir, timestamp, target_name)
     cases.append(
         (
-            "folder reports: consecutive basenames differ",
-            folder_timestamps[0] != folder_timestamps[1],
-            "different" if folder_timestamps[0] != folder_timestamps[1] else "collision",
+            "folder reports: same-second collision gets a numeric suffix",
+            second_stem == f"{base_stem}_2",
+            second_stem,
         )
     )
 

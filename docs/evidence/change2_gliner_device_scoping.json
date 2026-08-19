@@ -1,0 +1,23 @@
+{
+  "scan1": {
+    "description": "GLiNER enabled, real .txt file -- GLiNER actually executes",
+    "gliner_run_counter_before": 0,
+    "gliner_run_counter_after": 1,
+    "gliner_actually_ran": true,
+    "reported_gliner_device": "cpu"
+  },
+  "scan2": {
+    "description": "GLiNER enabled for the scan, only file is '.csv' (GLINER_SKIP_EXTENSIONS) -- GLiNER never executes this scan, run after a prior scan (scan1) that DID use GLiNER",
+    "skip_extension_used": ".csv",
+    "gliner_run_counter_before": 1,
+    "gliner_run_counter_after": 1,
+    "gliner_actually_ran": false,
+    "reported_gliner_device": null,
+    "module_singleton_device_still_set": "cpu"
+  },
+  "verdict": {
+    "scan1_measured_a_real_device": true,
+    "scan2_correctly_reports_none": true,
+    "singleton_was_not_reloaded": true
+  }
+}

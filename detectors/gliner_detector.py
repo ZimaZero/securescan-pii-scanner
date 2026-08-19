@@ -116,6 +116,14 @@ _GLOBAL_BACKEND = None
 # scan) — see active_device().
 _GLOBAL_DEVICE = None
 _MODEL_LOCK = threading.Lock()
+# Incremented once per call that actually reaches a loaded model (see
+# detect_entities_gliner()). The singleton above persists across scans in a
+# long-lived GUI process, so _GLOBAL_DEVICE alone can't tell a caller whether
+# GLiNER ran in THIS scan or is just echoing a stale value from an earlier
+# one — discovery.py snapshots run_counter() before a scan and compares it
+# after to decide whether active_device() reflects this scan at all.
+_RUN_COUNTER = 0
+_RUN_COUNTER_LOCK = threading.Lock()
 _COUNTING_TOKENIZER = None
 # This lock protects only the separately loaded chunk-counting tokenizer.
 # GLiNER's model-owned tokenizer and predict_entities() inference path never
@@ -423,6 +431,15 @@ def active_device():
     return _GLOBAL_DEVICE
 
 
+def run_counter() -> int:
+    """Monotonic count of completed detect_entities_gliner() model calls,
+    process-wide. Callers snapshot this before a scan and compare after to
+    tell whether GLiNER actually executed during that scan, independent of
+    whether the singleton model/device were already resolved by an earlier
+    scan."""
+    return _RUN_COUNTER
+
+
 def _get_counting_tokenizer(model=None):
     """Return an isolated tokenizer used only to bound chunk token counts."""
     global _COUNTING_TOKENIZER
@@ -638,6 +655,10 @@ def detect_entities_gliner(text: str) -> Dict[str, List[Tuple[str, float]]]:
         model = _get_model()
     except Exception as e:
         raise RuntimeError(f"GLiNER load failed: {e}") from e
+
+    global _RUN_COUNTER
+    with _RUN_COUNTER_LOCK:
+        _RUN_COUNTER += 1
 
     # Collect best confidence per (label, value).
     best: Dict[str, Dict[str, float]] = {}

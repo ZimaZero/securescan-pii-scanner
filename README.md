@@ -270,7 +270,7 @@ docker compose run --rm securescan-cpu python main.py
 ```
 
 Reports are written under `outputs/YYYY-MM-DD/`. Each scan produces matching
-`report_<timestamp>.md`, `.json`, and `.html` files, and `outputs/latest.html`
+`report_<date>_<time>_<target>.md`, `.json`, and `.html` files, and `outputs/latest.html`
 tracks the newest HTML report.
 
 ## Optional local verification

@@ -62,7 +62,7 @@ def _extension_filter_cases(root):
     for name in ("only.pdf", "notes.txt", "photo.jpg", "slides.pptx", "ignored.xyz"):
         (root / name).write_bytes(b"fixture")
 
-    fixed_timestamp = "20260724_120000_000000"
+    fixed_timestamp = "2026-07-24_12-00-00"
 
     def run_scan(pass_extensions, include_kwarg=True):
         output = io.StringIO()

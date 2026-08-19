@@ -1,0 +1,35 @@
+Full 33-module test suite run — 2026-08-19T04:02:28Z
+
+tests/test_backend_faults.py                  SUMMARY: 6/6 passed
+tests/test_binary_content_guard.py            SUMMARY: 12/12 passed
+tests/test_cancel_scan.py                     SUMMARY: 7/7 passed
+tests/test_drivers_license.py                 SUMMARY: 59/59 passed, 0 failed
+tests/test_eml_extractor.py                   SUMMARY: 11/11 passed
+tests/test_extraction_status.py               SUMMARY: 10/10 passed
+tests/test_face_detector.py                   SUMMARY: 5/5 passed
+tests/test_financial_identifier_tiers.py      SUMMARY: 8/8 passed
+tests/test_format_coverage.py                 SUMMARY: 16/16 files fully passed, 0 failed
+tests/test_gliner_backend.py                  SUMMARY: 8/8 passed
+tests/test_gliner_filter.py                   SUMMARY: 23/23 passed, 0 failed
+tests/test_gui_logic.py                       SUMMARY: 161/161 passed, 0 failed
+tests/test_health_cards.py                    SUMMARY: 43/43 passed, 0 failed
+tests/test_image_extractor_confidence.py      SUMMARY: 7/7 passed
+tests/test_ip_url.py                          SUMMARY: 13/13 passed, 0 failed
+tests/test_keyword_negation.py                SUMMARY: 20/20 passed, 0 failed
+tests/test_layer_selection.py                 SUMMARY: 20/20 passed, 0 failed
+tests/test_llm_verifier.py                    SUMMARY: 15/15 passed, 0 failed
+tests/test_masking.py                         SUMMARY: 77/77 passed, 0 failed
+tests/test_mismatch_alarm.py                  SUMMARY: 38/38 passed, 0 failed
+tests/test_mrz.py                             SUMMARY: 42/42 passed, 0 failed
+tests/test_multiframe_tiff.py                 SUMMARY: 7/7 passed
+tests/test_ocr_recovery.py                    SUMMARY: 5/5 passed, 0 failed
+tests/test_orchestration_audit.py             SUMMARY: 8/8 passed
+tests/test_passports.py                       SUMMARY: 10/10 passed, 0 failed
+tests/test_pdf_native_text.py                 SUMMARY: 4/4 passed
+tests/test_phone.py                           SUMMARY: 11/11 passed, 0 failed
+tests/test_pptx_extractor.py                  SUMMARY: 10/10 passed
+tests/test_scan_boundaries.py                 SUMMARY: 14/14 passed
+tests/test_scoring.py                         ALL PASS
+tests/test_secrets.py                         SUMMARY: 21/21 passed, 0 failed
+tests/test_status_card.py                     SUMMARY: 3/3 passed, 0 failed
+tests/test_uci.py                             SUMMARY: 3/3 passed, 0 failed
