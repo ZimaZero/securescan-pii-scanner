@@ -370,7 +370,7 @@ for t in tests/test_*.py; do
   docker compose run --rm securescan-cpu python "$t" || echo "FAILED: $t"
 done
 ```
- Two evaluation harnesses are run manually rather than as part of this
+Two evaluation harnesses are run manually rather than as part of this
 loop — `tests/run_canadian_eval.py` and `tests/run_specimen_eval.py` — since
 they exercise NER/OCR/optional-LLM paths against larger external corpora.
 
