@@ -1,0 +1,2163 @@
+{
+  "generated": "2026-08-19T21:29:57.996836",
+  "generator": {
+    "name": "SecureScan",
+    "version": "2.4.1",
+    "git_commit": "bb80485",
+    "detection_layers": 11
+  },
+  "layers": {
+    "enabled": [
+      "drivers_license",
+      "gliner",
+      "health_card",
+      "keyword_context",
+      "mrz",
+      "ocr_recovery",
+      "passport",
+      "regex",
+      "secrets",
+      "status_card",
+      "uci"
+    ],
+    "disabled": [],
+    "total": 11
+  },
+  "total_files": 16,
+  "skipped_files": 0,
+  "skipped_file_details": [],
+  "summary": {
+    "scan_cancelled": false,
+    "peak_rss_mb": 2847.1,
+    "peak_cpu_percent": 1057.2,
+    "workers": 4,
+    "ocr_device": "cpu",
+    "gliner_device": "cpu",
+    "scanned": 16,
+    "failed": 0,
+    "skipped": 0,
+    "high_risk": 14,
+    "medium_risk": 1,
+    "low_risk": 1,
+    "no_pii": 0
+  },
+  "failed_files": [],
+  "verification": {
+    "status": "disabled",
+    "model": "qwen2.5:3b",
+    "routed": 0,
+    "demoted": 0,
+    "errors": 0,
+    "demoted_findings": []
+  },
+  "mismatch_alarms": [
+    {
+      "file": "/mnt/demo/passport_new_data_page_mrz_annotated.jpg",
+      "triggered_by": "filename+content+face",
+      "matched_keywords": [
+        "PASSEPORT",
+        "PASSPORT"
+      ],
+      "reason": "Document-type indicators present but no identifier was extracted — manual review recommended.",
+      "layers_disabled": []
+    }
+  ],
+  "files": [
+    {
+      "file": "/mnt/demo/12516554_10207519563300831_634996911_n.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 77,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "15/04/1981",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "entity.organization": [
+          {
+            "value": "Medicare",
+            "confidence": 0.8071408271789551,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "Assurance-maladie",
+            "confidence": 0.512092649936676,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "New",
+            "confidence": 0.7078032493591309,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "runwick",
+            "confidence": 0.5264319777488708,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "PAULM LEWIS",
+            "confidence": 0.9708274006843567,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.health_card_nb": [
+          {
+            "value": "916915916",
+            "confidence": 0.6,
+            "source": "health_card",
+            "risk_level": "HIGH",
+            "category": "identifier.government.health_card_nb"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 7,
+          "high_confidence": 2,
+          "sources": {
+            "secrets": 0,
+            "regex": 1,
+            "health_card": 1,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 5,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 103
+        }
+      },
+      "metadata": {
+        "width": 900,
+        "height": 550,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 73.9,
+        "faces_detected": 0,
+        "ocr_confidence": 94.5,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 103,
+        "ocr_line_count": 11,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/AB_standalone_current.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 77,
+      "matches": {
+        "identifier.personal.dob": [
+          {
+            "value": "1988/06/05",
+            "confidence": 0.6375,
+            "source": "keyword_context",
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.dob"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "Alberta",
+            "confidence": 0.9842900633811951,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "Abertan",
+            "confidence": 0.8067398071289062,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "Sally Sample",
+            "confidence": 0.9050756096839905,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.health_card_ab": [
+          {
+            "value": "123450000",
+            "confidence": 0.6,
+            "source": "health_card",
+            "risk_level": "HIGH",
+            "category": "identifier.government.health_card_ab"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 5,
+          "high_confidence": 2,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 1,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 1,
+            "gliner": 3,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 268
+        }
+      },
+      "metadata": {
+        "width": 750,
+        "height": 422,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 95.53,
+        "faces_detected": 0,
+        "ocr_confidence": 99.0,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 268,
+        "ocr_line_count": 14,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/AB_front_specimen.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 74,
+      "matches": {
+        "entity.person": [
+          {
+            "value": "SEEEEEN",
+            "confidence": 0.5219935774803162,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.drivers_license_ab": [
+          {
+            "value": "134711-320",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_ab"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 2,
+          "high_confidence": 0,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 1,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 245
+        }
+      },
+      "metadata": {
+        "width": 740,
+        "height": 482,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 157.36,
+        "dpi": [
+          96,
+          96
+        ],
+        "faces_detected": 3,
+        "ocr_confidence": 94.2,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 245,
+        "ocr_line_count": 19,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/Canada_passport-data-page-large_2023.jpeg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 82,
+      "matches": {
+        "entity.organization": [
+          {
+            "value": "CAN",
+            "confidence": 0.546690821647644,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "CANADA",
+            "confidence": 0.5223740339279175,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "SARAH",
+            "confidence": 0.9568844437599182,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "OTTAWA",
+            "confidence": 0.8856666088104248,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.date": [
+          {
+            "value": "14 JAN/JAN 2023",
+            "confidence": 0.6837295293807983,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "4 JAN/JAN 2033",
+            "confidence": 0.5901241898536682,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.government.mrz_document_number": [
+          {
+            "value": "P123456AA",
+            "confidence": 0.95,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "CAN",
+              "doc_type": "PP"
+            },
+            "risk_level": "HIGH",
+            "category": "identifier.government.mrz_document_number"
+          }
+        ],
+        "identifier.personal.mrz_dob": [
+          {
+            "value": "900801",
+            "confidence": 0.95,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "CAN",
+              "doc_type": "PP"
+            },
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.mrz_dob"
+          }
+        ],
+        "identifier.government_low.mrz_expiry": [
+          {
+            "value": "330114",
+            "confidence": 0.95,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "CAN",
+              "doc_type": "PP"
+            },
+            "risk_level": "LOW",
+            "category": "identifier.government_low.mrz_expiry"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 9,
+          "high_confidence": 5,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 3,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 6,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 252
+        }
+      },
+      "metadata": {
+        "width": 389,
+        "height": 256,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 96.16,
+        "make": "Copyright (C) 1999-2021 Glenisys",
+        "orientation": "1",
+        "datetime": "2023:05:09 10:15:30",
+        "dpi": [
+          72,
+          72
+        ],
+        "faces_detected": 2,
+        "ocr_confidence": 96.7,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 252,
+        "ocr_line_count": 20,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/MB_front_sample.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 78,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "2017/05/06",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "2018/08/08",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.personal.dob": [
+          {
+            "value": "2000/08/08",
+            "confidence": 0.6375,
+            "source": "keyword_context",
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.dob"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "JAMES QUINTIN",
+            "confidence": 0.9649044275283813,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "1201 - 123 MAIN STREET",
+            "confidence": 0.5685238242149353,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "NOTRE-DAME-DE-LOURDES",
+            "confidence": 0.5248632431030273,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.organization": [
+          {
+            "value": "James Q Public",
+            "confidence": 0.9044572114944458,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "identifier.government.drivers_license_mb": [
+          {
+            "value": "PU-BL-IJ-Q008NH",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_mb"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 8,
+          "high_confidence": 4,
+          "sources": {
+            "secrets": 0,
+            "regex": 2,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 1,
+            "gliner": 4,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 428
+        }
+      },
+      "metadata": {
+        "width": 633,
+        "height": 400,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 197.21,
+        "orientation": "1",
+        "datetime": "2019:02:28 09:25:47",
+        "dpi": [
+          "72.0",
+          "72.0"
+        ],
+        "faces_detected": 2,
+        "ocr_confidence": 97.3,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 428,
+        "ocr_line_count": 35,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/NB_medicare.png",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 76,
+      "matches": {
+        "entity.organization": [
+          {
+            "value": "TBrun",
+            "confidence": 0.7286771535873413,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "Medicare",
+            "confidence": 0.7113645076751709,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "LOUISE SMITH",
+            "confidence": 0.9632173776626587,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.health_card_ca": [
+          {
+            "value": "99999999",
+            "confidence": 0.6,
+            "source": "health_card",
+            "risk_level": "HIGH",
+            "category": "identifier.government.health_card_ca"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 4,
+          "high_confidence": 1,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 1,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 3,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 55
+        }
+      },
+      "metadata": {
+        "width": 624,
+        "height": 389,
+        "format": "PNG",
+        "mode": "RGB",
+        "size_kb": 207.18,
+        "faces_detected": 0,
+        "ocr_confidence": 95.8,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 55,
+        "ocr_line_count": 6,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/ON_front_sample_with_DL_number.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 76,
+      "matches": {
+        "entity.location": [
+          {
+            "value": "TORONTO",
+            "confidence": 0.7156984806060791,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "Ontario",
+            "confidence": 0.5905385613441467,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "JANE",
+            "confidence": 0.9684290289878845,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "DOE",
+            "confidence": 0.8120888471603394,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.drivers_license_on": [
+          {
+            "value": "D0123-45678-90123",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_on"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 5,
+          "high_confidence": 1,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 4,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 361
+        }
+      },
+      "metadata": {
+        "width": 765,
+        "height": 471,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 113.14,
+        "dpi": [
+          72,
+          72
+        ],
+        "faces_detected": 1,
+        "ocr_confidence": 97.7,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 361,
+        "ocr_line_count": 36,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/QC_current_official.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 74,
+      "matches": {
+        "entity.organization": [
+          {
+            "value": "Regie de",
+            "confidence": 0.7031021118164062,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "BOUF",
+            "confidence": 0.5802938938140869,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "identifier.government.health_card_qc": [
+          {
+            "value": "BOUF94011419",
+            "confidence": 0.6,
+            "source": "health_card",
+            "risk_level": "HIGH",
+            "category": "identifier.government.health_card_qc"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 3,
+          "high_confidence": 0,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 1,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 2,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 248
+        }
+      },
+      "metadata": {
+        "width": 360,
+        "height": 240,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 56.77,
+        "faces_detected": 1,
+        "ocr_confidence": 86.5,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 248,
+        "ocr_line_count": 19,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/QC_front_sample.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 78,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "2023-07-13",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "2031-12-17",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.personal.dob": [
+          {
+            "value": "1974-12-17",
+            "confidence": 0.6375,
+            "source": "keyword_context",
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.dob"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "LAPOINTE",
+            "confidence": 0.9009983539581299,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "BOULEVARD JEAN-LESAGE",
+            "confidence": 0.7103779315948486,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "QUEBEC",
+            "confidence": 0.6887747049331665,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "identifier.government.drivers_license_qc": [
+          {
+            "value": "L1531-171274-08",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_qc"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 7,
+          "high_confidence": 3,
+          "sources": {
+            "secrets": 0,
+            "regex": 2,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 1,
+            "gliner": 3,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 440
+        }
+      },
+      "metadata": {
+        "width": 1101,
+        "height": 691,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 384.76,
+        "faces_detected": 1,
+        "ocr_confidence": 95.9,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 440,
+        "ocr_line_count": 31,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/SK_front_specimens.png",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 75,
+      "matches": {
+        "entity.person": [
+          {
+            "value": "Jane",
+            "confidence": 0.7282198071479797,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "Regina",
+            "confidence": 0.7644125819206238,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.date": [
+          {
+            "value": "2015 AUG 31",
+            "confidence": 0.7185143828392029,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "AUG 31",
+            "confidence": 0.5055333375930786,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "1988",
+            "confidence": 0.5011618137359619,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.government.drivers_license_sk": [
+          {
+            "value": "20000030",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_sk"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 6,
+          "high_confidence": 0,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 5,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 610
+        }
+      },
+      "metadata": {
+        "width": 1000,
+        "height": 326,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size_kb": 732.48,
+        "faces_detected": 4,
+        "ocr_confidence": 94.7,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 610,
+        "ocr_line_count": 59,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/Work_Permit_withUCI.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 91,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "2022/08/30",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "2024/11/30",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "1-2019",
+            "confidence": 0.7453398704528809,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.personal.dob": [
+          {
+            "value": "1990/10/21",
+            "confidence": 0.6375,
+            "source": "keyword_context",
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.dob"
+          }
+        ],
+        "entity.organization": [
+          {
+            "value": "UCI",
+            "confidence": 0.7400864362716675,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "Immigration, Refugees and",
+            "confidence": 0.7001503109931946,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "IUC",
+            "confidence": 0.5865082740783691,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "DESIGNATED LEARNING INSTITUTION",
+            "confidence": 0.5591650605201721,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "Citoyenneté Canada",
+            "confidence": 0.5559796094894409,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "MOUTA SOUZA",
+            "confidence": 0.9393594861030579,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "VINICIUS",
+            "confidence": 0.9239888191223145,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "SPOUSE",
+            "confidence": 0.7532998323440552,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "AVENIDA LUCIO",
+            "confidence": 0.6526603102684021,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "VANCOUVER",
+            "confidence": 0.9122135043144226,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "Canada",
+            "confidence": 0.7500997185707092,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "identifier.government.passport_ca": [
+          {
+            "value": "FS617484",
+            "confidence": 0.7,
+            "source": "passport",
+            "risk_level": "HIGH",
+            "category": "identifier.government.passport_ca"
+          }
+        ],
+        "identifier.government.uci": [
+          {
+            "value": "1127041820",
+            "confidence": 0.6,
+            "source": "uci",
+            "risk_level": "HIGH",
+            "category": "identifier.government.uci"
+          },
+          {
+            "value": "1104062315",
+            "confidence": 0.6,
+            "source": "uci",
+            "risk_level": "HIGH",
+            "category": "identifier.government.uci"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 18,
+          "high_confidence": 5,
+          "sources": {
+            "secrets": 0,
+            "regex": 2,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 1,
+            "uci": 2,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 1,
+            "gliner": 12,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 1688
+        }
+      },
+      "metadata": {
+        "width": 768,
+        "height": 1024,
+        "format": "WEBP",
+        "mode": "RGB",
+        "size_kb": 97.45,
+        "faces_detected": 0,
+        "ocr_confidence": 96.8,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 1688,
+        "ocr_line_count": 63,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/YT_front_sample.webp",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 78,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "1988/02/17",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "2029/02/17",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "JANE DOE",
+            "confidence": 0.9457598328590393,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "ENDIMEN",
+            "confidence": 0.7708113193511963,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "EVERIYEUX",
+            "confidence": 0.7380609512329102,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "SEXSEXE",
+            "confidence": 0.671403169631958,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "HGTITAILLE",
+            "confidence": 0.6472741365432739,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "YT",
+            "confidence": 0.5552071332931519,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "identifier.government.drivers_license_yt": [
+          {
+            "value": "504896",
+            "confidence": 0.6,
+            "source": "drivers_license",
+            "risk_level": "HIGH",
+            "category": "identifier.government.drivers_license_yt"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 9,
+          "high_confidence": 3,
+          "sources": {
+            "secrets": 0,
+            "regex": 2,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 6,
+            "drivers_license": 1
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 284
+        }
+      },
+      "metadata": {
+        "width": 300,
+        "height": 255,
+        "format": "WEBP",
+        "mode": "RGBA",
+        "size_kb": 12.63,
+        "faces_detected": 2,
+        "ocr_confidence": 93.4,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 284,
+        "ocr_line_count": 32,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/dummy-passport-ukraine.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 81,
+      "matches": {
+        "entity.person": [
+          {
+            "value": "IVAN",
+            "confidence": 0.8816335797309875,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "UKRGRYTSENKO",
+            "confidence": 0.6369031667709351,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "IBAH",
+            "confidence": 0.5965838432312012,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "PPMLEHKO",
+            "confidence": 0.5943447351455688,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.date": [
+          {
+            "value": "AUG 19",
+            "confidence": 0.6319942474365234,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "identifier.government.passport_ca": [
+          {
+            "value": "EK000001",
+            "confidence": 0.7,
+            "source": "passport",
+            "risk_level": "HIGH",
+            "category": "identifier.government.passport_ca"
+          }
+        ],
+        "identifier.government_unverified.mrz": [
+          {
+            "value": "EK000001",
+            "confidence": 0.55,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "UKR",
+              "doc_type": "P"
+            },
+            "risk_level": "MEDIUM",
+            "category": "identifier.government_unverified.mrz"
+          }
+        ],
+        "identifier.personal.mrz_dob": [
+          {
+            "value": "830725",
+            "confidence": 0.95,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "UKR",
+              "doc_type": "P"
+            },
+            "risk_level": "MEDIUM",
+            "category": "identifier.personal.mrz_dob"
+          }
+        ],
+        "identifier.government_low.mrz_expiry": [
+          {
+            "value": "190803",
+            "confidence": 0.95,
+            "source": "mrz",
+            "metadata": {
+              "format": "TD3",
+              "issuing_state": "UKR",
+              "doc_type": "P"
+            },
+            "risk_level": "LOW",
+            "category": "identifier.government_low.mrz_expiry"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 9,
+          "high_confidence": 3,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 3,
+            "passport": 1,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 5,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 593
+        }
+      },
+      "metadata": {
+        "width": 569,
+        "height": 407,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 94.34,
+        "datetime": "2018:12:25 13:26:45",
+        "dpi": [
+          1200,
+          1200
+        ],
+        "faces_detected": 1,
+        "ocr_confidence": 90.5,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 593,
+        "ocr_line_count": 33,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/invoice_canadapost_01.png",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 69,
+      "matches": {
+        "contact.email": [
+          {
+            "value": "cmg@canadapost.ca",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "MEDIUM",
+            "category": "contact.email"
+          }
+        ],
+        "contact.phone": [
+          {
+            "value": "866-607-6301",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "MEDIUM",
+            "category": "contact.phone"
+          },
+          {
+            "value": "800-267-7651",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "MEDIUM",
+            "category": "contact.phone"
+          }
+        ],
+        "identifier.financial_unverified.sin": [
+          {
+            "value": "119321495",
+            "confidence": 0.55,
+            "source": "regex",
+            "risk_level": "MEDIUM",
+            "category": "identifier.financial_unverified.sin"
+          }
+        ],
+        "entity.date": [
+          {
+            "value": "2025-06-21",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "2025-07-06",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "entity.organization": [
+          {
+            "value": "CANADA POST CORPORATION",
+            "confidence": 0.8991622924804688,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "CANADA",
+            "confidence": 0.8577392101287842,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          },
+          {
+            "value": "canadapost",
+            "confidence": 0.5992931127548218,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "CLIENT1",
+            "confidence": 0.7067233324050903,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "Customer number",
+            "confidence": 0.5356805324554443,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          },
+          {
+            "value": "Customer number 1234567",
+            "confidence": 0.532945990562439,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "BARRIE ON",
+            "confidence": 0.9264029264450073,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "OTTAWA ON",
+            "confidence": 0.7660145163536072,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "NM",
+            "confidence": 0.7278362512588501,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "RIVERSIDE DR",
+            "confidence": 0.6754226088523865,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "L4M",
+            "confidence": 0.5362103581428528,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          },
+          {
+            "value": "CANADA",
+            "confidence": 0.5076116323471069,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 18,
+          "high_confidence": 8,
+          "sources": {
+            "secrets": 0,
+            "regex": 6,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 12,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 1531
+        }
+      },
+      "metadata": {
+        "width": 1224,
+        "height": 1584,
+        "format": "PNG",
+        "mode": "RGB",
+        "size_kb": 226.52,
+        "dpi": [
+          96.012,
+          96.012
+        ],
+        "faces_detected": 0,
+        "ocr_confidence": 99.0,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 1531,
+        "ocr_line_count": 86,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/passport_new_data_page_mrz_annotated.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 14,
+      "matches": {
+        "entity.person": [
+          {
+            "value": "SARAH",
+            "confidence": 0.9301589727401733,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "entity.date": [
+          {
+            "value": "14 JAN/JAN 2023",
+            "confidence": 0.7786968946456909,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "01 AUG/AOÜT 1990",
+            "confidence": 0.6914706230163574,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "14 JAN/JAN 2033",
+            "confidence": 0.6578246355056763,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "entity.location": [
+          {
+            "value": "OTTAWA",
+            "confidence": 0.743716835975647,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.location"
+          }
+        ],
+        "entity.organization": [
+          {
+            "value": "Autorite",
+            "confidence": 0.5328364968299866,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.organization"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 6,
+          "high_confidence": 1,
+          "sources": {
+            "secrets": 0,
+            "regex": 0,
+            "health_card": 0,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 6,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 623
+        }
+      },
+      "metadata": {
+        "width": 1200,
+        "height": 1065,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 449.35,
+        "dpi": [
+          144,
+          144
+        ],
+        "faces_detected": 4,
+        "ocr_confidence": 98.0,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 623,
+        "ocr_line_count": 38,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    },
+    {
+      "file": "/mnt/demo/telechargement.jpg",
+      "scan_status": "scanned",
+      "failure_reason": null,
+      "detection_degraded": false,
+      "failed_layers": [],
+      "score": 75,
+      "matches": {
+        "entity.date": [
+          {
+            "value": "31/12/1993",
+            "confidence": 0.95,
+            "source": "regex",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          },
+          {
+            "value": "11/2020",
+            "confidence": 0.6036949157714844,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.date"
+          }
+        ],
+        "entity.person": [
+          {
+            "value": "LOUISE SMIT",
+            "confidence": 0.9785731434822083,
+            "source": "gliner",
+            "risk_level": "LOW",
+            "category": "entity.person"
+          }
+        ],
+        "identifier.government.health_card_nb": [
+          {
+            "value": "999999999",
+            "confidence": 0.6,
+            "source": "health_card",
+            "risk_level": "HIGH",
+            "category": "identifier.government.health_card_nb"
+          }
+        ],
+        "_metadata": {
+          "layers_used": [
+            "regex",
+            "keyword_context",
+            "gliner",
+            "secrets",
+            "health_card",
+            "passport",
+            "uci",
+            "status_card",
+            "ocr_recovery",
+            "drivers_license",
+            "mrz"
+          ],
+          "failed_layers": [],
+          "disabled_layers": [],
+          "detection_degraded": false,
+          "total_detections": 4,
+          "high_confidence": 2,
+          "sources": {
+            "secrets": 0,
+            "regex": 1,
+            "health_card": 1,
+            "mrz": 0,
+            "passport": 0,
+            "uci": 0,
+            "status_card": 0,
+            "ocr_recovery": 0,
+            "keyword_context": 0,
+            "gliner": 2,
+            "drivers_license": 0
+          },
+          "ner_truncated": false,
+          "ner_analyzed_chars": 88
+        }
+      },
+      "metadata": {
+        "width": 1020,
+        "height": 580,
+        "format": "JPEG",
+        "mode": "RGB",
+        "size_kb": 232.18,
+        "orientation": "1",
+        "datetime": "2022:08:05 18:54:32",
+        "dpi": [
+          "72.0",
+          "72.0"
+        ],
+        "faces_detected": 0,
+        "ocr_confidence": 94.1,
+        "ocr_attempted": true,
+        "ocr_engine": "paddleocr",
+        "confidence_mapping": "character_weighted_mean_rec_score_x100",
+        "ocr_character_count": 88,
+        "ocr_line_count": 6,
+        "textline_orientation": true,
+        "rotation_applied": 0,
+        "rotation_method": "none",
+        "upscaled": false,
+        "exif_transposed": false,
+        "preprocessing_applied": false
+      }
+    }
+  ]
+}

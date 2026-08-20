@@ -74,10 +74,6 @@ MAX_PROVINCE_NAME_LENGTH = max(
 )
 
 # Tier-2 numeric formats: digit length -> province codes sharing that length.
-# NB stays here for its contiguous compact form (still a plain \b\d{9}\b run);
-# its separately-grouped 3-3-3/6-3/3-6 display forms are handled by the
-# dedicated _NB_DISPLAY_RE pattern below instead, since those are not
-# contiguous digit runs.
 LEN_PROVINCES = {
     8: ["pe", "nt"],
     9: ["ab", "sk", "mb", "nb", "nu", "yk"],
@@ -96,22 +92,6 @@ _TEN_DIGIT_RE = re.compile(r"\b(\d{10})(?:[- \t]?([A-Z]{1,2}))?\b")
 _AB_DISPLAY_RE = re.compile(r"\b\d{5}-\d{4}\b")
 # Northwest Territories: one letter followed by seven digits.
 _NT_RE = re.compile(r"\b[A-Za-z]\d{7}\b")
-# New Brunswick displayed forms: nine digits printed 3-3-3, with OCR
-# sometimes merging adjacent groups into 6-3 or 3-6. Only a single space or
-# hyphen is accepted as a group separator. Contiguous 9 digits is deliberately
-# NOT included here: it is already handled by the generic LEN_PROVINCES loop
-# below (which keeps "nb" among the length-9 provinces), so a bare contiguous
-# 9-digit run next to a generic health keyword (no province named) still
-# resolves to the ambiguous "health_card_ca" rather than being narrowed to
-# NB specifically — folding contiguous digits into this pattern too would
-# mistag every other length-9 province's compact card (AB/SK/MB/NU/YK) as
-# health_card_nb whenever a bare health keyword (not a province name) is
-# nearby, since those are also 9-digit contiguous runs.
-_NB_DISPLAY_RE = re.compile(
-    r"\b\d{3}[ -]\d{3}[ -]\d{3}\b"
-    r"|\b\d{6}[ -]\d{3}\b"
-    r"|\b\d{3}[ -]\d{6}\b"
-)
 # Quebec (RAMQ): 4 letters + 8 digits, compact or printed in 4/4/4 groups.
 _QC_RE = re.compile(r"\b[A-Za-z]{4}(?:\d{8}| \d{4} \d{4})\b")
 
@@ -257,17 +237,6 @@ def detect_health_cards(text: str) -> Dict[str, List[Tuple[str, float]]]:
         window = lowered[max(0, m.start() - CONTEXT_WINDOW): m.end() + CONTEXT_WINDOW]
         if _province_in_window(window, ["nt"]) or _has_health_keyword(window):
             add("health_card_nt", m.group(0), TIER3_CONFIDENCE)
-
-    # New Brunswick's grouped display forms (3-3-3, and the 6-3/3-6 groupings
-    # OCR sometimes produces by merging adjacent groups) are normalized to
-    # their digit string before the length check, same as Alberta above.
-    for m in _NB_DISPLAY_RE.finditer(text):
-        digits = re.sub(r"[ -]", "", m.group(0))
-        if len(digits) != 9:
-            continue
-        window = lowered[max(0, m.start() - CONTEXT_WINDOW): m.end() + CONTEXT_WINDOW]
-        if _province_in_window(window, ["nb"]) or _has_health_keyword(window):
-            add("health_card_nb", digits, TIER3_CONFIDENCE)
 
     # ---- Tier 3: format + context (keyword/province required), no checksum ----
     for length, provs in LEN_PROVINCES.items():

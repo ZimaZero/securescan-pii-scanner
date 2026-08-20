@@ -791,6 +791,30 @@ def detect_pii_hybrid(
         if not merged["passport_generic"]:
             del merged["passport_generic"]
 
+    # Reconcile: a checksum-validated SIN beats a same-digit health_card_nb
+    # match, for the same reason it already beats passport_generic above — NB's
+    # printed 3-3-3 grouping is indistinguishable from a SIN's own printed
+    # form, and health_card_nb (Tier 3: format + context, no checksum) is
+    # weaker evidence than a Luhn-validated SIN. Both "sin" and "sin_unverified"
+    # require validate_sin() (Luhn) to have already passed — every path that
+    # can populate either key (detectors.py's regex layer and
+    # keyword_detector.py's context layer) gates on it before emitting either
+    # one; "_unverified" here means "no SIN-keyword context nearby", not
+    # "checksum not checked" (mirrors health_card's own *_unverified naming).
+    # So both keys are equally legitimate checksum evidence for this trade.
+    if "health_card_nb" in merged and ("sin" in merged or "sin_unverified" in merged):
+        sin_digits = {
+            re.sub(r"\D", "", d["value"])
+            for k in ("sin", "sin_unverified") if k in merged
+            for d in merged[k]
+        }
+        merged["health_card_nb"] = [
+            d for d in merged["health_card_nb"]
+            if re.sub(r"\D", "", d["value"]) not in sin_digits
+        ]
+        if not merged["health_card_nb"]:
+            del merged["health_card_nb"]
+
     # Reconcile: MRZ is checksum-validated (source priority 3, same as regex/
     # health_card) and strictly more trustworthy than the passport detector's
     # format+keyword-only match (source priority 2). If the SAME document
