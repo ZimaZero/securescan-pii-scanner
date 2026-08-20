@@ -359,6 +359,18 @@ def _load_onnx_model():
     # multiply into all-core inference pools and starve the GUI.
     session_options.intra_op_num_threads = config.GLINER_ONNX_THREADS
     session_options.inter_op_num_threads = config.GLINER_ONNX_THREADS
+    if not config.SECURESCAN_VERBOSE:
+        # Suppresses the transformer_memcpy advisory on both the CPU and
+        # (when swapped in) CUDA session -- this same SessionOptions object
+        # is passed to both.
+        session_options.log_severity_level = 3
+        # ScatterNDWithAtomicReduction is emitted through ONNX Runtime's
+        # process-wide "Default" logger, not the per-session one --
+        # session_options.log_severity_level above does not reach it
+        # (verified empirically: it kept printing with only the line
+        # above). See docs/evidence/console_noise_suppression.md for why
+        # this is display-suppressed rather than resolved.
+        onnxruntime.set_default_logger_severity(3)
     instance = GLiNER.from_pretrained(
         str(cache_dir),
         local_files_only=True,

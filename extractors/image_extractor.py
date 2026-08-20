@@ -10,9 +10,11 @@ from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
 from importlib.util import find_spec
+import logging
 import os
 import threading
 from typing import Any, Dict, Tuple
+import warnings
 
 import config
 from .errors import ExtractionError
@@ -27,6 +29,20 @@ os.environ.setdefault(
     os.path.join(os.path.expanduser("~"), ".cache", "securescan", "paddleocr"),
 )
 os.environ.setdefault("PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK", "True")
+
+if not config.SECURESCAN_VERBOSE:
+    # Benign build-time advisory (no ccache installed in the image; every
+    # source file just recompiles from scratch on the rare occasion Paddle's
+    # JIT extension path is exercised) -- narrow filter, not a blanket
+    # warnings.simplefilter("ignore"). See gliner_detector.py's identically
+    # shaped huggingface_hub filter for precedent and
+    # docs/evidence/console_noise_suppression.md for the full rationale.
+    warnings.filterwarnings(
+        "ignore",
+        message=r".*No ccache found.*",
+        category=UserWarning,
+        module=r"paddle\.utils\.cpp_extension\.extension_utils",
+    )
 
 try:
     from PIL import Image, ImageOps
@@ -79,6 +95,20 @@ def _exif_transpose(img: PIL.Image.Image) -> Tuple[PIL.Image.Image, bool]:
 
 def _build_paddle_pipeline(device: str):
     from paddleocr import PaddleOCR
+
+    if not config.SECURESCAN_VERBOSE:
+        # Importing paddleocr transitively imports paddlex, whose __init__
+        # calls setup_logging() and sets its "paddlex" logger to INFO --
+        # that's the source of the "Creating model:"/"Model files already
+        # exist..." lines (paddlex/inference/pipelines/base.py,
+        # paddlex/inference/utils/official_models.py), both emitted via
+        # logging.info() through that one named logger. Must run after the
+        # import above, not before: setting the level first would just be
+        # overwritten by paddlex's own setup_logging() call. Raising the
+        # level (not touching the handler) still lets real paddlex
+        # WARNING/ERROR output through. See
+        # docs/evidence/console_noise_suppression.md.
+        logging.getLogger("paddlex").setLevel(logging.WARNING)
 
     return PaddleOCR(
         text_detection_model_name=PADDLE_DETECTION_MODEL,

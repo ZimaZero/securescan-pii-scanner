@@ -32,6 +32,18 @@ DEFAULT_OCR_WORKERS = 4
 PADDLEOCR_DEVICE = os.environ.get("SECURESCAN_PADDLEOCR_DEVICE", "cpu")
 
 # ---------------------------------------------------------------------------
+# Console noise suppression escape hatch
+# ---------------------------------------------------------------------------
+# SECURESCAN_VERBOSE=1 (any value other than unset/""/"0") restores every
+# third-party log line this codebase otherwise suppresses for a clean scan
+# console (ONNX Runtime CUDA advisories, Paddle's "No ccache found" warning,
+# PaddleX model-loading chatter — see docs/evidence/console_noise_suppression.md).
+# Default off, so bare-host/unset-env-var behavior is the quiet path; every
+# suppression site below must check this flag rather than suppressing
+# unconditionally.
+SECURESCAN_VERBOSE = os.environ.get("SECURESCAN_VERBOSE", "") not in ("", "0")
+
+# ---------------------------------------------------------------------------
 # GLiNER file-type gating
 # ---------------------------------------------------------------------------
 # The GLiNER layer performs semantic NER (person/org/location/date). It adds
